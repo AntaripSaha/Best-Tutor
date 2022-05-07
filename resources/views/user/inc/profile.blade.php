@@ -171,7 +171,7 @@
 </div>
 
 <hr>
-<h5>{{__('Add Video Profile')}}</h5>
+{{-- <h5>{{__('Add Video Profile')}}</h5>
 
 <div class="row">
     <div class="col-md-12" id="video_link_id">
@@ -180,7 +180,7 @@
             {!! Form::textarea('video_link', null, array('class'=>'form-control', 'id'=>'video_link', 'placeholder'=>__('Video Link'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'video_link') !!} </div>
     </div>
-</div>
+</div> --}}
 <hr>
 
 <h5>{{__('Career Information')}}</h5>

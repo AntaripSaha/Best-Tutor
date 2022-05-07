@@ -16,7 +16,7 @@
         <div class="row"> 
             <!--Quick Links-->
             <div class="col-md-3 col-sm-6">
-                <img src="public\sitesetting_images\thumb\tution-1651141216-525.png" alt="" height="100px" width="310px">
+                <img src="public\sitesetting_images\thumb\tution-1651141216-525.png" alt="" style="max-width: 100%;opacity: 65%;height: 55px;width: 97%;">
             </br></br></br>
                 <!--Quick Links menu Start-->
                 <ul class="quicklinks">

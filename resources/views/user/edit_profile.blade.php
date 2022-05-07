@@ -31,7 +31,7 @@
                             <div class="formpanel mt0">
                                 <!-- Personal Information -->
                                 @include('user.forms.cv.cvs')
-                                @include('user.forms.project.projects')
+                                {{-- @include('user.forms.project.projects') --}}
                                 @include('user.forms.experience.experience')
                                 @include('user.forms.education.education')
                                 @include('user.forms.skill.skills')
