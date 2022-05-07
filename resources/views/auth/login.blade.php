@@ -33,7 +33,7 @@
                                 <input type="hidden" name="candidate_or_employer" value="candidate" />
                                 <div class="formpanel">
                                     <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
+                                        <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address/Phone')}}">
                                         @if ($errors->has('email'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -66,7 +66,7 @@
                                 <input type="hidden" name="candidate_or_employer" value="employer" />
                                 <div class="formpanel">
                                     <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address')}}">
+                                        <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{__('Email Address/Phone')}}">
                                         @if ($errors->has('email'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>

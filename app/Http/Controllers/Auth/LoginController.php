@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Illuminate\Http\Request;
 
 
 class LoginController extends Controller
@@ -151,10 +152,11 @@ use AuthenticatesUsers;
     public function findOrCreateUser($user, $provider)
 
     {
-
         if ($user->getEmail() != '') {
 
-            $authUser = User::where('email', 'like', $user->getEmail())->first();
+            $authUser = User::where('email', 'like', $user->getEmail())
+                              ->orWhere()
+                              ->first();
 
             if ($authUser) {
 
@@ -197,6 +199,23 @@ use AuthenticatesUsers;
         ]);
 
     }
+
+          /**
+       * Get the needed authorization credentials from the request.
+       *
+       * @param  \Illuminate\Http\Request  $request
+       * @return array
+       */
+      protected function credentials(Request $request)
+      {
+        if(is_numeric($request->get('email'))){
+          return ['phone'=>$request->get('email'),'password'=>$request->get('password')];
+        }
+        elseif (filter_var($request->get('email'), FILTER_VALIDATE_EMAIL)) {
+          return ['email' => $request->get('email'), 'password'=>$request->get('password')];
+        }
+        return ['username' => $request->get('email'), 'password'=>$request->get('password')];
+      }
 
 
 

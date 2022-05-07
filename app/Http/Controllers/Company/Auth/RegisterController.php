@@ -67,6 +67,7 @@ use RegistersUsers;
         $company = new Company();
         $company->name = $request->input('name');
         $company->email = $request->input('email');
+        $company->phone = $request->input('phone');
         $company->password = bcrypt($request->input('password'));
         $company->is_active = 0;
         $company->verified = 0;
