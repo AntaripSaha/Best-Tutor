@@ -12,13 +12,15 @@
     </div>
     <div class="col-md-12">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'description') !!}"> {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>__('Job description'))) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'description') !!} </div>
+            {!! APFrmErrHelp::showErrors($errors, 'description') !!} 
+        </div>
     </div>
-	
-	 <div class="col-md-12">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'benefits') !!}"> {!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits', 'placeholder'=>__('Job Benefits'))) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'benefits') !!} </div>
-    </div>
+    {{-- 	
+        <div class="col-md-12">
+            <label for="" >Benefits</label>
+            <div class="formrow {!! APFrmErrHelp::hasError($errors, 'benefits') !!}"> {!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits', 'placeholder'=>__('Job Benefits'))) !!}
+                {!! APFrmErrHelp::showErrors($errors, 'benefits') !!} </div>
+        </div> --}}
 	
 	
     <div class="col-md-12">
@@ -27,7 +29,8 @@
             $skills = old('skills', $jobSkillIds);
             ?>
             {!! Form::select('skills[]', $jobSkills, $skills, array('class'=>'form-control select2-multiple', 'id'=>'skills', 'multiple'=>'multiple')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'skills') !!} </div>
+            {!! APFrmErrHelp::showErrors($errors, 'skills') !!} 
+        </div>
     </div>
     <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}" id="country_id_div"> {!! Form::select('country_id', ['' => __('Select Country')]+$countries, old('country_id', (isset($job))? $job->country_id:$siteSetting->default_country_id), array('class'=>'form-control', 'id'=>'country_id')) !!}
@@ -40,14 +43,18 @@
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}" id="city_id_div"> <span id="default_city_dd"> {!! Form::select('city_id', ['' => __('Select City')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} </div>
     </div>
     <div class="col-md-6">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'salary_from') !!}" id="salary_from_div"> {!! Form::number('salary_from', null, array('class'=>'form-control', 'id'=>'salary_from', 'placeholder'=>__('Salary from'))) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'salary_from') !!} </div>
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'num_of_positions') !!}" id="num_of_positions_div"> {!! Form::select('num_of_positions', ['' => __('Select number of Students')]+MiscHelper::getNumPositions(), null, array('class'=>'form-control', 'id'=>'num_of_positions')) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'num_of_positions') !!} </div>
     </div>
     <div class="col-md-6">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'salary_from') !!}" id="salary_from_div"> {!! Form::number('salary_from', null, array('class'=>'form-control', 'id'=>'salary_from', 'placeholder'=>__('Salary'))) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'salary_from') !!} </div>
+    </div>
+    {{-- <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'salary_to') !!}" id="salary_to_div">
             {!! Form::number('salary_to', null, array('class'=>'form-control', 'id'=>'salary_to', 'placeholder'=>__('Salary to'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'salary_to') !!} </div>
-    </div>
+    </div> --}}
     <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'salary_currency') !!}" id="salary_currency_div">
             @php
@@ -81,33 +88,31 @@
             </div>
             {!! APFrmErrHelp::showErrors($errors, 'hide_salary') !!} </div>
     </div>
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'career_level_id') !!}" id="career_level_id_div"> {!! Form::select('career_level_id', ['' => __('Select Career level')]+$careerLevels, null, array('class'=>'form-control', 'id'=>'career_level_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'career_level_id') !!} </div>
-    </div>
+    </div> --}}
 
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'functional_area_id') !!}" id="functional_area_id_div"> {!! Form::select('functional_area_id', ['' => __('Select Functional Area')]+$functionalAreas, null, array('class'=>'form-control', 'id'=>'functional_area_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!} </div>
-    </div>
-    <div class="col-md-6">
+    </div> --}}
+    {{-- <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'job_type_id') !!}" id="job_type_id_div"> {!! Form::select('job_type_id', ['' => __('Select Job Type')]+$jobTypes, null, array('class'=>'form-control', 'id'=>'job_type_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'job_type_id') !!} </div>
+    </div> --}}
+    <div class="col-md-6">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'job_shift_id') !!}" id="job_shift_id_div">
+            {!! Form::select('job_shift_id', ['' => __('Select Job Shift')]+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'job_shift_id') !!} 
+        </div>
     </div>
     <div class="col-md-6">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'job_shift_id') !!}" id="job_shift_id_div"> {!! Form::select('job_shift_id', ['' => __('Select Job Shift')]+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'job_shift_id') !!} </div>
-    </div>
-    <div class="col-md-6">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'num_of_positions') !!}" id="num_of_positions_div"> {!! Form::select('num_of_positions', ['' => __('Select number of Positions')]+MiscHelper::getNumPositions(), null, array('class'=>'form-control', 'id'=>'num_of_positions')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'num_of_positions') !!} </div>
-    </div>
-    <div class="col-md-6">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}" id="gender_id_div"> {!! Form::select('gender_id', ['' => __('No preference')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}" id="gender_id_div"> {!! Form::select('gender_id', ['' => __('Select Gender preference')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} </div>
     </div>
     <div class="col-md-6">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'expiry_date') !!}"> {!! Form::text('expiry_date', null, array('class'=>'form-control datepicker', 'id'=>'expiry_date', 'placeholder'=>__('Job expiry date'), 'autocomplete'=>'off')) !!}
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'expiry_date') !!}"> {!! Form::text('expiry_date', null, array('class'=>'form-control datepicker', 'id'=>'expiry_date', 'placeholder'=>__('Hire date'), 'autocomplete'=>'off')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'expiry_date') !!} </div>
     </div>
     <div class="col-md-6">
@@ -159,7 +164,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.select2-multiple').select2({
-            placeholder: "{{__('Select Required Skills')}}",
+            placeholder: "{{__('Select Required Subjects')}}",
             allowClear: true
         });
         $(".datepicker").datepicker({

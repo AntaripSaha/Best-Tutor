@@ -90,12 +90,12 @@
 			{!! Form::select('gender_id', [''=>__('Select Gender')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} </div>
     </div>
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
 			<label for="">{{__('Martial Status')}}</label>
 			{!! Form::select('marital_status_id', [''=>__('Select Marital Status')]+$maritalStatuses, null, array('class'=>'form-control', 'id'=>'marital_status_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'marital_status_id') !!} </div>
-    </div>
+    </div> --}}
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}">
 			<label for="">{{__('Country')}}</label>
@@ -105,13 +105,13 @@
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
-			<label for="">{{__('State')}}</label>
+			<label for="">{{__('Division')}}</label>
 			<span id="state_dd"> {!! Form::select('state_id', [''=>__('Select State')], null, array('class'=>'form-control', 'id'=>'state_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} </div>
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
-			<label for="">{{__('City')}}</label>
-			<span id="city_dd"> {!! Form::select('city_id', [''=>__('Select City')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} </div>
+			<label for="">{{__('Area')}}</label>
+			<span id="city_dd"> {!! Form::select('city_id', [''=>__('Select Area')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} </div>
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
@@ -200,14 +200,14 @@
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'industry_id') !!}">
-			<label for="">{{__('Select Industry')}}</label>
-			{!! Form::select('industry_id', [''=>__('Select Industry')]+$industries, null, array('class'=>'form-control', 'id'=>'industry_id')) !!}
+			<label for="">{{__('Department')}}</label>
+			{!! Form::select('industry_id', [''=>__('Departments')]+$industries, null, array('class'=>'form-control', 'id'=>'industry_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'industry_id') !!} </div>
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'functional_area_id') !!}">
-			<label for="">{{__('Functional Area')}}</label>
-			{!! Form::select('functional_area_id', [''=>__('Select Functional Area')]+$functionalAreas, null, array('class'=>'form-control', 'id'=>'functional_area_id')) !!}
+			<label for="">{{__('Major')}}</label>
+			{!! Form::select('functional_area_id', [''=>__('Select Major')]+$functionalAreas, null, array('class'=>'form-control', 'id'=>'functional_area_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!} </div>
     </div>
     <div class="col-md-4">
