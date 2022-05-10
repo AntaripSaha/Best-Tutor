@@ -15,7 +15,7 @@
             {!! APFrmErrHelp::showErrors($errors, 'description') !!} 
         </div>
     </div>
-    {{-- 	
+    {{--
         <div class="col-md-12">
             <label for="" >Benefits</label>
             <div class="formrow {!! APFrmErrHelp::hasError($errors, 'benefits') !!}"> {!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits', 'placeholder'=>__('Job Benefits'))) !!}
