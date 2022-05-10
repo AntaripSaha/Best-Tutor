@@ -71,18 +71,103 @@ use RegistersUsers;
         $company->password = bcrypt($request->input('password'));
         $company->is_active = 0;
         $company->verified = 0;
-        $company->save();
-        /*         * ******************** */
-        $company->slug = Str::slug($company->name, '-') . '-' . $company->id;
-        $company->update();
-        /*         * ******************** */
+        $phone = $request->input('phone');
+        $otp = rand(0000,9999);
+        $company->otp = $otp;
+        $append = '88';
+        $append .= $phone;
+       
+        if($company->save()){
+              $url = "https://portal.metrotel.com.bd/smsapi";
+              $data = [
+                "api_key" => "C2000120621743647cdeb8.61438463",
+                "type" => "text",
+                "contacts" => $append,
+                "senderid" => "8809612451779",
+                "msg" => "Your OTP is $otp . Never Share Your OTP With Others.",
+              ];
+              $ch = curl_init();
+              curl_setopt($ch, CURLOPT_URL, $url);
+              curl_setopt($ch, CURLOPT_POST, 1);
+              curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+              curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+              curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+              $response = curl_exec($ch);
+              curl_close($ch);
+             
+  
+            // $url = "https://portal.metrotel.com.bd/smsapi";
+            // $data = [
+            //     "api_key" => "C2000120621743647cdeb8.61438463",
+            //     "type" => "text",
+            //     "contacts" =>"88"+$phone,
+            //     "senderid" => "8809612451779",
+            //     "msg" => "Your OTP is $otp . Never Share Your OTP With Others.",
+            // ];
+            // $ch = curl_init();
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, 1);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            // $response = curl_exec($ch);
+            // curl_close($ch);
+            
+            $company->slug = Str::slug($company->name, '-') . '-' . $company->id;
+            $company->update();
+            /*         * ******************** */
+    
+            return view('company.otp', compact('phone','company', 'request'));
 
-        event(new Registered($company));
-        event(new CompanyRegistered($company));
-        $this->guard()->login($company);
-        UserVerification::generate($company);
-        UserVerification::send($company, 'Company Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
-        return $this->registered($request, $company) ?: redirect($this->redirectPath());
+        }else{
+            return 'wrong';
+        }
+
     }
+    public function viewotp(){
+
+        $phone = "01713702979";
+        $company = "name3";
+        return view('company.otp', compact('phone','company'));    
+    }
+
+    public function otpMatch(Request $req){
+        $company = $req->company;   
+        $company = $req->company;   
+        $sent_otp  = Company::where('phone', $req->phone)->select('otp')->get();
+         
+        $entered_otp = $req->otp;
+        if($sent_otp[0]->otp == $entered_otp){
+            return redirect()->route('login');
+        }else{
+            return redirect()->back()->with('warning', 'Wrong OTP Given. Please Try Again');
+        }
+    }
+
+
+
+
+
+    public function otp($phone, $otp){
+        $url = "https://portal.metrotel.com.bd/smsapi";
+        $data = [
+            "api_key" => "C2000120621743647cdeb8.61438463",
+            "type" => "text",
+            "contacts" => $phone,
+            "senderid" => "8809612451779",
+            "msg" => "Your OTP is $otp . Never Share Your OTP With Others.",
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        return redirect()->route('otp');
+    }
+
 
 }

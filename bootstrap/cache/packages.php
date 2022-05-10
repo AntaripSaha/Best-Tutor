@@ -21,6 +21,17 @@
       'Flare' => 'Facade\\Ignition\\Facades\\Flare',
     ),
   ),
+  'ferdous/laravel-otp-validate' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Ferdous\\OtpValidator\\OtpValidatorServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'OtpVerifier' => 'Ferdous\\OtpValidator\\OtpValidatorFacade',
+    ),
+  ),
   'fideloper/proxy' => 
   array (
     'providers' => 

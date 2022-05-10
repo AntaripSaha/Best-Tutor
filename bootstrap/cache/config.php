@@ -677,6 +677,69 @@
       ),
     ),
   ),
+  'otp' => 
+  array (
+    'service' => 'enabled',
+    'table-name' => 'otps',
+    'timeout' => 120,
+    'digit' => 4,
+    'resend' => 'enabled',
+    'max-retry' => 2,
+    'max-resend' => 1,
+    'service-name' => 'OTP Service',
+    'company-name' => 'Test Company',
+    'send-by' => 
+    array (
+      'email' => 0,
+      'sms' => 1,
+      'aws-sns' => 0,
+    ),
+    'email' => 
+    array (
+      'from' => 'example@mail.com',
+      'name' => 'Example',
+      'subject' => 'Security Code',
+    ),
+    'smsc' => 
+    array (
+      'url' => NULL,
+      'method' => 'GET',
+      'add_code' => NULL,
+      'json' => 1,
+      'headers' => 
+      array (
+        'header1' => '',
+        'header2' => '',
+        'authKey' => '',
+      ),
+      'params' => 
+      array (
+        'send_to_param_name' => 'number',
+        'msg_param_name' => 'msg',
+        'others' => 
+        array (
+          'username' => NULL,
+          'password' => NULL,
+          'param1' => '',
+          'param2' => '',
+        ),
+      ),
+    ),
+    'aws' => 
+    array (
+      'sns' => 
+      array (
+        'version' => '2010-03-31',
+        'credentials' => 
+        array (
+          'key' => NULL,
+          'secret' => NULL,
+        ),
+        'region' => 'us-east-1',
+        'profile' => NULL,
+      ),
+    ),
+  ),
   'paypal' => 
   array (
     'client_id' => 'AWuIi1J_QCuTudnhU3-TKNLYg1GHuGz-y8nsdh5Cosa9rPL7StMKjTdBTahjyOt95_3HPwPKPHZziA9r',
