@@ -36,32 +36,43 @@ class CompanyMessagesController extends Controller
      */
     function submitnew_message_seeker(Request $request)
     {
-        $this->validate($request, [
-            'message' => 'required',
-        ], [
-            'message.required' => 'Message is required.',
-        ]);
-        $message = new CompanyMessage();
-        $message->company_id = Auth::guard('company')->user()->id;
-        $message->message = $request->message;
-        $message->seeker_id = $request->seeker_id;
-        $message->type = 'reply';
-        $message->save();
+        $all =  Company::findOrFail(Auth::guard('company')->user()->id);
+        $phone = $all->phone;
+        $company = $all->phone;
+        if($all->otp_verified == 1){
+            $this->validate($request, [
+                'message' => 'required',
+            ], [
+                'message.required' => 'Message is required.',
+            ]);
+            $message = new CompanyMessage();
+            $message->company_id = Auth::guard('company')->user()->id;
+            $message->message = $request->message;
+            $message->seeker_id = $request->seeker_id;
+            $message->type = 'reply';
+            $message->save();
 
-        $company = Company::where('id', Auth::guard('company')->user()->id)->first();
-        $user = User::where('id', $request->seeker_id)->first();
-        $data['name'] = $user->name;
-        $data['email'] = $user->email;
-        $data['company_name'] = $company->name;
+            $company = Company::where('id', Auth::guard('company')->user()->id)->first();
+            $user = User::where('id', $request->seeker_id)->first();
+            $data['name'] = $user->name;
+            $data['email'] = $user->email;
+            $data['company_name'] = $company->name;
 
-        /*Mail::send(new MessageSendCompanyMail($data));*/
-        if ($message->save() == true) {
-            $arr = array('msg' => 'Your message have successfully been posted. ', 'status' => true);
-        }
-        return Response()->json($arr);
+            /*Mail::send(new MessageSendCompanyMail($data));*/
+            if ($message->save() == true) {
+                $arr = array('msg' => 'Your message have successfully been posted. ', 'status' => true);
+            }
+            return Response()->json($arr);
+        }else{
+            return view('company.otp', compact('phone', 'company'));                   
+        }  
     }
     function submit_message(Request $request)
     {
+        $all =  Company::findOrFail(Auth::guard('company')->user()->id);
+        $phone = $all->phone;
+        $company = $all->phone;
+        if($all->otp_verified == 1){
         $this->validate($request, [
             'message' => 'required',
         ], [
@@ -90,54 +101,85 @@ class CompanyMessagesController extends Controller
             $search = view("company.appendonly-messages", compact('messages', 'seeker', 'company'))->render();
             return $search;
         }
+    }else{
+        return view('company.otp', compact('phone', 'company'));                   
+    } 
     }
     public function all_messages()
     {
+        $all =  Company::findOrFail(Auth::guard('company')->user()->id);
+        $phone = $all->phone;
+        $company = $all->phone;
+        if($all->otp_verified == 1){
 
-        $messages = CompanyMessage::where('company_id', Auth::guard('company')->user()->id)->get();
-        $ids = array();
-        foreach ($messages as $key => $value) {
-            $ids[] = $value->seeker_id;
-        }
-        $data['seekers'] = User::whereIn('id', $ids)->get();
-        return view('company.all-messages')->with($data);
+            $messages = CompanyMessage::where('company_id', Auth::guard('company')->user()->id)->get();
+            $ids = array();
+            foreach ($messages as $key => $value) {
+                $ids[] = $value->seeker_id;
+            }
+            $data['seekers'] = User::whereIn('id', $ids)->get();
+            return view('company.all-messages')->with($data);
+        }else{
+            return view('company.otp', compact('phone', 'company'));                   
+        } 
     }
     public function append_messages(Request $request)
     {
-        $seeker_id = $request->get('seeker_id');
-        $company_id = Auth::guard('company')->user()->id;
-        $messages = CompanyMessage::where('company_id', $company_id)->where('seeker_id', $seeker_id)->get();
-        $seeker = User::where('id', $seeker_id)->first();
-        $company = Company::where('id', $company_id)->first();
-        $search = view("company.append-messages", compact('messages', 'seeker', 'company'))->render();
-        return $search;
+        $all =  Company::findOrFail(Auth::guard('company')->user()->id);
+        $phone = $all->phone;
+        $company = $all->phone;
+        if($all->otp_verified == 1){
+            $seeker_id = $request->get('seeker_id');
+            $company_id = Auth::guard('company')->user()->id;
+            $messages = CompanyMessage::where('company_id', $company_id)->where('seeker_id', $seeker_id)->get();
+            $seeker = User::where('id', $seeker_id)->first();
+            $company = Company::where('id', $company_id)->first();
+            $search = view("company.append-messages", compact('messages', 'seeker', 'company'))->render();
+            return $search;
+    }else{
+        return view('company.otp', compact('phone', 'company'));                   
+    } 
     }
     public function appendonly_messages(Request $request)
     {
-        $seeker_id = $request->get('seeker_id');
-        $company_id = Auth::guard('company')->user()->id;
-        $messages = CompanyMessage::where('company_id', $company_id)->where('seeker_id', $seeker_id)->get();
-        $seeker = User::where('id', $seeker_id)->first();
-        $company = Company::where('id', $company_id)->first();
-        $search = view("company.appendonly-messages", compact('messages', 'seeker', 'company'))->render();
-        $data = array();
-        $data['html_data'] = $search;
-        $data['seeker_id'] = $seeker_id;
-        return \Response::json($data);
+        $all =  Company::findOrFail(Auth::guard('company')->user()->id);
+        $phone = $all->phone;
+        $company = $all->phone;
+        if($all->otp_verified == 1){
+            $seeker_id = $request->get('seeker_id');
+            $company_id = Auth::guard('company')->user()->id;
+            $messages = CompanyMessage::where('company_id', $company_id)->where('seeker_id', $seeker_id)->get();
+            $seeker = User::where('id', $seeker_id)->first();
+            $company = Company::where('id', $company_id)->first();
+            $search = view("company.appendonly-messages", compact('messages', 'seeker', 'company'))->render();
+            $data = array();
+            $data['html_data'] = $search;
+            $data['seeker_id'] = $seeker_id;
+            return \Response::json($data);
+        }else{
+            return view('company.otp', compact('phone', 'company'));                   
+        }
     }
 
     public function change_message_status(Request $request)
     {
-        $company_id = Auth::guard('company')->user()->id;
-        $seeker_id = $request->get('sender_id');
-        $messages = CompanyMessage::where('company_id', $company_id)->where('seeker_id', $seeker_id)->get();
-        if ($messages) {
-            foreach ($messages as $key => $value) {
-                $message = CompanyMessage::findOrFail($value->id);
-                $message->status = 'viewed';
-                $message->update();
+        $all =  Company::findOrFail(Auth::guard('company')->user()->id);
+        $phone = $all->phone;
+        $company = $all->phone;
+        if($all->otp_verified == 1){
+            $company_id = Auth::guard('company')->user()->id;
+            $seeker_id = $request->get('sender_id');
+            $messages = CompanyMessage::where('company_id', $company_id)->where('seeker_id', $seeker_id)->get();
+            if ($messages) {
+                foreach ($messages as $key => $value) {
+                    $message = CompanyMessage::findOrFail($value->id);
+                    $message->status = 'viewed';
+                    $message->update();
+                }
             }
+            echo 'done';
+        }else{
+            return view('company.otp', compact('phone', 'company'));                   
         }
-        echo 'done';
     }
 }

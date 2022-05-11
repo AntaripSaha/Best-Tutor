@@ -51,7 +51,6 @@ $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTOR
 
 
 
-Route::get('/otp', 'OtpController@otp')->name('otp');
 /* * ******** IndexController ************ */
 
 
@@ -116,6 +115,7 @@ Route::get('company-email-verification/check/{token}', 'Company\Auth\RegisterCon
 
 Route::get('otp', 'Company\Auth\RegisterController@viewotp')->name('company.otp');
 Route::get('otp/match', 'Company\Auth\RegisterController@otpMatch')->name('company.otp.match');
+Route::get('otp/resend/{phone}/{company}', 'Company\Auth\RegisterController@resend')->name('company.otp.resend');
 
 
 

@@ -38,7 +38,7 @@
                                 <button type="submit" class="btn btn-success btn-sm" style="margin-top:10px;">
                                     Submit
                                 </button>
-                                <a href="#">
+                                <a href="{{route('company.otp.resend', ['phone' => $phone, 'company'=>$company])}}">
                                     <button type="button" class="btn btn-info btn-sm" style="margin-top:10px; margin-left:2%;">
                                         Resend
                                     </button>

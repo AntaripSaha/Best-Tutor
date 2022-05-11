@@ -440,19 +440,25 @@ trait JobTrait
 
     {
 
+        $all =  Company::findOrFail(Auth::guard('company')->user()->id);
+        if($all->otp_verified == 0){
+            $phone = $all->phone;
+            $company = $all->phone;
+            return view('company.otp', compact('phone', 'company'));
+        }
         $company = Auth::guard('company')->user();
 
-		
+            if ((bool)$company->is_active === false) {
 
-		if ((bool)$company->is_active === false) {
+                flash(__('Your account is inactive contact site admin to activate it'))->error();
+    
+                return \Redirect::route('company.home');
+    
+                exit;
+    
+            }
+        
 
-            flash(__('Your account is inactive contact site admin to activate it'))->error();
-
-            return \Redirect::route('company.home');
-
-            exit;
-
-        }
 
 		if((bool)config('company.is_company_package_active')){
 
