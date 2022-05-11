@@ -56,7 +56,10 @@ use RegistersUsers;
      * Get the guard to be used during registration.
      *
      * @return \Illuminate\Contracts\Auth\StatefulGuard
+     * 
      */
+     
+
     protected function guard()
     {
         return Auth::guard('company');
@@ -115,9 +118,10 @@ use RegistersUsers;
     // }
 
     public function otpMatch(Request $req){
-        $company = $req->company;   
+        
         $company = $req->company;   
         $sent_otp  = Company::where('phone', $req->phone)->select('otp')->get();
+         
         $entered_otp = $req->otp;
         if($sent_otp[0]->otp == $entered_otp){
             Company::where('phone', $req->phone)->update(['otp_verified'=>1]);
@@ -128,6 +132,7 @@ use RegistersUsers;
     }
 
     public function resend($phone, $company){
+        return 'a';
 
         $otp = rand(1000,9999);
         Company::where('phone', $phone)->update(['otp'=>$otp]);
@@ -150,7 +155,7 @@ use RegistersUsers;
         $response = curl_exec($ch);
         curl_close($ch);
 
-        return redirect()->route('company.otp');
+        return view('company.otp', compact('phone', 'company'));
 
     }
 

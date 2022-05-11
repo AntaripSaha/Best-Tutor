@@ -65,7 +65,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             return view('company_home'); 
         }else{
@@ -77,7 +77,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $data['companies']=Company::paginate(20);
             return view('company.listing')->with($data);
@@ -90,7 +90,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $countries = DataArrayHelper::defaultCountriesArray();
             $industries = DataArrayHelper::defaultIndustriesArray();
@@ -111,7 +111,7 @@ class CompanyController extends Controller
 
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
 
             $company = Company::findOrFail(Auth::guard('company')->user()->id);
@@ -184,7 +184,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
         
             $data['user_id'] = $user_id;
@@ -203,7 +203,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $data['user_id'] = $user_id;
             $data['job_id'] = $job_id;
@@ -225,7 +225,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $data['user_id'] = $user_id;
             $data['job_id'] = $job_id;
@@ -249,7 +249,7 @@ class CompanyController extends Controller
 
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
 
             $data['user_id'] = $user_id;
@@ -274,7 +274,7 @@ class CompanyController extends Controller
 
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
 
             $company = Company::where('slug', 'like', $company_slug)->firstOrFail();
@@ -294,7 +294,7 @@ class CompanyController extends Controller
 
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
 
             $msgresponse = Array();
@@ -351,7 +351,7 @@ class CompanyController extends Controller
     
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $msgresponse = Array();
             $rules = array(
@@ -405,7 +405,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $jobs = Auth::guard('company')->user()->jobs()->paginate(10);
             return view('job.company_posted_jobs')
@@ -419,7 +419,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $job_applications = JobApply::where('job_id', '=', $job_id)->get();
 
@@ -434,7 +434,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $company_id = Auth::guard('company')->user()->id;
             $user_ids = FavouriteApplicant::where('job_id', '=', $job_id)->where('company_id', '=', $company_id)->where('status','hired')->pluck('user_id')->toArray();
@@ -451,7 +451,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $job_applications = JobApplyRejected::where('job_id', '=', $job_id)->get();
 
@@ -466,7 +466,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $company_id = Auth::guard('company')->user()->id;
             $user_ids = FavouriteApplicant::where('job_id', '=', $job_id)->where('company_id', '=', $company_id)->where('status',null)->pluck('user_id')->toArray();
@@ -483,7 +483,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
 
         $job_application = JobApply::findOrFail($application_id);
@@ -515,7 +515,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $job_application = JobApply::findOrFail($application_id);
 
@@ -546,7 +546,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
 
             $user = User::findOrFail($id);
@@ -571,7 +571,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
                 $company = Company::findOrFail(Auth::guard('company')->user()->id);
                 $userIdsArray = $company->getFollowerIdsArray();
@@ -589,7 +589,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $company = Company::findOrFail(Auth::guard('company')->user()->id);
             $messages = CompanyMessage::where('company_id', '=', $company->id)
@@ -609,7 +609,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $company = Company::findOrFail(Auth::guard('company')->user()->id);
             $message = CompanyMessage::findOrFail($message_id);
@@ -629,7 +629,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             //dd('yrdy');
             $data['packages'] = Package::where('package_for', 'cv_search')->get();
@@ -651,7 +651,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $data = array();
             $unlocked_users = Unlocked_users::where('company_id', Auth::guard('company')->user()->id)->first();
@@ -670,7 +670,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $cvsSearch = Auth::guard('company')->user();
             if (null !== ($cvsSearch)) {
@@ -708,7 +708,7 @@ class CompanyController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $parts = explode(',', $str);
             $parts[] = $item;
@@ -716,7 +716,7 @@ class CompanyController extends Controller
             return implode(',', $parts);
         }else{
             return view('company.otp', compact('phone', 'company'));                   
-        }   
+        }
     }
 
 }

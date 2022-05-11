@@ -118,7 +118,6 @@ Route::get('otp/match', 'Company\Auth\RegisterController@otpMatch')->name('compa
 Route::get('otp/resend/{phone}/{company}', 'Company\Auth\RegisterController@resend')->name('company.otp.resend');
 
 
-
 /* * ***************************** */
 
 

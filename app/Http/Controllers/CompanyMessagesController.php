@@ -38,7 +38,7 @@ class CompanyMessagesController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $this->validate($request, [
                 'message' => 'required',
@@ -71,7 +71,7 @@ class CompanyMessagesController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
         $this->validate($request, [
             'message' => 'required',
@@ -109,7 +109,7 @@ class CompanyMessagesController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
 
             $messages = CompanyMessage::where('company_id', Auth::guard('company')->user()->id)->get();
@@ -127,7 +127,7 @@ class CompanyMessagesController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $seeker_id = $request->get('seeker_id');
             $company_id = Auth::guard('company')->user()->id;
@@ -144,7 +144,7 @@ class CompanyMessagesController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $seeker_id = $request->get('seeker_id');
             $company_id = Auth::guard('company')->user()->id;
@@ -165,7 +165,7 @@ class CompanyMessagesController extends Controller
     {
         $all =  Company::findOrFail(Auth::guard('company')->user()->id);
         $phone = $all->phone;
-        $company = $all->phone;
+        $company = $all->id;
         if($all->otp_verified == 1){
             $company_id = Auth::guard('company')->user()->id;
             $seeker_id = $request->get('sender_id');
