@@ -10,7 +10,7 @@
 
 <!-- Inner Page Title start -->
 
-@include('includes.inner_page_title', ['page_title'=>__('Company Detail')])
+@include('includes.inner_page_title', ['page_title'=>__('Student Profile')])
 
 <!-- Inner Page Title end -->
 
@@ -72,19 +72,19 @@
 
                             @if(!empty($company->phone))
 
-                            <div class="loctext"><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:{{$company->phone}}">{{$company->phone}}</a></div>
+                            {{-- <div class="loctext"><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:{{$company->phone}}">{{$company->phone}}</a></div> --}}
 
                             @endif
 
                             @if(!empty($company->email))
 
-                            <div class="loctext"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:{{$company->email}}">{{$company->email}}</a></div>
+                            {{-- <div class="loctext"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:{{$company->email}}">{{$company->email}}</a></div> --}}
 
                             @endif
 
                             @if(!empty($company->website))
 
-                            <div class="loctext"><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{$company->website}}" target="_blank">{{$company->website}}</a></div>
+                            {{-- <div class="loctext"><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{$company->website}}" target="_blank">{{$company->website}}</a></div> --}}
 
                             @endif
 
@@ -140,7 +140,7 @@
 
                     <div class="contentbox">
 
-                        <h3>{{__('About Company')}}</h3>
+                        <h3>{{__('About')}}</h3>
 
                         <p>{!! $company->description !!}</p>
 
@@ -242,7 +242,7 @@
 
                     <div class="jobdetail">
 
-                        <h3>{{__('Company Detail')}}</h3>
+                        <h3>{{__('Detail')}}</h3>
 
                         <ul class="jbdetail">
 
@@ -255,22 +255,22 @@
                                 </div>
 
                             </li>
-
+{{-- 
                             <li class="row">
 
-                                <div class="col-md-6 col-xs-6">{{__('Total Employees')}}</div>
+                                <div class="col-md-6 col-xs-6">{{__('Total Students')}}</div>
 
                                 <div class="col-md-6 col-xs-6"><span>{{$company->no_of_employees}}</span></div>
 
-                            </li>
+                            </li> --}}
 
-                            <li class="row">
+                            {{-- <li class="row">
 
                                 <div class="col-md-6 col-xs-6">{{__('Established In')}}</div>
 
                                 <div class="col-md-6 col-xs-6"><span>{{$company->established_in}}</span></div>
 
-                            </li>
+                            </li> --}}
 
                             <li class="row">
 

@@ -1,5 +1,3 @@
-
-text/x-generic otp.blade.php ( HTML document, ASCII text, with CRLF line terminators )
 @extends('layouts.app')
 
 @section('content')
@@ -64,3 +62,4 @@ text/x-generic otp.blade.php ( HTML document, ASCII text, with CRLF line termina
 @include('includes.footer')
 
 @endsection
+
