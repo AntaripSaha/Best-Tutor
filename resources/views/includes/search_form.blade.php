@@ -1,22 +1,41 @@
 @if(Auth::guard('company')->check())
-<h3 class="seekertxt">{{__('One million success stories')}}. <span>{{__('Search Jobseekers Today')}}.</span></h3>
+<h3 class="seekertxt">{{__('Best Home Tutor Service')}}. <span>{{__('Search Available Tutors Today')}}.</span></h3>
 <form action="{{route('job.seeker.list')}}" method="get">
-    <div class="searchbar">
+    {{-- <div class="">
+			<input type="submit" class="btn btn-info btn-lg" value="{{__('Search Tutors')}}">
+    </div> --}}
+	<div class="searchbar">
 		<div class="srchbox seekersrch">		
 		<div class="input-group">
 		  <input type="text"  name="search" id="empsearch" value="{{Request::get('search', '')}}" class="form-control" placeholder="{{__('Enter Skills or Job Seeker Details')}}" autocomplete="off" />
 		  <span class="input-group-btn">
-			<input type="submit" class="btn" value="{{__('Search Job Seeker')}}">
+			<input type="submit" class="btn" value="{{__('Search Tutors')}}">
 		  </span>
 		</div>
 		</div>
-		
-       
-        
     </div>
 </form>
 @else
-<h3>{{__('One million success stories')}}. <span>{{__('Start yours today')}}.</span></h3>
+<h3 style="color: rgb(255, 255, 255); margin-left: -65%;">{{__('Best Home Tutor Service')}}.</h3>
+<h4><span style="color: rgb(253, 253, 253); margin-left:-5.5%;">{{__('Hire The Right Tutor Today')}}.</span>
+</h4>
+<h5><span style="color: rgb(255, 255, 255); margin-left:-5.5%;">Book one-on-one Lessons with verified tutors in your area.</span></h5>
+
+<form action="{{route('register')}}" method="get">
+    <div style="margin-left:-10.5%; margin-top:5%;">
+		<input type="submit" class="btn btn-info btn-lg" style="background-color:#0675c1;  margin-left:4.5%;" value="{{__('Request for Tutor')}}">
+    </div>
+</form>
+<form action="{{route('register')}}" method="get">
+    <div style="margin-left:11.5%; margin-top:-4.2%;">
+		<input type="submit" class="btn btn-info btn-lg" style="background-color:#0675c1 ; margin-left:4.5%;" value="{{__('Register as a Tutor')}}">
+    </div>
+</form>
+
+	<h4 style="margin-top:1%; margin-left:-5.5%; margin-top:2%; color:rgb(253, 253, 246);">Become a tutor <a href="{{route('login')}}" style="color:white"><b><span style="text-decoration: underline">Sign In</span></b></a> -(It's Free)</h4>
+
+
+{{-- 
 <form action="{{route('job.list')}}" method="get">
     <div class="searchbar">
 		<div class="srchbox">
@@ -70,5 +89,13 @@
 		
 		
     </div>
-</form>
+</form> --}}
 @endif
+
+
+
+
+
+
+
+
