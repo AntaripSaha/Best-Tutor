@@ -116,7 +116,6 @@ use RegistersUsers;
 
     public function otpMatch(Request $req){
         $company = $req->company;   
-        $company = $req->company;   
         $sent_otp  = Company::where('phone', $req->phone)->select('otp')->get();
          
         $entered_otp = $req->otp;

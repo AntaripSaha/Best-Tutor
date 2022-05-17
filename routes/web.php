@@ -120,6 +120,13 @@ Route::get('otp/resend/{phone}/{company}', 'Company\Auth\RegisterController@rese
 
 
 
+Route::get('tutor/otp', 'Auth\RegisterController@otpView')->name('tutor.otp');
+Route::get('tutor/otp/match', 'Auth\RegisterController@otpMatch')->name('tutor.otp.match');
+Route::get('tutor/otp/resend/{phone}', 'Auth\RegisterController@resend')->name('tutor.otp.resend');
+
+
+
+
 /* * ***************************** */
 
 

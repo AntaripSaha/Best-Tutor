@@ -58,8 +58,9 @@
 <!-- Testimonials start -->
 @include('includes.test_testimonials')
 <!-- Testimonials End -->
+
 <!-- Testimonials start -->
-@include('includes.testimonials')
+{{-- @include('includes.testimonials') --}}
 <!-- Testimonials End -->
 
 {{-- <!-- Subscribe start -->

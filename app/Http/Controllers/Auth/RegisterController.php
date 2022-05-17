@@ -57,11 +57,36 @@ use RegistersUsers;
         $user->password = bcrypt($request->input('password'));
         $user->is_active = 0;
         $user->verified = 0;
-        $user->save();
-        /*         * *********************** */
-        $user->name = $user->getName();
-        $user->update();
-        /*         * *********************** */
+        $phone = $request->input('phone');
+        $otp = rand(1000,9999);
+        $user->otp = $otp;
+        $append = '88';
+        $append .= $phone;
+        if($user->save()){
+            $url = "https://portal.metrotel.com.bd/smsapi";
+            $data = [
+              "api_key" => env('API_KEY'),
+              "type" => "text",
+              "contacts" => $append,
+              "senderid" => env('SENDER_ID'),
+              "msg" => "Your OTP is $otp . Never Share Your OTP With Others.",
+            ];
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            $response = curl_exec($ch);
+            curl_close($ch);
+               /*         * *********************** */
+                $user->name = $user->getName();
+                $user->update();
+                /*         * *********************** */
+        return view('otp', compact('phone'));
+    }else{
+        return 'wrong';
+    }
         event(new Registered($user));
         event(new UserRegistered($user));
         $this->guard()->login($user);
@@ -69,5 +94,40 @@ use RegistersUsers;
         UserVerification::send($user, 'User Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
         return $this->registered($request, $user) ?: redirect($this->redirectPath());
     }
+    public function otpMatch(Request $req){
+        $sent_otp  = User::where('phone', $req->phone)->select('otp')->get();
+         
+        $entered_otp = $req->otp;
+        if($sent_otp[0]->otp == $entered_otp){
+            User::where('phone', $req->phone)->update(['otp_verified'=>1]);
+            return redirect()->route('login');
+        }else{
+            return redirect()->back()->with('warning', 'Wrong OTP Given. Please Try Again');
+        }
+    }
+    public function resend($phone){
+        $otp = rand(1000,9999);
+        User::where('phone', $phone)->update(['otp'=>$otp]);
+        $append = '88';
+        $append .= $phone;
+        $url = "https://portal.metrotel.com.bd/smsapi";
+        $data = [
+          "api_key" => env('API_KEY'),
+          "type" => "text",
+          "contacts" => $append,
+          "senderid" => env('SENDER_ID'),
+          "msg" => "Your OTP is $otp . Never Share Your OTP With Others.",
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return view('otp', compact('phone'));
+    }
+
 
 }
