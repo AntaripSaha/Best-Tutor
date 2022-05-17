@@ -18,7 +18,9 @@
 @include('includes.all_search_board')
 <!-- Popular Searches ends --> 
 
-
+<!-- Testimonials start -->
+@include('includes.tutor_testimonials')
+<!-- Testimonials End -->
 
 <!-- Popular Searches start -->
 {{-- @include('includes.popular_searches') --}}
@@ -55,8 +57,9 @@
 @include('includes.how_it_works')
 <!-- How it Works Ends -->  --}}
 
+
 <!-- Testimonials start -->
-@include('includes.test_testimonials')
+@include('includes.student_testimonials')
 <!-- Testimonials End -->
 
 <!-- Testimonials start -->

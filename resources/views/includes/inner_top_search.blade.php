@@ -5,7 +5,7 @@
 				<div class="searchform">
 					<div class="row">
 						<div class="col-lg-9">
-							<input type="text" name="search" value="{{Request::get('search', '')}}" class="form-control" placeholder="{{__('Enter Skills, job title or Location')}}" />
+							<input type="text" name="search" value="{{Request::get('search', '')}}" class="form-control" placeholder="{{__('Enter Skills, Subject title or Location')}}" />
 						</div>
 
 						<div class="col-lg-3">

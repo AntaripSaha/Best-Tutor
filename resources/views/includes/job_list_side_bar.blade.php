@@ -2,15 +2,15 @@
 	<div class="jobreqbtn">
 	@if (Request::get('search') != '' || Request::get('functional_area_id') != '' || Request::get('country_id') != ''|| Request::get('state_id') != '' || Request::get('city_id') != ''|| Request::get('city_id') != '')
 	<a class="btn btn-job-alert" href="javascript:;">
-		<i class="fa fa-bell" style="font-size:1.125rem;"></i> {{__('Save Job Alert')}} </a>
+		<i class="fa fa-bell" style="font-size:1.125rem;"></i> {{__('Save Tution Alert')}} </a>
 	@else
 	<a class="btn btn-job-alert-disabled" disabled href="javascript:;">
-		<i class="fa fa-bell" style="font-size:1.125rem;"></i> {{__('Save Job Alert')}}</a>
+		<i class="fa fa-bell" style="font-size:1.125rem;"></i> {{__('Save Tution Alert')}}</a>
 	@endif
 	
 	
 	@if(Auth::guard('company')->check())
-	<a href="{{ route('post.job') }}" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> {{__('Post Job')}}</a>
+	<a href="{{ route('post.job') }}" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> {{__('Post Tution')}}</a>
 	@else
 	<a href="{{url('my-profile#cvs')}}" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> {{__('Upload Your Resume')}}</a>
 	@endif
@@ -21,7 +21,7 @@
         
         <!-- Jobs By Title -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Title')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Title')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($jobTitlesArray) && count($jobTitlesArray))
                 @foreach($jobTitlesArray as $key=>$jobTitle)
@@ -41,7 +41,7 @@
 
         <!-- Jobs By Country -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Country')}}</h4>
+            <h4 class="widget-title">{{__('Tution By Country')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($countryIdsArray) && count($countryIdsArray))
                 @foreach($countryIdsArray as $key=>$country_id)
@@ -66,7 +66,7 @@
 
         <!-- Jobs By State -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By State')}}</h4>
+            <h4 class="widget-title">{{__('Tution By State')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($stateIdsArray) && count($stateIdsArray))
                 @foreach($stateIdsArray as $key=>$state_id)
@@ -91,7 +91,7 @@
 
         <!-- Jobs By City -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By City')}}</h4>
+            <h4 class="widget-title">{{__('Tution By City')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($cityIdsArray) && count($cityIdsArray))
                 @foreach($cityIdsArray as $key=>$city_id)
@@ -115,7 +115,7 @@
 
         <!-- Jobs By Experience -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Experience')}}</h4>
+            <h4 class="widget-title">{{__('Tution By Experience')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($jobExperienceIdsArray) && count($jobExperienceIdsArray))
                 @foreach($jobExperienceIdsArray as $key=>$job_experience_id)
@@ -139,7 +139,7 @@
 
         <!-- Jobs By Job Type -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Job Type')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Subject Type')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($jobTypeIdsArray) && count($jobTypeIdsArray))
                 @foreach($jobTypeIdsArray as $key=>$job_type_id)
@@ -163,7 +163,7 @@
 
         <!-- Jobs By Job Shift -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Job Shift')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Shift')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($jobShiftIdsArray) && count($jobShiftIdsArray))
                 @foreach($jobShiftIdsArray as $key=>$job_shift_id)
@@ -187,7 +187,7 @@
 
         <!-- Jobs By Career Level -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Career Level')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Career Level')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($careerLevelIdsArray) && count($careerLevelIdsArray))
                 @foreach($careerLevelIdsArray as $key=>$career_level_id)
@@ -212,7 +212,7 @@
 
         <!-- Jobs By Degree Level -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Degree Level')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Degree Level')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($degreeLevelIdsArray) && count($degreeLevelIdsArray))
                 @foreach($degreeLevelIdsArray as $key=>$degree_level_id)
@@ -237,7 +237,7 @@
 
         <!-- Jobs By Gender -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Gender')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Gender')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($genderIdsArray) && count($genderIdsArray))
                 @foreach($genderIdsArray as $key=>$gender_id)
@@ -263,7 +263,7 @@
 
         <!-- Jobs By Industry -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Industry')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Industry')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($industryIdsArray) && count($industryIdsArray))
                 @foreach($industryIdsArray as $key=>$industry_id)
@@ -287,7 +287,7 @@
 
         <!-- Jobs By Skill -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Skill')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Skill')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($skillIdsArray) && count($skillIdsArray))
                 @foreach($skillIdsArray as $key=>$job_skill_id)
@@ -312,7 +312,7 @@
 
 
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Functional Areas')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Functional Areas')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($functionalAreaIdsArray) && count($functionalAreaIdsArray))
                 @foreach($functionalAreaIdsArray as $key=>$functional_area_id)
@@ -339,7 +339,7 @@
 
         <!-- Top Companies -->
         <div class="widget">
-            <h4 class="widget-title">{{__('Jobs By Company')}}</h4>
+            <h4 class="widget-title">{{__('Tutions By Company')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($companyIdsArray) && count($companyIdsArray))
                 @foreach($companyIdsArray as $key=>$company_id)
@@ -378,7 +378,7 @@
 
             <!-- button -->
             <div class="searchnt">
-                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i> {{__('Search Jobs')}}</button>
+                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i> {{__('Search Tutions')}}</button>
             </div>
             <!-- button end--> 
         </div>

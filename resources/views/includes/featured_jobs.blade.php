@@ -40,7 +40,7 @@
         <!--Featured Job end--> 
 
         <!--button start-->
-        <div class="viewallbtn"><a href="{{route('job.list', ['is_featured'=>1])}}">{{__('View All Featured Jobs')}}</a></div>
+        <div class="viewallbtn"><a href="{{route('job.list', ['is_featured'=>1])}}">{{__('View All Featured Tution')}}</a></div>
         <!--button end--> 
     </div>
 </div>

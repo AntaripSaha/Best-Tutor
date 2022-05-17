@@ -29,9 +29,9 @@
 		
 		
 		<div class="input-group">
-		  <input type="text"  name="search" id="empsearch" value="{{Request::get('search', '')}}" class="form-control" placeholder="{{__('Enter Skills or Job Seeker Details')}}" autocomplete="off" />
+		  <input type="text"  name="search" id="empsearch" value="{{Request::get('search', '')}}" class="form-control" placeholder="{{__('Enter Skills or Tutors Details')}}" autocomplete="off" />
 		  <span class="input-group-btn">
-			<input type="submit" class="btn" value="{{__('Search Job Seeker')}}">
+			<input type="submit" class="btn" value="{{__('Search Tutor')}}">
 		  </span>
 		</div>
 		</div>

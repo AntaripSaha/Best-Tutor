@@ -26,6 +26,9 @@
             letter-spacing: 2px;
             font-size: 16px;
             color: #fff;
+            padding-left: 4%;
+            margin-left: 14%;
+            padding-right: 15%;
         }
         .ratinguser{
             color: #EBA102;
@@ -52,20 +55,21 @@
     <div class="container">
                 <!-- title start -->
                 <div class="titleTop">
-                    <div class="subtitle">{{__('Testimonials')}}</div>
+                    <div class="subtitle">{{__('Tutor Says About Us')}}</div>
                     <h3>{{__('Success')}} <span>{{__('Stories')}}</span></h3>
                 </div>
                 <!-- title end -->
 
         <div class="owl-carousel owl-theme owl-loaded owl-drag">
+        
             <div class="owl-stage-outer">
+          
                 <div class="owl-stage" style="transform: translate3d(-1527px, 0px, 0px); transition: all 0.25s ease 0s; width: 3334px;">
-                 
-
                     @if(isset($testimonials) && count($testimonials))
                     @foreach($testimonials as $testimonial)
-                        <div class="owl-item cloned" style="width: 128.906px; margin-right: 10px;">
-                            <div class="item">
+
+                        <div class="owl-item cloned">
+                            <div class="item" >
                                 <div class="ratinguser">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -77,10 +81,9 @@
                                 <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
                                 <p class="description">"{{$testimonial->testimonial}}"</p>
                             </div>
-                            
                         </div>
-                    @endforeach
-                    @endif
+                        @endforeach
+                        @endif
                 </div>
             </div>
                 <div class="owl-nav disabled">
@@ -89,22 +92,18 @@
     </div>
 </div>
 
-
-
-
 </body>
 <script>
     var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4, 
-  // items change number for slider display on desktop
-  
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-});
+    owl.owlCarousel({
+        items:1.27, 
+        // items change number for slider display on desktop
+        loop:true,
+        margin:0,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true
+    });
 
 </script>
 </html>
