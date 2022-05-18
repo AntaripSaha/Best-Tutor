@@ -57,7 +57,9 @@ class IndexController extends Controller
         $latestJobs = Job::active()->notExpire()->orderBy('id', 'desc')->limit(18)->get();
         $blogs = Blog::orderBy('id', 'desc')->where('lang', 'like', \App::getLocale())->limit(3)->get();
         $video = Video::getVideo();
-        $testimonials = Testimonial::langTestimonials();
+        $testimonials = Testimonial::where('user_type', 2)->where('is_active', 1)->get();
+        $students = Testimonial::where('user_type', 1)->where('is_active', 1)->get();
+      
 
         $functionalAreas = DataArrayHelper::langFunctionalAreasArray();
         $countries = DataArrayHelper::langCountriesArray();
@@ -77,6 +79,7 @@ class IndexController extends Controller
 						->with('sliders', $sliders)
                         ->with('video', $video)
                         ->with('testimonials', $testimonials)
+                        ->with('students', $students)
                         ->with('seo', $seo);
     }
 

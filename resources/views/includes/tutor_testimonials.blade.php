@@ -21,14 +21,23 @@
             margin-bottom: 15px;
         }
         .description{
-            font-style: italic;
+            /* font-style: italic;
             line-height: 24px;
             letter-spacing: 2px;
             font-size: 16px;
             color: #fff;
             padding-left: 4%;
-            margin-left: 14%;
-            padding-right: 15%;
+            margin-left: 0%;
+            padding-right: 15%; */
+
+            font-style: italic;
+            line-height: 22px;
+            letter-spacing: 2px;
+            font-size: 13px;
+            color: #fff;
+            padding-left: 0%;
+            margin-left: 0%;
+            padding-right: 0%;
         }
         .ratinguser{
             color: #EBA102;
@@ -37,6 +46,15 @@
         }
         .owl-stage{
             padding: 10%;
+        }
+        .img{
+            height: auto !important;
+            width: 250px !important;
+            margin-left: 46% !important;
+            border-radius: 30% !important;
+        }
+        .ab{
+            width: 430px !important;
         }
 
     </style>
@@ -67,19 +85,33 @@
                 <div class="owl-stage" style="transform: translate3d(-1527px, 0px, 0px); transition: all 0.25s ease 0s; width: 3334px;">
                     @if(isset($testimonials) && count($testimonials))
                     @foreach($testimonials as $testimonial)
-
-                        <div class="owl-item cloned">
-                            <div class="item" >
-                                <div class="ratinguser">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+ 
+                        <div class="owl-item cloned" id="ab">
+                            <div class="item" style="margin-left: -4% !important">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="{{ asset($testimonial->image) }}" alt="" class="img" >
+                                    </div>                                  
+                                    <div class="col-10">
+                                        <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
+                                        <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
+                                        <p class="description">"{{$testimonial->testimonial}}"</p>
+                                    </div>
                                 </div>
+                            
+                                {{-- <div class="ratinguser">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div> --}}
+                                {{-- <img src="{{ asset('images/head.jpg') }}" alt="" class="img" >
                                 <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                 <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
-                                <p class="description">"{{$testimonial->testimonial}}"</p>
+                                <p class="description">"{{$testimonial->testimonial}}"</p> --}}
+
+
                             </div>
                         </div>
                         @endforeach
@@ -94,14 +126,14 @@
 
 </body>
 <script>
-    var owl = $('.owl-carousel');
+    var owl = $('.abc');
     owl.owlCarousel({
-        items:1.27, 
+        items:2.35, 
         // items change number for slider display on desktop
         loop:true,
         margin:0,
         autoplay:true,
-        autoplayTimeout:3000,
+        autoplayTimeout:10000,
         autoplayHoverPause:true
     });
 
