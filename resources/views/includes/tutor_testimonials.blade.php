@@ -53,9 +53,7 @@
             margin-left: 46% !important;
             border-radius: 30% !important;
         }
-        .ab{
-            width: 430px !important;
-        }
+
 
     </style>
 </head>
@@ -86,16 +84,16 @@
                     @if(isset($testimonials) && count($testimonials))
                     @foreach($testimonials as $testimonial)
  
-                        <div class="owl-item cloned" id="ab">
-                            <div class="item" style="margin-left: -4% !important">
-                                <div class="row">
+                        <div class="owl-item cloned">
+                            <div class="item" style="margin-left:-25% !important">
+                                <div class="row" style="margin-right: 25% !important;">
                                     <div class="col-2">
-                                        <img src="{{ asset($testimonial->image) }}" alt="" class="img" >
+                                        <img src="{{ asset('images/head.jpg') }}" alt="" class="img" >
                                     </div>                                  
                                     <div class="col-10">
                                         <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                         <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
-                                        <p class="description">"{{$testimonial->testimonial}}"</p>
+                                        <p class="description" style="text-align: left">"{{$testimonial->testimonial}}"</p>
                                     </div>
                                 </div>
                             
@@ -118,24 +116,24 @@
                         @endif
                 </div>
             </div>
-                <div class="owl-nav disabled">
-                </div>
+                {{-- <div class="owl-nav disabled">
+                </div> --}}
         </div>
     </div>
 </div>
 
 </body>
 <script>
-    var owl = $('.abc');
-    owl.owlCarousel({
-        items:2.35, 
-        // items change number for slider display on desktop
-        loop:true,
-        margin:0,
-        autoplay:true,
-        autoplayTimeout:10000,
-        autoplayHoverPause:true
-    });
+    // var owl = $('.owl-carousel');
+    // owl.owlCarousel({
+    //     items:2.35, 
+    //     // items change number for slider display on desktop
+    //     loop:true,
+    //     margin:0,
+    //     autoplay:true,
+    //     autoplayTimeout:1000,
+    //     autoplayHoverPause:true
+    // });
 
 </script>
 </html>

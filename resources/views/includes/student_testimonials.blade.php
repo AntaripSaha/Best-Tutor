@@ -36,7 +36,7 @@
             font-size: 13px;
             color: #fff;
             padding-left: 0%;
-            margin-left: 0%;
+            margin-left: 10%;
             padding-right: 0%;
         }
         .ratinguser{
@@ -48,14 +48,13 @@
             padding: 10%;
         }
         .img{
-            height: auto !important;
-            width: 250px !important;
-            margin-left: 46% !important;
-            border-radius: 30% !important;
+            height: 110px !important;
+            width: auto !important;
+            /* margin-left: 46% !important;
+            margin-right: 5% !important; */
+            border-radius: 50% !important;
         }
-        .ab{
-            width: 430px !important;
-        }
+     
 
     </style>
 </head>
@@ -73,12 +72,12 @@
     <div class="container">
                 <!-- title start -->
                 <div class="titleTop">
-                    <div class="subtitle">{{__('Tutor Says About Us')}}</div>
+                    <div class="subtitle">{{__('Parents Says About Us')}}</div>
                     <h3>{{__('Success')}} <span>{{__('Stories')}}</span></h3>
                 </div>
                 <!-- title end -->
 
-        <div class="owl-carousel owl-theme owl-loaded owl-drag">
+        <div class="owl-carousel owl-theme owl-loaded owl-drag" id="ab">
         
             <div class="owl-stage-outer">
           
@@ -86,16 +85,16 @@
                     @if(isset($students) && count($students))
                     @foreach($students as $testimonial)
  
-                        <div class="owl-item cloned" id="ab">
-                            <div class="item" style="margin-left: -4% !important">
-                                <div class="row">
+                        <div class="owl-item cloned">
+                            <div class="item" style="margin-left:-25% !important">
+                                <div class="row"  style="margin-right: 25% !important;">
                                     <div class="col-2">
-                                        <img src="{{ asset($testimonial->image) }}" alt="" class="img" >
+                                        <img src="{{ asset($testimonial->image) }}" alt="" class="img">
                                     </div>                                  
                                     <div class="col-10">
                                         <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                         <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
-                                        <p class="description">"{{$testimonial->testimonial}}"</p>
+                                        <p class="description" style="text-align: left;">"{{$testimonial->testimonial}}"</p>
                                     </div>
                                 </div>
                             
@@ -118,8 +117,8 @@
                         @endif
                 </div>
             </div>
-                <div class="owl-nav disabled">
-                </div>
+                {{-- <div class="owl-nav disabled">
+                </div> --}}
         </div>
     </div>
 </div>
@@ -128,10 +127,10 @@
 <script>
     var owl = $('.owl-carousel');
     owl.owlCarousel({
-        items:2.35, 
+        items:2, 
         // items change number for slider display on desktop
         loop:true,
-        margin:0,
+        margin:10,
         autoplay:true,
         autoplayTimeout:5000,
         autoplayHoverPause:true

@@ -49,7 +49,10 @@
 $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTORY_SEPARATOR;
 
 
-
+Route::get('/linkstorage', function () {
+  Artisan::call('storage:link');
+  return 'ok';
+});
 
 Route::get('/otp', 'OtpController@otp')->name('otp');
 /* * ******** IndexController ************ */

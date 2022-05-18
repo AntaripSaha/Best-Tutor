@@ -60,11 +60,18 @@ class TestimonialController extends Controller
         $testimonial->is_default = $request->input('is_default');
         $testimonial->testimonial_id = $request->input('testimonial_id');
         $testimonial->is_active = $request->input('is_active');
+        // if($request->file('image')){
+        //     $image = $request->file('image');
+        //     Storage::putFile('public/testimonial_image', $image);
+        //     $testimonial->image = "storage/testimonial_image/".$image->hashName();
+        // }
         if($request->file('image')){
-            $image = $request->file('image');
-            Storage::putFile('public/testimonial_image', $image);
-            $testimonial->image = "storage/testimonial_image/".$image->hashName();
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('testimonial_image'), $filename);
+            $testimonial['image']= 'public/testimonial_image/'.$filename;
         }
+      
         $testimonial->save();
         /*         * ************************************ */
         $testimonial->sort_order = $testimonial->id;
@@ -103,10 +110,17 @@ class TestimonialController extends Controller
         $testimonial->is_default = $request->input('is_default');
         $testimonial->testimonial_id = $request->input('testimonial_id');
         $testimonial->is_active = $request->input('is_active');
+        // if($request->file('image')){
+        //     $image = $request->file('image');
+        //     Storage::putFile('public/testimonial_image', $image);
+        //     $testimonial->image = "storage/testimonial_image/".$image->hashName();
+        // }
+
         if($request->file('image')){
-            $image = $request->file('image');
-            Storage::putFile('public/testimonial_image', $image);
-            $testimonial->image = "storage/testimonial_image/".$image->hashName();
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('testimonial_image'), $filename);
+            $testimonial['image']= 'public/testimonial_image/'.$filename;
         }
         /*         * ************************************ */
         if ((int) $request->input('is_default') == 1) {
