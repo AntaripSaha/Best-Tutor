@@ -51,7 +51,7 @@ class ProfileExperienceFormRequest extends Request
             'company.required' => 'Please enter company.',
             'description.required' => 'Please enter description.',
             'country_id.required' => 'Please select country.',
-            'state_id.required' => 'Please select state.',
+            'state_id.required' => 'Please select division.',
             'city_id.required' => 'Please select city.',
             'date_start.required' => 'Please set start date.',
             'date_end.required_if' => 'Please set end date.',

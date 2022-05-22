@@ -87,7 +87,7 @@
         {!! APFrmErrHelp::showErrors($errors, 'country_id') !!} </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'state_id') !!}"> {!! Form::label('state_id', 'State', ['class' => 'bold']) !!}
         <span id="default_state_dd">                    
-            {!! Form::select('state_id', ['' => 'Select State'], null, array('class'=>'form-control', 'id'=>'state_id')) !!}
+            {!! Form::select('state_id', ['' => 'Select Division'], null, array('class'=>'form-control', 'id'=>'state_id')) !!}
         </span>
         {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'city_id') !!}"> {!! Form::label('city_id', 'City', ['class' => 'bold']) !!}  

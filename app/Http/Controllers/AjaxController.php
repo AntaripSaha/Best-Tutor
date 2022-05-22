@@ -34,7 +34,7 @@ class AjaxController extends Controller
         $state_id = $request->input('state_id');
         $new_state_id = $request->input('new_state_id', 'state_id');
         $states = DataArrayHelper::defaultStatesArray($country_id);
-        $dd = Form::select('state_id', ['' => __('Select State')] + $states, $state_id, array('id' => $new_state_id, 'class' => 'form-control'));
+        $dd = Form::select('state_id', ['' => __('Select Division')] + $states, $state_id, array('id' => $new_state_id, 'class' => 'form-control'));
         echo $dd;
     }
 
@@ -55,7 +55,7 @@ class AjaxController extends Controller
         $state_id = $request->input('state_id');
         $new_state_id = $request->input('new_state_id', 'state_id');
         $states = DataArrayHelper::langStatesArray($country_id);
-        $dd = Form::select('state_id', ['' => __('Select State')] + $states, $state_id, array('id' => $new_state_id, 'class' => 'form-control'));
+        $dd = Form::select('state_id', ['' => __('Select Division')] + $states, $state_id, array('id' => $new_state_id, 'class' => 'form-control'));
         echo $dd;
     }
 
@@ -77,7 +77,7 @@ class AjaxController extends Controller
         $state_id = $request->input('state_id');
         $new_state_id = $request->input('new_state_id', 'state_id');
         $states = DataArrayHelper::langStatesArray($country_id);
-        $dd = Form::select('state_id[]', ['' => __('Select State')] + $states, $state_id, array('id' => $new_state_id, 'class' => 'form-control'));
+        $dd = Form::select('state_id[]', ['' => __('Select Division')] + $states, $state_id, array('id' => $new_state_id, 'class' => 'form-control'));
         echo $dd;
     }
 

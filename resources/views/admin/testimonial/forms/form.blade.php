@@ -8,11 +8,31 @@ $queryString = MiscHelper::getLangQueryStr();
 ?>
 {!! APFrmErrHelp::showErrorsNotice($errors) !!}
 @include('flash::message')
+
+<div>
+    <img src="{{asset($testimonial->image)}}" alt="" height="250px" width="350px" style="margin-left: 30%;">
+</div>
 <div class="form-body">        
     {!! Form::hidden('id', null) !!}
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}" id="lang_div">
         {!! Form::select('lang', ['' => 'Select Language']+$languages, $lang, ['class'=>'form-control', 'id'=>'lang', 'onchange'=>'setLang(this.value);']) !!}
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
+    </div>
+    <div class="form-group">
+        <label for="user_type"><b>Choose User Type:</b></label>
+        <select id="user_type" class="form-control" name="user_type">
+        @if($testimonial->user_type == 1)
+        <option value="1" selected >Student/Gurdian</option>
+        <option value="2">Tutor</option>
+        @else
+        <option value="1">Student/Gurdian</option>
+        <option value="2" selected>Tutor</option>
+        @endif
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="image" ><b>Choose Image</b></label>
+        <input type="file" class="form-control"  name="image" id="">
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'testimonial_by') !!}">
         {!! Form::label('testimonial_by', 'Testimonial By', ['class' => 'bold']) !!}
@@ -29,6 +49,7 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! Form::text('company', null, array('class'=>'form-control', 'id'=>'company', 'placeholder'=>'Company and Designation', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'company') !!}
     </div>
+    
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_default') !!}">
         {!! Form::label('is_default', 'Is default?', ['class' => 'bold']) !!}
         <div class="radio-list">

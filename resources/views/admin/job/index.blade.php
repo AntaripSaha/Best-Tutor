@@ -43,7 +43,7 @@
                                                 <?php $default_country_id = Request::query('country_id', $siteSetting->default_country_id); ?>
                                                 {!! Form::select('country_id', ['' => 'Select Country']+$countries, $default_country_id, array('id'=>'country_id', 'class'=>'form-control')) !!}
                                                 <span id="default_state_dd">
-                                                    {!! Form::select('state_id', ['' => 'Select State'], null, array('id'=>'state_id', 'class'=>'form-control')) !!}
+                                                    {!! Form::select('state_id', ['' => 'Select Division'], null, array('id'=>'state_id', 'class'=>'form-control')) !!}
                                                 </span>
                                                 <span id="default_city_dd">
                                                     {!! Form::select('city_id', ['' => 'Select City'], null, array('id'=>'city_id', 'class'=>'form-control')) !!}

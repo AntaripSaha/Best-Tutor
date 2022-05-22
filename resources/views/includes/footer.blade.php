@@ -40,7 +40,7 @@
                 <ul class="quicklinks">
                     <li><a href="{{ route('index') }}">{{__('Home')}}</a></li>
                     <li><a href="{{ route('contact.us') }}">{{__('Contact Us')}}</a></li>
-                    <li class="postad"><a href="{{ route('post.job') }}">{{__('Post a Job')}}</a></li>
+                    <li class="postad"><a href="{{ route('post.job') }}">{{__('Post a Tution')}}</a></li>
                     <li><a href="{{ route('faq') }}">{{__('FAQs')}}</a></li>
                     @foreach($show_in_footer_menu as $footer_menu)
                     @php

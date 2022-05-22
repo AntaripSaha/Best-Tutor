@@ -64,7 +64,7 @@ class JobFrontFormRequest extends Request
             'description.required' => __('Please enter Job description'),
             'skills.required' => __('Please enter Job skills'),
             'country_id.required' => __('Please select Country'),
-            'state_id.required' => __('Please select State'),
+            'state_id.required' => __('Please select Division'),
             'city_id.required' => __('Please select City'),
             //'is_freelance.required' => __('Is this freelance Job?'),
             //'career_level_id.required' => __('Please select Career level'),

@@ -79,7 +79,7 @@ class UserFormRequest extends Request
             'nationality_id.required' => 'Please select nationality',
             //'national_id_card_number.required' => 'national ID card# required',
             'country_id.required' => 'Please select country',
-            'state_id.required' => 'Please select state',
+            'state_id.required' => 'Please select division',
             'city_id.required' => 'Please select city',
             'phone.required' => 'Please enter phone',
            // 'mobile_num.required' => 'Please enter mobile number',

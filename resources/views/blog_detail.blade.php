@@ -29,30 +29,19 @@
                     <ul class="blogList">
                         <li>
                             <div class="bloginner">
-
-
                                 <div class="postimg">{{$blog->printBlogImage()}}</div>
-
-
                                 <div class="post-header">
                                     <h2>{{$blog->heading}}</h2>
                                     <div class="postmeta">
                                         {{-- Category : {!!implode(', ',$cate_array)!!}</div> --}}
                                 </div>
                                 <p>{!! $blog->content !!}</p>
-
-
                             </div>
                         </li>
-
                     </ul>
                 </div>
-
-
             </div>
-			
 			 <div class="col-lg-3">
-				 
 				 <div class="sidebar"> 
           <!-- Search -->
           <div class="widget">
@@ -77,8 +66,6 @@
           @endif
         </div>
 			</div>
-			
-
         </div>
     </div>
 </section>

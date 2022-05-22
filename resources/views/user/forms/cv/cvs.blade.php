@@ -1,4 +1,5 @@
-<h5 id="cvs" onclick="showCvs();">{{__('Curriculum vitae')}}</h5>
+<h5 id="cvs" onclick="showCvs();">{{__('Credential info!')}}</h5>
+<p>Upload Your Certification, Eg. SSC, HSC, Bachelor's, Master's etc.</p>
 
 <div class="row">
 
@@ -10,7 +11,7 @@
 
 </div>
 
-<a href="javascript:;" class="prolinkadd" onclick="showProfileCvModal();"> {{__('Add CV')}} </a>
+<a href="javascript:;" class="prolinkadd" onclick="showProfileCvModal();"> {{__('Add Credential')}} </a>
 
 <hr>
 

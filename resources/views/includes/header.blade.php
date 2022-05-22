@@ -24,7 +24,7 @@
 							@if(Auth::guard('company')->check())
 							<li class="nav-item"><a href="{{url('/job-seekers')}}" class="nav-link">{{__('Seekers')}}</a> </li>
 							@else
-							<li class="nav-item"><a href="{{url('/jobs')}}" class="nav-link">{{__('Job Board')}}</a> </li>
+							<li class="nav-item"><a href="{{url('/jobs')}}" class="nav-link">{{__('Tution')}}</a> </li>
 							@endif
 
 							<!--<li class="nav-item {{ Request::url()}}"><a href="{{url('/companies')}}" class="nav-link">{{__('Companies')}}</a> </li>-->
@@ -47,7 +47,7 @@
                                 </ul>
                             </li>
                             @endif @if(Auth::guard('company')->check())
-                            <li class="nav-item postjob"><a href="{{route('post.job')}}" class="nav-link register">{{__('Post a job')}}</a> </li>
+                            <li class="nav-item postjob"><a href="{{route('post.job')}}" class="nav-link register">{{__('Post a Tution')}}</a> </li>
                             <li class="nav-item dropdown userbtn"><a href="">{{Auth::guard('company')->user()->printCompanyImage()}}</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a href="{{route('company.home')}}" class="nav-link"><i class="fa fa-tachometer" aria-hidden="true"></i> {{__('Dashboard')}}</a> </li>

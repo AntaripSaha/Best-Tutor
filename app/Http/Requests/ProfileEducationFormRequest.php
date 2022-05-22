@@ -54,7 +54,7 @@ class ProfileEducationFormRequest extends Request
             'degree_title.required' => 'Please enter degree title.',
             'major_subjects.required' => 'Please select major subjects.',
             'country_id.required' => 'Please select country.',
-            'state_id.required' => 'Please select state.',
+            'state_id.required' => 'Please select division.',
             'city_id.required' => 'Please select city.',
             'institution.required' => 'Please enter institution.',
             'date_completion.required' => 'Please set completion date.',

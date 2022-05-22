@@ -49,6 +49,12 @@
 $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTORY_SEPARATOR;
 
 
+Route::get('/linkstorage', function () {
+  Artisan::call('storage:link');
+  return 'ok';
+});
+
+Route::any('/tutor/store', 'Tution\TutorController@category')->name('tutor.store');
 
 
 Route::get('/otp', 'OtpController@otp')->name('otp');
@@ -117,6 +123,13 @@ Route::get('company-email-verification/check/{token}', 'Company\Auth\RegisterCon
 Route::get('otp', 'Company\Auth\RegisterController@viewotp')->name('company.otp');
 Route::get('otp/match', 'Company\Auth\RegisterController@otpMatch')->name('company.otp.match');
 Route::get('otp/resend/{phone}/{company}', 'Company\Auth\RegisterController@resend')->name('company.otp.resend');
+
+
+
+Route::get('tutor/otp', 'Auth\RegisterController@otpView')->name('tutor.otp');
+Route::get('tutor/otp/match', 'Auth\RegisterController@otpMatch')->name('tutor.otp.match');
+Route::get('tutor/otp/resend/{phone}', 'Auth\RegisterController@resend')->name('tutor.otp.resend');
+
 
 
 

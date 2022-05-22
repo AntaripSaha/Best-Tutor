@@ -39,7 +39,7 @@
 		
 </div>
 
-
+{{-- 
 <h6>{{__('Cover Photo')}}</h6>
 
 <div class="row">
@@ -55,7 +55,7 @@
             </label>
             {!! APFrmErrHelp::showErrors($errors, 'cover_image') !!} </div>
     </div>
-</div>
+</div> --}}
 
 
 <div class="row">
@@ -65,12 +65,12 @@
 			{!! Form::text('first_name', null, array('class'=>'form-control', 'id'=>'first_name', 'placeholder'=>__('First Name'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'first_name') !!} </div>
     </div>
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'middle_name') !!}">
 			<label for="">{{__('Midlle Name')}}</label>
 			{!! Form::text('middle_name', null, array('class'=>'form-control', 'id'=>'middle_name', 'placeholder'=>__('Middle Name'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'middle_name') !!}</div>
-    </div>
+    </div> --}}
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'last_name') !!}">
 			<label for="">{{__('Last Name')}}</label>
@@ -106,7 +106,7 @@
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
 			<label for="">{{__('Division')}}</label>
-			<span id="state_dd"> {!! Form::select('state_id', [''=>__('Select State')], null, array('class'=>'form-control', 'id'=>'state_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} </div>
+			<span id="state_dd"> {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'state_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} </div>
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
@@ -165,7 +165,8 @@
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'street_address') !!}">
 			<label for="">{{__('Street Address')}}</label>
 			{!! Form::textarea('street_address', null, array('class'=>'form-control', 'id'=>'street_address', 'placeholder'=>__('Street Address'))) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'street_address') !!} </div>
+            {!! APFrmErrHelp::showErrors($errors, 'street_address') !!} 
+        </div>
     </div>
 	
 </div>
@@ -183,7 +184,7 @@
 </div> --}}
 <hr>
 
-<h5>{{__('Career Information')}}</h5>
+{{-- <h5>{{__('Career Information')}}</h5>
 
 <div class="row">
  <div class="col-md-6">
@@ -231,7 +232,7 @@
             {!! Form::text('salary_currency', $salary_currency, array('class'=>'form-control', 'id'=>'salary_currency', 'placeholder'=>__('Salary Currency'), 'autocomplete'=>'off')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'salary_currency') !!} </div>
     </div>
-</div>
+</div> --}}
 	
 	
 	

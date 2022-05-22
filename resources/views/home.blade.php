@@ -74,30 +74,6 @@
 
 		</div>
 
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-
 				@include('includes.user_dashboard_stats')
 
                 @if((bool)config('jobseeker.is_jobseeker_package_active'))
@@ -131,47 +107,10 @@
                 @if(null !== $packages)
 
                 @include('includes.user_packages_new')
-
                 @endif
-
                 @endif
-
                 @endif 
-
-			
-
-			
-
 			 <div class="row">
-
-                        <div class="col-lg-7">
-
-                            <div class="profbox">
-
-                                <h3><i class="fa fa-black-tie" aria-hidden="true"></i> Recommended Jobs</h3>
-
-                                <ul class="recomndjobs">
-
-                                    @if(null!==($matchingJobs)) @foreach($matchingJobs as $match)
-
-                                    <li>
-
-                                        <h4><a href="{{route('job.detail', [$match->slug])}}">{{$match->title}}</a></h4>
-
-                                        <p>{{$match->getCompany()->name}}</p>
-
-                                    </li>
-
-                                    @endforeach @endif
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-
-
                    <div class="col-lg-5">
 
 							<div class="profbox followbox">

@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use DataTables;
 use App\Http\Requests\TestimonialFormRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class TestimonialController extends Controller
@@ -33,12 +34,14 @@ class TestimonialController extends Controller
 
     public function indexTestimonials()
     {
+        
         $languages = DataArrayHelper::languagesNativeCodeArray();
         return view('admin.testimonial.index')->with('languages', $languages);
     }
 
     public function createTestimonial()
     {
+
         $languages = DataArrayHelper::languagesNativeCodeArray();
         $testimonials = DataArrayHelper::defaultTestimonialsArray();
         return view('admin.testimonial.add')
@@ -50,12 +53,25 @@ class TestimonialController extends Controller
     {
         $testimonial = new Testimonial();
         $testimonial->lang = $request->input('lang');
+        $testimonial->user_type = $request->input('user_type');
         $testimonial->testimonial_by = $request->input('testimonial_by');
         $testimonial->testimonial = $request->input('testimonial');
         $testimonial->company = $request->input('company');
         $testimonial->is_default = $request->input('is_default');
         $testimonial->testimonial_id = $request->input('testimonial_id');
         $testimonial->is_active = $request->input('is_active');
+        // if($request->file('image')){
+        //     $image = $request->file('image');
+        //     Storage::putFile('public/testimonial_image', $image);
+        //     $testimonial->image = "storage/testimonial_image/".$image->hashName();
+        // }
+        if($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('testimonial_image'), $filename);
+            $testimonial['image']= 'public/testimonial_image/'.$filename;
+        }
+      
         $testimonial->save();
         /*         * ************************************ */
         $testimonial->sort_order = $testimonial->id;
@@ -74,7 +90,6 @@ class TestimonialController extends Controller
     {
         $languages = DataArrayHelper::languagesNativeCodeArray();
         $testimonials = DataArrayHelper::defaultTestimonialsArray();
-
         $testimonial = Testimonial::findOrFail($id);
         return view('admin.testimonial.edit')
                         ->with('testimonial', $testimonial)
@@ -84,7 +99,10 @@ class TestimonialController extends Controller
 
     public function updateTestimonial($id, TestimonialFormRequest $request)
     {
+        
+        
         $testimonial = Testimonial::findOrFail($id);
+        $testimonial->user_type = $request->input('user_type');
         $testimonial->lang = $request->input('lang');
         $testimonial->testimonial_by = $request->input('testimonial_by');
         $testimonial->testimonial = $request->input('testimonial');
@@ -92,6 +110,18 @@ class TestimonialController extends Controller
         $testimonial->is_default = $request->input('is_default');
         $testimonial->testimonial_id = $request->input('testimonial_id');
         $testimonial->is_active = $request->input('is_active');
+        // if($request->file('image')){
+        //     $image = $request->file('image');
+        //     Storage::putFile('public/testimonial_image', $image);
+        //     $testimonial->image = "storage/testimonial_image/".$image->hashName();
+        // }
+
+        if($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('testimonial_image'), $filename);
+            $testimonial['image']= 'public/testimonial_image/'.$filename;
+        }
         /*         * ************************************ */
         if ((int) $request->input('is_default') == 1) {
             $testimonial->testimonial_id = $testimonial->id;

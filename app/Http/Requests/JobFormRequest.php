@@ -74,7 +74,7 @@ class JobFormRequest extends Request
             'benefits.required' => 'Please enter Job Benefits.',
             'skills.required' => 'Please enter Job skills.',
             'country_id.required' => 'Please select Country.',
-            'state_id.required' => 'Please select State.',
+            'state_id.required' => 'Please select Division.',
             'city_id.required' => 'Please select City.',
             //'is_freelance.required' => 'Is this freelance Job?',
             //'career_level_id.required' => 'Please select Career level.',

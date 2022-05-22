@@ -1,13 +1,13 @@
 <form class="form" id="add_edit_profile_cv" method="POST" action="{{ route('store.profile.cv', [$user->id]) }}" target="cv_iframe">{{ csrf_field() }}
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-        <h4 class="modal-title">{{__('Add CV')}}</h4>
+        <h4 class="modal-title">{{__('Add Credential')}}</h4>
     </div>
     <div class="modal-body">
         <div class="form-body">
             <div class="form-group" id="div_name">
-                <label for="name" class="bold">{{__('CV Title')}}</label>
-                <input class="form-control" id="title" placeholder="{{__('CV Title')}}" name="title" type="text" value="{{(isset($profileCv)? $profileCv->title:'')}}">
+                <label for="name" class="bold">{{__('Credential Title')}}</label>
+                <input class="form-control" id="title" placeholder="{{__('Credential Title')}}" name="title" type="text" value="{{(isset($profileCv)? $profileCv->title:'')}}">
                 <span class="help-block title-error"></span> </div>
 
             @if(isset($profileCv))
@@ -18,7 +18,7 @@
 
 
             <div class="form-group" id="div_cv_file">
-                <label for="cv_file" class="bold">{{__('CV File')}}</label>
+                <label for="cv_file" class="bold">{{__('Credential File')}}</label>
                 <input class="form-control" id="cv_file" name="cv_file" type="file">
                 <span class="help-block cv_file-error"></span> </div>
 
@@ -45,6 +45,6 @@
 
         <div class="modal-footer">
             <button type="button" class="btn dark btn-outline" data-dismiss="modal">{{__('Close')}}</button>
-            <button type="submit" class="btn btn-large btn-primary">{{__('Add CV')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+            <button type="submit" class="btn btn-large btn-primary">{{__('Add Credential')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
         </div>
 </form>

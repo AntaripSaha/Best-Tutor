@@ -13,8 +13,17 @@
 <!-- Top Employers ends -->  --}}
 
 
+
 <!-- Popular Searches start -->
-@include('includes.popular_searches')
+@include('includes.all_search_board')
+<!-- Popular Searches ends --> 
+
+<!-- Testimonials start -->
+@include('includes.tutor_testimonials')
+<!-- Testimonials End -->
+
+<!-- Popular Searches start -->
+{{-- @include('includes.popular_searches') --}}
 <!-- Popular Searches ends --> 
 
 
@@ -31,28 +40,35 @@
 <!-- Login box ends --> 
 
 
-<!-- Video start -->
+{{-- <!-- Video start -->
 @include('includes.video')
-<!-- Video end --> 
-<!-- Login box start -->
+<!-- Video end -->  --}}
+
+
+{{-- <!-- Login box start -->
 @include('includes.employer_login_text')
-<!-- Login box ends -->
+<!-- Login box ends --> --}}
 
-<!-- Testimonials start -->
+{{-- <!-- Testimonials start -->
 @include('includes.home_blogs')
-<!-- Testimonials End -->
+<!-- Testimonials End --> --}}
 
-<!-- How it Works start -->
+{{-- <!-- How it Works start -->
 @include('includes.how_it_works')
-<!-- How it Works Ends --> 
+<!-- How it Works Ends -->  --}}
+
 
 <!-- Testimonials start -->
-@include('includes.testimonials')
+@include('includes.student_testimonials')
 <!-- Testimonials End -->
 
-<!-- Subscribe start -->
+<!-- Testimonials start -->
+{{-- @include('includes.testimonials') --}}
+<!-- Testimonials End -->
+
+{{-- <!-- Subscribe start -->
 @include('includes.subscribe')
-<!-- Subscribe End -->
+<!-- Subscribe End --> --}}
 
 @include('includes.footer')
 @endsection

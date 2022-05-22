@@ -20,7 +20,7 @@
                 <div class="iconcircle"><i class="fa fa-black-tie" aria-hidden="true"></i>
                 </div>
                 <h4>{{__('Apply to Your Desired Tuition Job')}}</h4>
-                <p>{{__('Check our job board everyday and apply to your preferred tutoring jobs that match your skills.')}}.</p>
+                <p>{{__('Check our Tution board everyday and apply to your preferred tutoring that match your skills.')}}.</p>
             </li>
             <!--step 2 end-->
             <!--step 3-->

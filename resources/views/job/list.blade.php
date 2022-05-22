@@ -10,7 +10,7 @@
 
 <!-- Inner Page Title start --> 
 
-@include('includes.inner_page_title', ['page_title'=>__('Job Listing')]) 
+@include('includes.inner_page_title', ['page_title'=>__('Tution Listing')]) 
 
 
 
@@ -234,7 +234,7 @@
 
                 <div class="modal-header">
 
-                    <h4 class="modal-title">Job Alert</h4>
+                    <h4 class="modal-title">Tution Alert</h4>
 
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -322,9 +322,9 @@ $('.btn-job-alert').on('click', function() {
     $('#show_alert').modal('show');
     @else
     swal({
-        title: "Save Job Alerts",
+        title: "Save Tution Alerts",
 
-        text: "To save Job Alerts you must be Registered and Logged in",
+        text: "To save Tution Alerts you must be Registered and Logged in",
 
         icon: "error",
 

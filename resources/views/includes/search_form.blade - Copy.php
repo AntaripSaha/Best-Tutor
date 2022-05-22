@@ -17,7 +17,7 @@
 
         <div class="col-md-3">
             <span id="state_dd">
-                {!! Form::select('state_id[]', ['' => __('Select State')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
+                {!! Form::select('state_id[]', ['' => __('Select Division')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
             </span>
         </div>
         <div class="col-md-3">
@@ -29,9 +29,9 @@
 		
 		
 		<div class="input-group">
-		  <input type="text"  name="search" id="empsearch" value="{{Request::get('search', '')}}" class="form-control" placeholder="{{__('Enter Skills or Job Seeker Details')}}" autocomplete="off" />
+		  <input type="text"  name="search" id="empsearch" value="{{Request::get('search', '')}}" class="form-control" placeholder="{{__('Enter Skills or Tutors Details')}}" autocomplete="off" />
 		  <span class="input-group-btn">
-			<input type="submit" class="btn" value="{{__('Search Job Seeker')}}">
+			<input type="submit" class="btn" value="{{__('Search Tutor')}}">
 		  </span>
 		</div>
 		</div>
@@ -59,7 +59,7 @@
 
         <div class="col-md-3">
             <span id="state_dd">
-                {!! Form::select('state_id[]', ['' => __('Select State')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
+                {!! Form::select('state_id[]', ['' => __('Select Division')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
             </span>
         </div>
         <div class="col-md-3">
