@@ -19,18 +19,11 @@
             border: none;
             transition-duration: 0.5s;
     }
-    }
+    
 </style>
-
-
-     
-
     <h5>Tution Related Information</h5>
-
 <form action="{{route('tutor.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
-
-
     <div class="row">
         <div class="col-md-6">
             <div class="formrow">
@@ -70,13 +63,8 @@
                   </select>
             </div>
         </div>
-
     </div>
-
-
     <button type="submit" id="tution_submit">Submit</button>
 </form>
-
-
 <hr>
 
