@@ -41,7 +41,7 @@ class CityController extends Controller
     {
         $languages = DataArrayHelper::languagesNativeCodeArray();
         $countries = DataArrayHelper::defaultCountriesArray();
-        $states = array('' => 'Select State');
+        $states = array('' => 'Select Division');
         return view('admin.city.index')
                         ->with('languages', $languages)
                         ->with('countries', $countries)
@@ -52,7 +52,7 @@ class CityController extends Controller
     {
         $languages = DataArrayHelper::languagesNativeCodeArray();
         $countries = DataArrayHelper::defaultCountriesArray();
-        $states = array('' => 'Select State');
+        $states = array('' => 'Select Division');
         return view('admin.city.add')
                         ->with('languages', $languages)
                         ->with('countries', $countries)
@@ -86,7 +86,7 @@ class CityController extends Controller
     {
         $languages = DataArrayHelper::languagesNativeCodeArray();
         $countries = DataArrayHelper::defaultCountriesArray();
-        $states = array('' => 'Select State');
+        $states = array('' => 'Select Division');
         $city = City::findOrFail($id);
         return view('admin.city.edit')
                         ->with('city', $city)

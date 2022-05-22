@@ -1,7 +1,7 @@
 <div class="modal-body">
     <div class="form-body">
         <div class="formrow" id="div_title">
-            <input class="form-control" id="title" placeholder="{{__('CV title')}}" name="title" type="text" value="{{(isset($profileCv)? $profileCv->title:'')}}">
+            <input class="form-control" id="title" placeholder="{{__('Credential title')}}" name="title" type="text" value="{{(isset($profileCv)? $profileCv->title:'')}}">
             <span class="help-block title-error"></span> </div>
 
         @if(isset($profileCv))

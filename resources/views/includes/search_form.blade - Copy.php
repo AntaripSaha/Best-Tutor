@@ -17,7 +17,7 @@
 
         <div class="col-md-3">
             <span id="state_dd">
-                {!! Form::select('state_id[]', ['' => __('Select State')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
+                {!! Form::select('state_id[]', ['' => __('Select Division')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
             </span>
         </div>
         <div class="col-md-3">
@@ -59,7 +59,7 @@
 
         <div class="col-md-3">
             <span id="state_dd">
-                {!! Form::select('state_id[]', ['' => __('Select State')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
+                {!! Form::select('state_id[]', ['' => __('Select Division')], Request::get('state_id', null), array('class'=>'form-control', 'id'=>'state_id')) !!}
             </span>
         </div>
         <div class="col-md-3">

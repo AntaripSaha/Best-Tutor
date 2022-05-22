@@ -81,7 +81,7 @@ class CompanyFormRequest extends Request
             'phone.required' => 'Phone number required',
             'logo.required' => 'Company logo is required',
             'country_id.required' => 'Please select country',
-            'state_id.required' => 'Please select state',
+            'state_id.required' => 'Please select division',
             'city_id.required' => 'Please select city',
             'is_active.required' => 'Is this Company Acive?',
             'is_featured.required' => 'Is this Company featured?',

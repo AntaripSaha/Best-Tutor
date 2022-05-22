@@ -8,6 +8,10 @@ $queryString = MiscHelper::getLangQueryStr();
 ?>
 {!! APFrmErrHelp::showErrorsNotice($errors) !!}
 @include('flash::message')
+
+<div>
+    <img src="{{asset($testimonial->image)}}" alt="" height="250px" width="350px" style="margin-left: 30%;">
+</div>
 <div class="form-body">        
     {!! Form::hidden('id', null) !!}
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'lang') !!}" id="lang_div">
@@ -17,8 +21,13 @@ $queryString = MiscHelper::getLangQueryStr();
     <div class="form-group">
         <label for="user_type"><b>Choose User Type:</b></label>
         <select id="user_type" class="form-control" name="user_type">
-        <option value="1">Student/Gurdian</option>
+        @if($testimonial->user_type == 1)
+        <option value="1" selected >Student/Gurdian</option>
         <option value="2">Tutor</option>
+        @else
+        <option value="1">Student/Gurdian</option>
+        <option value="2" selected>Tutor</option>
+        @endif
         </select>
     </div>
     <div class="form-group">

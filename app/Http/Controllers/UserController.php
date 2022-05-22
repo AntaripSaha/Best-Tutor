@@ -43,6 +43,7 @@ use App\Traits\ProfileLanguageTrait;
 use App\Traits\Skills;
 use App\Http\Requests\Front\UserFrontFormRequest;
 use App\Helpers\DataArrayHelper;
+use App\MajorSubject;
 
 class UserController extends Controller
 {
@@ -83,6 +84,8 @@ class UserController extends Controller
 
     public function myProfile()
     {
+
+        $category = MajorSubject::all();
         $genders = DataArrayHelper::langGendersArray();
         $maritalStatuses = DataArrayHelper::langMaritalStatusesArray();
         $nationalities = DataArrayHelper::langNationalitiesArray();
@@ -104,7 +107,8 @@ class UserController extends Controller
                         ->with('industries', $industries)
                         ->with('functionalAreas', $functionalAreas)
                         ->with('user', $user)
-                        ->with('upload_max_filesize', $upload_max_filesize);
+                        ->with('upload_max_filesize', $upload_max_filesize)
+                        ->with('category', $category);
     }
 
     public function updateMyProfile(UserFrontFormRequest $request)

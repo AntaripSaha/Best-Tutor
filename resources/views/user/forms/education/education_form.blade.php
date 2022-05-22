@@ -4,7 +4,7 @@
             <?php
             $degree_level_id = (isset($profileEducation) ? $profileEducation->degree_level_id : null);
             ?>
-            {!! Form::select('degree_level_id', [''=>__('Select Degree Level')]+$degreeLevels, $degree_level_id, array('class'=>'form-control', 'id'=>'degree_level_id')) !!}
+            {!! Form::select('degree_level_id', [''=>__('Add Masters, Honors, HSC/A Level, SSC/O Level *')]+$degreeLevels, $degree_level_id, array('class'=>'form-control', 'id'=>'degree_level_id')) !!}
             <span class="help-block degree_level_id-error"></span> </div>
 
 
@@ -18,7 +18,7 @@
             <span class="help-block degree_type_id-error"></span> </div>
 
         <div class="formrow" id="div_degree_title">
-            <input class="form-control" id="degree_title" placeholder="{{__('Degree Title')}}" name="degree_title" type="text" value="{{(isset($profileEducation)? $profileEducation->degree_title:'')}}">
+            <input class="form-control" id="degree_title" placeholder="{{__('Exam/Degree Title')}}" name="degree_title" type="text" value="{{(isset($profileEducation)? $profileEducation->degree_title:'')}}">
             <span class="help-block degree_title-error"></span> </div>
 
         <div class="formrow" id="div_major_subjects">
@@ -26,7 +26,8 @@
             $profileEducationMajorSubjectIds = old('major_subjects', $profileEducationMajorSubjectIds);
             ?>
             {!! Form::select('major_subjects[]', $majorSubjects, $profileEducationMajorSubjectIds, array('class'=>'form-control select2-multiple', 'id'=>'major_subjects', 'multiple'=>'multiple')) !!}
-            <span class="help-block major_subjects-error"></span> </div>
+            <span class="help-block major_subjects-error"></span> 
+        </div>
 
         <div class="formrow" id="div_country_id">
             <?php
@@ -37,7 +38,7 @@
 
         <div class="formrow" id="div_state_id">
             <span id="default_state_education_dd">
-                {!! Form::select('state_id', [''=>__('Select State')], null, array('class'=>'form-control', 'id'=>'education_state_id')) !!}
+                {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'education_state_id')) !!}
             </span>
             <span class="help-block state_id-error"></span> </div>
 
@@ -61,7 +62,7 @@
 
 
         <div class="formrow" id="div_degree_result">
-            <input class="form-control" id="degree_result" placeholder="{{__('Degree Result')}}" name="degree_result" type="text" value="{{(isset($profileEducation)? $profileEducation->degree_result:'')}}">
+            <input class="form-control" id="degree_result" placeholder="{{__('Exam Result')}}" name="degree_result" type="text" value="{{(isset($profileEducation)? $profileEducation->degree_result:'')}}">
             <span class="help-block degree_result-error"></span> </div>
 
 

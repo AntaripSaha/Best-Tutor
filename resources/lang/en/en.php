@@ -10,7 +10,7 @@ return [
     'is_default_required' => 'Is this default/fallback?',
     'is_active_required' => 'Is this active?',
     'country_id_required' => 'Please select country.',
-    'state_id_required' => 'Please select state.',
+    'state_id_required' => 'Please select division.',
     'city_id_required' => 'Please select city.',
     'image_image' => 'Only images can be uploaded.',
     // Marital Status

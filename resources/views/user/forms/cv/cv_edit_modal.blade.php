@@ -5,11 +5,11 @@
             <input type="hidden" name="id" id="id" value="{{$profileCv->id}}"/>
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">{{__('Edit CV')}}</h4>
+                <h4 class="modal-title">{{__('Edit Credential')}}</h4>
             </div>
             @include('user.forms.cv.cv_form')
             <div class="modal-footer">
-                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileCvForm();">{{__('Update CV')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-large btn-primary" onClick="submitProfileCvForm();">{{__('Update Credential')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
             </div>
         </form>
     </div>

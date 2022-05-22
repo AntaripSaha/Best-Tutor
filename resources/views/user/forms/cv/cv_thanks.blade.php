@@ -6,10 +6,10 @@
                 <div class="col-md-12">
                     <div class="userccount">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5>{{__('Add CV')}}</h5>            
+                        <h5>{{__('Add Credential')}}</h5>            
                         <div class="formpanel">
                             <div class="formrow">
-                                <h3>{{__('CV added successfully')}}</h3>
+                                <h3>{{__('Credential added successfully')}}</h3>
                             </div>                
                         </div>            
                     </div>

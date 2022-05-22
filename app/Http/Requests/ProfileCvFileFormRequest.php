@@ -39,7 +39,7 @@ class ProfileCvFileFormRequest extends Request
     public function messages()
     {
         return [
-            'cv_file.required' => 'Please select CV file.',
+            'cv_file.required' => 'Please select Credential file.',
             'cv_file.mimes' => 'Only PDF and DOC files can be uploaded.',
         ];
     }

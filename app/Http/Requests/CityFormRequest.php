@@ -43,7 +43,7 @@ class CityFormRequest extends Request
     public function messages()
     {
         return [
-            'lang.required' => 'Please select language.', 'state_id.required' => 'Please select State.', 'city.required' => 'Please enter City Name.', 'is_default.required' => 'Is this city default/fallback ?.', 'city_id.required_if' => 'Please select default/fallback City.', 'is_active.required' => 'Is this City active?',
+            'lang.required' => 'Please select language.', 'state_id.required' => 'Please select Division.', 'city.required' => 'Please enter City Name.', 'is_default.required' => 'Is this city default/fallback ?.', 'city_id.required_if' => 'Please select default/fallback City.', 'is_active.required' => 'Is this City active?',
         ];
     }
 

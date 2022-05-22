@@ -88,7 +88,7 @@
                             <div class="item" style="margin-left:-25% !important">
                                 <div class="row" style="margin-right: 25% !important;">
                                     <div class="col-2">
-                                        <img src="{{ asset('images/head.jpg') }}" alt="" class="img" >
+                                        <img src="{{ asset($testimonial->image) }}" alt="" class="img" >
                                     </div>                                  
                                     <div class="col-10">
                                         <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>

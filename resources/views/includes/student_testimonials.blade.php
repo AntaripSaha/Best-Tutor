@@ -81,7 +81,7 @@
         
             <div class="owl-stage-outer">
           
-                <div class="owl-stage" style="transform: translate3d(-1527px, 0px, 0px); transition: all 0.25s ease 0s; width: 3334px;">
+                <div class="owl-stage" >
                     @if(isset($students) && count($students))
                     @foreach($students as $testimonial)
  
@@ -129,11 +129,22 @@
     owl.owlCarousel({
         items:2, 
         // items change number for slider display on desktop
+        autoWidth:false,
         loop:true,
         margin:10,
         autoplay:true,
         autoplayTimeout:5000,
+        dots: false,
         autoplayHoverPause:true
+
+        // slidesToShow: 1,
+        // mergeFit:true,
+        // slideBy:1,
+        // center:false,
+        // merge:true,
+        // lazyload:false,
+        // nav:true,  
+        
     });
 
 </script>

@@ -54,6 +54,9 @@ Route::get('/linkstorage', function () {
   return 'ok';
 });
 
+Route::any('/tutor/store', 'Tution\TutorController@category')->name('tutor.store');
+
+
 Route::get('/otp', 'OtpController@otp')->name('otp');
 /* * ******** IndexController ************ */
 
