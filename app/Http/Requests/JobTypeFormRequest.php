@@ -47,9 +47,9 @@ class JobTypeFormRequest extends Request
     public function messages()
     {
         return [
-            'job_type.required' => 'Please enter Job Type.',
-            'job_type_id.required_if' => 'Please select default/fallback Job Type.',
-            'is_default.required' => 'Is this Job Type default?',
+            'job_type.required' => 'Please enter Tution Type.',
+            'job_type_id.required_if' => 'Please select default/fallback Tution Type.',
+            'is_default.required' => 'Is this Tution Type default?',
             'is_active.required' => 'Please select status.',
             'lang.required' => 'Please select language.',
         ];

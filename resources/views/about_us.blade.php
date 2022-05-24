@@ -48,7 +48,7 @@
                     <div class="iconWrap">
                         <div class="icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
                     </div>
-                    <h3>Get Job</h3>
+                    <h3>Get Tution</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor congue enim non rhoncus. Sed ac lacus non elit malesuada blandit.</p>
                 </li>
             </ul>

@@ -8,8 +8,8 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
-                <li> <a href="{{ route('list.job.shifts') }}">Job Shifts</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Sort Job Shifts</span> </li>
+                <li> <a href="{{ route('list.job.shifts') }}">Tution Shifts</a> <i class="fa fa-circle"></i> </li>
+                <li> <span>Sort Tution Shifts</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->        
@@ -20,11 +20,11 @@
             <div class="col-md-12">
                 <div class="portlet light bordered">
                     <div class="portlet-title">
-                        <div class="caption font-red-sunglo"> <i class="icon-settings font-red-sunglo"></i> <span class="caption-subject bold uppercase">Sort Job Shifts</span> </div>
+                        <div class="caption font-red-sunglo"> <i class="icon-settings font-red-sunglo"></i> <span class="caption-subject bold uppercase">Sort Tution Shifts</span> </div>
                     </div>
                     <div class="portlet-body form">          
                         <ul class="nav nav-tabs">              
-                            <li class="active"> <a href="#Details" data-toggle="tab" aria-expanded="false"> Sort Job Shifts </a> </li>
+                            <li class="active"> <a href="#Details" data-toggle="tab" aria-expanded="false"> Sort Tution Shifts </a> </li>
                         </ul>
                         <div class="tab-content">              
                             <div class="tab-pane fade active in" id="Details"> @include('admin.job_shift.forms.sort') </div>

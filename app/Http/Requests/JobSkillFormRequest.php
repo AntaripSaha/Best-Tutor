@@ -47,9 +47,9 @@ class JobSkillFormRequest extends Request
     public function messages()
     {
         return [
-            'job_skill.required' => 'Please enter Job Skill.',
-            'job_skill_id.required_if' => 'Please select default/fallback Job Skill.',
-            'is_default.required' => 'Is this Job Skill default?',
+            'job_skill.required' => 'Please enter Tution Skill.',
+            'job_skill_id.required_if' => 'Please select default/fallback Tution Skill.',
+            'is_default.required' => 'Is this Tution Skill default?',
             'is_active.required' => 'Please select status.',
             'lang.required' => 'Please select language.',
         ];

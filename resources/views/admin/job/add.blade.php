@@ -8,8 +8,8 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
-                <li> <a href="{{ route('list.jobs') }}">Jobs</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Add Job</span> </li>
+                <li> <a href="{{ route('list.jobs') }}">Tutions</a> <i class="fa fa-circle"></i> </li>
+                <li> <span>Add Tution</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->        

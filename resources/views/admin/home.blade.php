@@ -45,21 +45,21 @@
                         <div class="visual"> <i class="fa fa-list"></i> </div>
                         <div class="details">
                             <div class="number"> <span data-counter="counterup" data-value="1349">{{ $totalTodaysJobs }}</span> </div>
-                            <div class="desc"> Todays Jobs </div>
+                            <div class="desc"> Todays Tution </div>
                         </div>
                     </a> </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"> <a class="dashboard-stat dashboard-stat-v2 blue" href="#">
                         <div class="visual"> <i class="fa fa-list"></i> </div>
                         <div class="details">
                             <div class="number"> <span data-counter="counterup" data-value="1349">{{ $totalActiveJobs }}</span> </div>
-                            <div class="desc"> Active Jobs </div>
+                            <div class="desc"> Active Tution </div>
                         </div>
                     </a> </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"> <a class="dashboard-stat dashboard-stat-v2 purple" href="#">
                         <div class="visual"> <i class="fa fa-list"></i> </div>
                         <div class="details">
                             <div class="number"> <span data-counter="counterup" data-value="1349">{{ $totalFeaturedJobs }}</span> </div>
-                            <div class="desc"> Featured Jobs </div>
+                            <div class="desc"> Featured Tution </div>
                         </div>
                     </a> </div>
             </div>
@@ -120,7 +120,7 @@
                             </ul>
                         </div>
                         <div class="scroller-footer">
-                            <div class="btn-arrow-link pull-right"> <a href="{{ route('list.jobs') }}">See All Jobs</a> <i class="icon-arrow-right"></i> </div>
+                            <div class="btn-arrow-link pull-right"> <a href="{{ route('list.jobs') }}">See All Tution</a> <i class="icon-arrow-right"></i> </div>
                         </div>
                     </div>
                 </div>

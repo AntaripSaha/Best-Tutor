@@ -14,12 +14,12 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Jobs</span> </li>
+                <li> <span>Tutions</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR --> 
         <!-- BEGIN PAGE TITLE-->
-        <h3 class="page-title">Manage Jobs <small>Jobs</small> </h3>
+        <h3 class="page-title">Manage Tutions <small>Tutions</small> </h3>
         <!-- END PAGE TITLE--> 
         <!-- END PAGE HEADER-->
         <div class="row">
@@ -27,8 +27,8 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light portlet-fit portlet-datatable bordered">
                     <div class="portlet-title">
-                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Jobs</span> </div>
-                        <div class="actions"> <a href="{{ route('create.job') }}" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Add New Job</a> </div>
+                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Tutions</span> </div>
+                        <div class="actions"> <a href="{{ route('create.job') }}" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Add New Tution</a> </div>
                     </div>
                     <div class="portlet-body">
                         <div class="table-container">
@@ -37,8 +37,8 @@
                                     <thead>
                                         <tr role="row" class="filter">
                                             <td>{!! Form::select('company_id', ['' => 'Select Company']+$companies, null, array('id'=>'company_id', 'class'=>'form-control')) !!}</td>
-                                            <td><input type="text" class="form-control" name="title" id="title" autocomplete="off" placeholder="Job title"></td>
-                                            <td><input type="text" class="form-control" name="description" id="description" autocomplete="off" placeholder="Job description"></td>
+                                            <td><input type="text" class="form-control" name="title" id="title" autocomplete="off" placeholder="Tution title"></td>
+                                            <td><input type="text" class="form-control" name="description" id="description" autocomplete="off" placeholder="Tution description"></td>
                                             <td>
                                                 <?php $default_country_id = Request::query('country_id', $siteSetting->default_country_id); ?>
                                                 {!! Form::select('country_id', ['' => 'Select Country']+$countries, $default_country_id, array('id'=>'country_id', 'class'=>'form-control')) !!}
@@ -61,8 +61,8 @@
                                         </tr>
                                         <tr role="row" class="heading">
                                             <th>Company</th>
-                                            <th>Job title</th>
-                                            <th>Job description</th>
+                                            <th>Tution title</th>
+                                            <th>Tution description</th>
                                             <th>City</th>
                                             <th>Actions</th>
                                         </tr>
