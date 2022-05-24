@@ -19,6 +19,10 @@
             border: none;
             transition-duration: 0.5s;
     }
+    #sel{
+        color: #17d27c !important;
+        padding: 8px 8px !important;
+    }
     
 </style>
     <h5>Tution Related Information</h5>
@@ -28,39 +32,53 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Categories</label>
-                <select class="form-control select2-multiple" name="category[]" multiple="multiple">
-                    <option value="">--Select Category--</option>
-                    @foreach ($category as $category)
-                    <option value="{{$category->major_subject}}">{{$category->major_subject}}</option>
+                        <select class="form-control select2-multiple" name="category[]" multiple="multiple">
+                            @foreach ($cat as $cat)
+                                <option value="{{$cat}}" selected>{{$cat}}</option>
+                            @endforeach
+                            @foreach ($category as $category)
+                                <option value="{{$category->name}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="formrow">
+                <label for="">Preferable Classes</label>
+                <select class="form-control select2-multiple" id="sel" name="class[]" multiple="multiple">
+                    @foreach($cla as $cla)
+                        <option value="{{$cla}}" selected>{{$cla}}</option>
+                    @endforeach
+                    @foreach($classes as $class)
+                        <option value="{{$class->name}}">{{$class->name}}</option>
                     @endforeach
                   </select>
             </div>
         </div>
         <div class="col-md-6">
             <div class="formrow">
-                <label for="">Preferable Classes</label>
-                <select class="form-control select2-multiple" name="category[]" multiple="multiple">
-                    <option value="">--Select Classes--</option>
-                    
-                  </select>
+                <label for="">Preferable Subjects</label>
+                <select class="form-control select2-multiple" id="sel" name="subject[]" multiple="multiple">
+                    @foreach($sub as $sub)
+                        <option value="{{$sub}}" selected>{{$sub}}</option>
+                    @endforeach
+                    @foreach($subjects as $subject)
+                        <option value="{{$subject->name}}">{{$subject->name}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-md-6">
             <div class="formrow">
-                <label for="">Preferable Categories</label>
-                <select class="form-control select2-multiple" name="category[]" multiple="multiple">
-                    <option value="">--Select Category--</option>
-                    
-                  </select>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="formrow">
-                <label for="">Preferable Categories</label>
-                <select class="form-control select2-multiple" name="category[]" multiple="multiple">
-                    <option value="">--Select Category--</option>
-                    
-                  </select>
+                <label for="">Place of Tutoring</label>
+                <select class="form-control select2-multiple" id="sel" name="place[]" multiple="multiple">
+                    @foreach($pla as $pla)
+                        <option value="{{$pla}}" selected>{{$pla}}</option>
+                    @endforeach
+                    <option value="Student Home">Student Home</option>
+                    <option value="My Home">My Home</option>
+                    <option value="Online">Online</option>
+                </select>
             </div>
         </div>
     </div>

@@ -43,7 +43,10 @@ use App\Traits\ProfileLanguageTrait;
 use App\Traits\Skills;
 use App\Http\Requests\Front\UserFrontFormRequest;
 use App\Helpers\DataArrayHelper;
-use App\MajorSubject;
+use App\Models\PrefarableCategories;
+use App\Models\PrefarableClasses;
+use App\Models\PrefarableSubjects;
+use App\Models\TutionInfoStore;
 
 class UserController extends Controller
 {
@@ -85,7 +88,25 @@ class UserController extends Controller
     public function myProfile()
     {
 
-        $category = MajorSubject::all();
+       $tutor = TutionInfoStore::where('user_id', auth()->user()->id)->get();
+
+        if( count( $tutor) != 0 ){
+            $cat =  unserialize($tutor[0]->category);
+            $cla =  unserialize($tutor[0]->class);
+            $sub =  unserialize($tutor[0]->subject);
+            $pla =  unserialize($tutor[0]->place);
+        }elseif(count( $tutor) == 0 ){
+            $cat = [''];
+            $cla = [''];
+            $sub = [''];
+            $pla = [''];
+        }else{
+            return 'something worng';
+        }
+
+        $subjects = PrefarableSubjects::all();
+        $classes = PrefarableClasses::all();
+        $category = PrefarableCategories::all();
         $genders = DataArrayHelper::langGendersArray();
         $maritalStatuses = DataArrayHelper::langMaritalStatusesArray();
         $nationalities = DataArrayHelper::langNationalitiesArray();
@@ -108,7 +129,14 @@ class UserController extends Controller
                         ->with('functionalAreas', $functionalAreas)
                         ->with('user', $user)
                         ->with('upload_max_filesize', $upload_max_filesize)
-                        ->with('category', $category);
+                        ->with('category', $category)
+                        ->with('classes', $classes)
+                        ->with('subjects', $subjects)
+                        ->with('tutor', $tutor)
+                        ->with('cat', $cat)
+                        ->with('cla', $cla)
+                        ->with('sub', $sub)
+                        ->with('pla', $pla);
     }
 
     public function updateMyProfile(UserFrontFormRequest $request)

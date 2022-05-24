@@ -345,28 +345,16 @@
                 continue;
 
             }
-
             var reader = new FileReader()
-
             reader.onload = (function (theFile) {
-
                 return function (e) {
-
                     $('#thumbnail_cover_image').append('<div class="fileattached"><img height="100px" src="' + e.target.result + '" > <div>' + theFile.name + '</div><div class="clearfix"></div></div>');
-
                 };
-
             }(file))
-
             var ret = reader.readAsDataURL(file);
-
         }
-
     }
-		
-		
     });
-
     function filterStates(state_id)
     {
         var country_id = $('#country_id').val();
