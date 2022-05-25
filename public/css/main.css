@@ -4657,7 +4657,9 @@ Large Mobile Screen
 .searchwrap h3 {
 	font-size: 24px;
 }
-.searchbar .input-group{display: block;}
+.searchbar .input-group{
+	/* display: block; */
+}
 .searchbar .btn{margin: 15px 0 0 0}
 
 .usernav li a {

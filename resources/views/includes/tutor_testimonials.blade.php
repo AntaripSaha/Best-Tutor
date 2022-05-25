@@ -54,7 +54,6 @@
             border-radius: 30% !important;
         }
 
-
     </style>
 </head>
 <body>
@@ -90,7 +89,7 @@
                                     <div class="col-2">
                                         <img src="{{ asset($testimonial->image) }}" alt="" class="img" >
                                     </div>                                  
-                                    <div class="col-10">
+                                    <div id="testi" class="col-10">
                                         <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                         <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
                                         <p class="description" style="text-align: left">"{{$testimonial->testimonial}}"</p>

@@ -1,6 +1,44 @@
+<style>
+    @media screen and (max-width: 560px) {
+            .searchbar .form-control {
+                height: 1px !important;
+                padding: 22px 74px !important;
+                border: none !important;
+                font-size: 16px !important;
+                box-shadow: 0px 20px 40px 5px rgb(0 0 0 / 20%) !important;
+            }
+            .searchbar .btn {
+                width: 185% !important;
+            }
+            .seekersrch {
+                max-width: 700px !important;
+                background: #fff !important;
+                padding: 10px !important;
+                box-shadow: 0px 20px 40px 5px rgb(0 0 0 / 20%) !important;
+                border-radius: 5px !important;
+            }
+            .section {
+                padding: 16px 0 !important;
+                overflow: hidden !important;
+            }
+            #title_seekertxt{
+                font-size: 25px !important;
+                margin-bottom: -7% !important;
+            }
+            
+    }
+    @media screen and (max-width: 360px) {
+        .searchbar .btn {
+                width: 160% !important;
+            }
+    }
+
+
+</style>
+
 <div class="section greybg">
     <div class="container">
-        <h3 class="seekertxt"> <span>{{__('Search Available Tutors & Tution')}}.</span></h3>
+        <h3 id="title_seekertxt" class="seekertxt"> <span>{{__('Search Available Tutors & Tution')}}.</span></h3>
         <div class="row">
             <div class="col-md-6">
                 <div class="topsearchwrap">
@@ -42,13 +80,6 @@
                 </div>            
             </div>
         </div>
-
-
-
-
-
-
-
 
     </div>
 </div>

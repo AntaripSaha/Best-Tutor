@@ -6,6 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+
+@media screen and (max-width: 600px){
+          #testi{
+              height: 300px !important;
+              width: 800px !important;
+              overflow: auto !important;
+          }
+          .owl-stage {
+                padding: 25% !important;
+            }
+        }
         .owl-item {width: 128.906px; margin-right: 10px;}
         .clientname{
             font-size: 24px;
@@ -91,7 +102,7 @@
                                     <div class="col-2">
                                         <img src="{{ asset($testimonial->image) }}" alt="" class="img">
                                     </div>                                  
-                                    <div class="col-10">
+                                    <div id="testi" class="col-10">
                                         <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                         <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
                                         <p class="description" style="text-align: left;">"{{$testimonial->testimonial}}"</p>
@@ -125,27 +136,25 @@
 
 </body>
 <script>
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-        items:2, 
-        // items change number for slider display on desktop
-        autoWidth:false,
-        loop:true,
-        margin:10,
-        autoplay:true,
-        autoplayTimeout:5000,
-        dots: false,
-        autoplayHoverPause:true
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            autoWidth:false,
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:500000,
+            dots: false,
+            autoplayHoverPause:true,
+            responsiveClass:true,
+            responsive:{
+                480:{
+                        items: 1
+                   }
+                1366:{
+                        items:2, 
 
-        // slidesToShow: 1,
-        // mergeFit:true,
-        // slideBy:1,
-        // center:false,
-        // merge:true,
-        // lazyload:false,
-        // nav:true,  
-        
-    });
-
+                   }
+            }      
+        });
 </script>
 </html>

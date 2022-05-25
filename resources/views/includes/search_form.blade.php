@@ -1,3 +1,44 @@
+<style>
+@media screen and (max-width: 480px) {
+	#req_tutor{
+		background-color: #0675c1 !important;
+		margin-left: 10% !important;
+		margin-top: 3% !important;
+		margin-bottom: 10% !important;
+		max-width: 60% !important;
+		font-size: 14px !important;
+	}
+	#reg_tutor{
+		background-color: #0675c1 !important;
+		margin-left: 45% !important;
+		margin-top: -23% !important;
+		margin-bottom: 11% !important;
+		max-width: 60% !important;
+		font-size: 13px !important;
+	}
+	#title{
+		color: rgb(255, 255, 255) !important;
+		margin-left: -34% !important;
+		font-size: 18px !important;
+	}
+	#title2{
+		color: rgb(255, 255, 255) !important;
+		margin-left: -2% !important;
+		font-size: 18px !important;
+	}
+	#sub{
+		color: rgb(255, 255, 255) !important;
+		margin-left: -1.5% !important;
+		font-size: 14px !important;
+	}
+	#para{
+		color: rgb(255, 255, 255) !important;
+		margin-left: -1.5% !important;
+		font-size: 12px !important;
+	}
+}
+</style>
+
 @if(Auth::guard('company')->check())
 <h3 class="seekertxt">{{__('Best Home Tutor Service')}}. <span>{{__('Search Available Tutors Today')}}.</span></h3>
 <form action="{{route('job.seeker.list')}}" method="get">
@@ -16,23 +57,24 @@
     </div>
 </form>
 @else
-<h3 style="color: rgb(255, 255, 255); margin-left: -65%;">{{__('Best Home Tutor Service')}}.</h3>
-<h4><span style="color: rgb(253, 253, 253); margin-left:-5.5%;">{{__('Hire The Right Tutor Today')}}.</span>
+<h3 id="title" style="color: rgb(255, 255, 255); margin-left: -65%;">{{__('Best Home Tutor Service')}}.</h3>
+<h4 id="sub" style="color: rgb(253, 253, 253); margin-left:-5.5%;"><span>{{__('Hire The Right Tutor Today')}}.</span>
 </h4>
-<h5><span style="color: rgb(255, 255, 255); margin-left:-5.5%;">Book one-on-one Lessons with verified tutors in your area.</span></h5>
+<h5 id="para" style="color: rgb(255, 255, 255); margin-left:-5.5%;"><span >Book one-on-one Lessons with verified tutors in your area.</span></h5>
+
 
 <form action="{{route('register')}}" method="get">
     <div style="margin-left:-10.5%; margin-top:5%;">
-		<input type="submit" class="btn btn-info btn-lg" style="background-color:#0675c1;  margin-left:4.5%;" value="{{__('Request for Tutor')}}">
+		<input type="submit" id="req_tutor" class="btn btn-info btn-lg" style="background-color:#0675c1;  margin-left:4.5%;" value="{{__('Request for Tutor')}}">
     </div>
 </form>
 <form action="{{route('register')}}" method="get">
     <div style="margin-left:11.5%; margin-top:-4.2%;">
-		<input type="submit" class="btn btn-info btn-lg" style="background-color:#0675c1 ; margin-left:4.5%;" value="{{__('Register as a Tutor')}}">
+		<input type="submit" id="reg_tutor"  class="btn btn-info btn-lg" style="background-color:#0675c1 ; margin-left:4.5%;" value="{{__('Register as a Tutor')}}">
     </div>
 </form>
 
-	<h4 style="margin-top:1%; margin-left:-5.5%; margin-top:2%; color:rgb(253, 253, 246);">Become a tutor <a href="{{route('login')}}" style="color:white"><b><span style="text-decoration: underline">Sign In</span></b></a> -(It's Free)</h4>
+	<h4 id="title2" style="margin-top:1%; margin-left:-5.5%; margin-top:2%; color:rgb(253, 253, 246);">Become a tutor <a href="{{route('login')}}" style="color:white"><b><span style="text-decoration: underline">Sign In</span></b></a> -(It's Free)</h4>
 
 
 {{-- 
