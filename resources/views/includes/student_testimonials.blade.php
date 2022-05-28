@@ -5,69 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-
-@media screen and (max-width: 600px){
-          #testi{
-              height: 300px !important;
-              width: 800px !important;
-              overflow: auto !important;
-          }
-          .owl-stage {
-                padding: 25% !important;
+<style>
+    @media screen and (max-width: 600px){
+            #testi{
+                height: 300px !important;
+                width: 800px !important;
+                overflow: auto !important;
             }
-        }
-        .owl-item {width: 128.906px; margin-right: 10px;}
-        .clientname{
-            font-size: 24px;
-            font-weight: 700;
-            padding: 15px 0 5px 0;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .clientinfo{
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: #17d27c;
-            margin-bottom: 15px;
-        }
-        .description{
-            /* font-style: italic;
-            line-height: 24px;
-            letter-spacing: 2px;
-            font-size: 16px;
-            color: #fff;
-            padding-left: 4%;
-            margin-left: 0%;
-            padding-right: 15%; */
+            .owl-stage {
+                    padding: 25% !important;
+                }
+            }
+            .owl-item {width: 128.906px; margin-right: 10px;}
+            .clientname{
+                font-size: 24px;
+                font-weight: 700;
+                padding: 15px 0 5px 0;
+                color: #fff;
+                font-family: 'Montserrat', sans-serif;
+            }
+            .clientinfo{
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+                color: #17d27c;
+                margin-bottom: 15px;
+            }
+            .description{
+                /* font-style: italic;
+                line-height: 24px;
+                letter-spacing: 2px;
+                font-size: 16px;
+                color: #fff;
+                padding-left: 4%;
+                margin-left: 0%;
+                padding-right: 15%; */
 
-            font-style: italic;
-            line-height: 22px;
-            letter-spacing: 2px;
-            font-size: 13px;
-            color: #fff;
-            padding-left: 0%;
-            margin-left: 10%;
-            padding-right: 0%;
-        }
-        .ratinguser{
-            color: #EBA102;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-        .owl-stage{
-            padding: 10%;
-        }
-        .img{
-            height: 110px !important;
-            width: auto !important;
-            /* margin-left: 46% !important;
-            margin-right: 5% !important; */
-            border-radius: 50% !important;
-        }
-     
-
-    </style>
+                font-style: italic;
+                line-height: 22px;
+                letter-spacing: 2px;
+                font-size: 13px;
+                color: #fff;
+                padding-left: 0%;
+                margin-left: 10%;
+                padding-right: 0%;
+            }
+            .ratinguser{
+                color: #EBA102;
+                font-size: 24px;
+                margin-top: 20px;
+            }
+            .owl-stage{
+                padding: 10%;
+            }
+            .img{
+                height: 110px !important;
+                width: auto !important;
+                /* margin-left: 46% !important;
+                margin-right: 5% !important; */
+                border-radius: 50% !important;
+            }
+</style>
 </head>
 <body>
     <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -142,7 +139,7 @@
             loop:true,
             margin:10,
             autoplay:true,
-            autoplayTimeout:500000,
+            autoplayTimeout:500,
             dots: false,
             autoplayHoverPause:true,
             responsiveClass:true,

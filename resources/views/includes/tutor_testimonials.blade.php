@@ -50,6 +50,7 @@
         .img{
             height: auto !important;
             width: 250px !important;
+            margin-left: 130px !important;
             margin-left: 46% !important;
             border-radius: 30% !important;
         }
