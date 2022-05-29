@@ -32,7 +32,7 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Categories</label>
-                        <select class="form-control select2-multiple" name="category[]" multiple="multiple">
+                        <select class="form-control select2-multiple" name="category[]" multiple="multiple" style="width: 260px !important;">
                             @foreach ($cat as $cat)
                                 <option value="{{$cat}}" selected>{{$cat}}</option>
                             @endforeach
@@ -45,7 +45,7 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Classes</label>
-                <select class="form-control select2-multiple" id="sel" name="class[]" multiple="multiple">
+                <select class="form-control select2-multiple" id="sel" name="class[]" multiple="multiple"  style="width: 260px !important;">
                     @foreach($cla as $cla)
                         <option value="{{$cla}}" selected>{{$cla}}</option>
                     @endforeach
@@ -58,7 +58,7 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Subjects</label>
-                <select class="form-control select2-multiple" id="sel" name="subject[]" multiple="multiple">
+                <select class="form-control select2-multiple" id="sel" name="subject[]" multiple="multiple" style="width: 260px !important;">
                     @foreach($sub as $sub)
                         <option value="{{$sub}}" selected>{{$sub}}</option>
                     @endforeach
@@ -71,7 +71,7 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Place of Tutoring</label>
-                <select class="form-control select2-multiple" id="sel" name="place[]" multiple="multiple">
+                <select class="form-control select2-multiple" id="sel" name="place[]" multiple="multiple"  style="width: 260px !important;">
                     @foreach($pla as $pla)
                         <option value="{{$pla}}" selected>{{$pla}}</option>
                     @endforeach
