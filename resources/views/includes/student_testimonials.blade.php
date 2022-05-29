@@ -96,13 +96,13 @@
                         <div class="owl-item cloned">
                             <div class="item" style="margin-left:-25% !important">
                                 <div class="row"  style="margin-right: 25% !important;">
-                                    <div class="col-2">
+                                    <div class="col-2" style="margin-top: 50px !important; ">
                                         <img src="{{ asset($testimonial->image) }}" alt="" class="img">
                                     </div>                                  
                                     <div id="testi" class="col-10">
                                         <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                         <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
-                                        <p class="description" style="text-align: left;">"{{$testimonial->testimonial}}"</p>
+                                        <p class="description" style="text-align: left;">"{{\Illuminate\Support\Str::limit($testimonial->testimonial, 150) }}"</p>
                                     </div>
                                 </div>
                             
@@ -139,17 +139,17 @@
             loop:true,
             margin:10,
             autoplay:true,
-            autoplayTimeout:500,
+            autoplayTimeout:15000,
             dots: false,
             autoplayHoverPause:true,
             responsiveClass:true,
             responsive:{
-                480:{
-                        items: 1
-                   }
-                1366:{
-                        items:2, 
-
+                0:{
+                    items:1,
+                    nav:true
+                   },
+                1000:{
+                        items:2 
                    }
             }      
         });

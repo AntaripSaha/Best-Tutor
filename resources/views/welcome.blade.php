@@ -62,7 +62,7 @@
 @include('includes.student_testimonials')
 <!-- Testimonials End -->
 <!-- Testimonials start -->
-@include('includes.test')
+{{-- @include('includes.test') --}}
 <!-- Testimonials End -->
 
 <!-- Testimonials start -->

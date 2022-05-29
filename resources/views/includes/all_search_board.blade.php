@@ -1,14 +1,12 @@
 <style>
-    @media screen and (max-width: 560px) {
-            .searchbar .form-control {
-                height: 1px !important;
+    @media only screen and (min-width: 260px) and (max-width: 550px) {
+            .empsearch {
+                height: 5000px !important;
                 padding: 22px 74px !important;
                 border: none !important;
                 font-size: 16px !important;
+                width: 100% !important;
                 box-shadow: 0px 20px 40px 5px rgb(0 0 0 / 20%) !important;
-            }
-            .searchbar .btn {
-                width: 185% !important;
             }
             .seekersrch {
                 max-width: 700px !important;
@@ -25,14 +23,12 @@
                 font-size: 25px !important;
                 margin-bottom: -7% !important;
             }
-            
-    }
-    @media screen and (max-width: 360px) {
-        .searchbar .btn {
-                width: 160% !important;
+            .searchbar .btn {
+                width: 50% !important;
+                margin-top: 5px !important;
+                margin-right: 213px !important;
             }
-    }
-
+}
 
 </style>
 
@@ -69,7 +65,7 @@
                         <div class="searchbar">
                             <div class="srchbox seekersrch">		
                             <div class="input-group">
-                              <input type="text"  name="search" id="empsearch" value="{{Request::get('search', '')}}" class="form-control" placeholder="" autocomplete="off" />
+                              <input type="text"  name="search" id="" value="{{Request::get('search', '')}}" class="form-control" placeholder="" autocomplete="off" />
                               <span class="input-group-btn">
                                 <input type="submit" class="btn" value="{{__('Search Tution')}}">
                               </span>
