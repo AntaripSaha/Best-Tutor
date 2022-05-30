@@ -21,15 +21,6 @@
             margin-bottom: 15px;
         }
         .description{
-            /* font-style: italic;
-            line-height: 24px;
-            letter-spacing: 2px;
-            font-size: 16px;
-            color: #fff;
-            padding-left: 4%;
-            margin-left: 0%;
-            padding-right: 15%; */
-
             font-style: italic;
             line-height: 22px;
             letter-spacing: 2px;

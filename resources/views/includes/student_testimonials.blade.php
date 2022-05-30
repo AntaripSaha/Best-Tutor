@@ -31,15 +31,6 @@
                 margin-bottom: 15px;
             }
             .description{
-                /* font-style: italic;
-                line-height: 24px;
-                letter-spacing: 2px;
-                font-size: 16px;
-                color: #fff;
-                padding-left: 4%;
-                margin-left: 0%;
-                padding-right: 15%; */
-
                 font-style: italic;
                 line-height: 22px;
                 letter-spacing: 2px;
@@ -67,12 +58,10 @@
 </style>
 </head>
 <body>
-    <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js">
-</script>
- <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js">
-   </script>
+<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js"></script>
+<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
 
 <!----------HTML code starts here------->
 
@@ -86,13 +75,10 @@
                 <!-- title end -->
 
         <div class="owl-carousel owl-theme owl-loaded owl-drag" id="ab">
-        
             <div class="owl-stage-outer">
-          
                 <div class="owl-stage" >
                     @if(isset($students) && count($students))
                     @foreach($students as $testimonial)
- 
                         <div class="owl-item cloned">
                             <div class="item" style="margin-left:-25% !important">
                                 <div class="row"  style="margin-right: 25% !important;">
@@ -105,7 +91,6 @@
                                         <p class="description" style="text-align: left;">"{{\Illuminate\Support\Str::limit($testimonial->testimonial, 150) }}"</p>
                                     </div>
                                 </div>
-                            
                                 {{-- <div class="ratinguser">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -117,8 +102,6 @@
                                 <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                 <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
                                 <p class="description">"{{$testimonial->testimonial}}"</p> --}}
-
-
                             </div>
                         </div>
                         @endforeach
@@ -149,9 +132,9 @@
                     nav:true
                    },
                 1000:{
-                        items:2 
+                    items:2 
                    }
-            }      
+            }
         });
 </script>
 </html>
