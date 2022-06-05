@@ -30,6 +30,7 @@ class AjaxController extends Controller
 
     public function filterDefaultStates(Request $request)
     {
+        // echo 'aaaaa';
         $country_id = $request->input('country_id');
         $state_id = $request->input('state_id');
         $new_state_id = $request->input('new_state_id', 'state_id');
@@ -40,6 +41,7 @@ class AjaxController extends Controller
 
     public function filterDefaultCities(Request $request)
     {
+        // echo 'abbbbbaaa';
         $state_id = $request->input('state_id');
         $city_id = $request->input('city_id');
         $cities = DataArrayHelper::defaultCitiesArray($state_id);
@@ -51,6 +53,7 @@ class AjaxController extends Controller
 
     public function filterLangStates(Request $request)
     {
+        // echo 'ccccccccccc';
         $country_id = $request->input('country_id');
         $state_id = $request->input('state_id');
         $new_state_id = $request->input('new_state_id', 'state_id');
@@ -61,6 +64,7 @@ class AjaxController extends Controller
 
     public function filterLangCities(Request $request)
     {
+        // echo 'ddddddddd';
         $state_id = $request->input('state_id');
         $city_id = $request->input('city_id');
         $cities = DataArrayHelper::langCitiesArray($state_id);
@@ -73,6 +77,7 @@ class AjaxController extends Controller
 
     public function filterStates(Request $request)
     {
+        // echo 'eeeeeeeeee';
         $country_id = $request->input('country_id');
         $state_id = $request->input('state_id');
         $new_state_id = $request->input('new_state_id', 'state_id');
@@ -83,6 +88,7 @@ class AjaxController extends Controller
 
     public function filterCities(Request $request)
     {
+        // echo 'ffffffff';
         $state_id = $request->input('state_id');
         $city_id = $request->input('city_id');
         $cities = DataArrayHelper::langCitiesArray($state_id);
@@ -95,6 +101,7 @@ class AjaxController extends Controller
 
     public function filterDegreeTypes(Request $request)
     {
+        // echo 'ggggggggg';
         $degree_level_id = $request->input('degree_level_id');
         $degree_type_id = $request->input('degree_type_id');
 

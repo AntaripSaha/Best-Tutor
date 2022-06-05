@@ -15,8 +15,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_title') !!}">
-        {!! Form::label('job_title', 'Job Title', ['class' => 'bold']) !!}                    
-        {!! Form::text('job_title', null, array('class'=>'form-control', 'id'=>'job_title', 'placeholder'=>'Job Title', 'dir'=>$direction)) !!}
+        {!! Form::label('job_title', 'Tution Title', ['class' => 'bold']) !!}                    
+        {!! Form::text('job_title', null, array('class'=>'form-control', 'id'=>'job_title', 'placeholder'=>'Tution Title', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_title') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_default') !!}">
@@ -40,8 +40,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'is_default') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_title_id') !!}" id="job_title_id_div">
-        {!! Form::label('job_title_id', 'Default Job Title', ['class' => 'bold']) !!}                    
-        {!! Form::select('job_title_id', ['' => 'Select Default Job Title']+$jobTitles, null, array('class'=>'form-control', 'id'=>'job_title_id')) !!}
+        {!! Form::label('job_title_id', 'Default Tution Title', ['class' => 'bold']) !!}                    
+        {!! Form::select('job_title_id', ['' => 'Select Default Tution Title']+$jobTitles, null, array('class'=>'form-control', 'id'=>'job_title_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_title_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_active') !!}">

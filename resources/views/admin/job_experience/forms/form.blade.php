@@ -15,8 +15,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience') !!}">
-        {!! Form::label('job_experience', 'Job Experience', ['class' => 'bold']) !!}                    
-        {!! Form::text('job_experience', null, array('class'=>'form-control', 'id'=>'job_experience', 'placeholder'=>'Job Experience', 'dir'=>$direction)) !!}
+        {!! Form::label('job_experience', 'Tution Experience', ['class' => 'bold']) !!}                    
+        {!! Form::text('job_experience', null, array('class'=>'form-control', 'id'=>'job_experience', 'placeholder'=>'Tution Experience', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_experience') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_default') !!}">
@@ -40,8 +40,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'is_default') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_experience_id') !!}" id="job_experience_id_div">
-        {!! Form::label('job_experience_id', 'Default Job Experience', ['class' => 'bold']) !!}                    
-        {!! Form::select('job_experience_id', ['' => 'Select Default Job Experience']+$jobExperiences, null, array('class'=>'form-control', 'id'=>'job_experience_id')) !!}
+        {!! Form::label('job_experience_id', 'Default Tution Experience', ['class' => 'bold']) !!}                    
+        {!! Form::select('job_experience_id', ['' => 'Select Default Tution Experience']+$jobExperiences, null, array('class'=>'form-control', 'id'=>'job_experience_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_active') !!}">

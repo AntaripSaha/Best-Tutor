@@ -21,15 +21,6 @@
             margin-bottom: 15px;
         }
         .description{
-            /* font-style: italic;
-            line-height: 24px;
-            letter-spacing: 2px;
-            font-size: 16px;
-            color: #fff;
-            padding-left: 4%;
-            margin-left: 0%;
-            padding-right: 15%; */
-
             font-style: italic;
             line-height: 22px;
             letter-spacing: 2px;
@@ -50,20 +41,19 @@
         .img{
             height: auto !important;
             width: 250px !important;
+            margin-left: 130px !important;
             margin-left: 46% !important;
             border-radius: 30% !important;
         }
 
-
     </style>
+    <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js"></script>
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
 </head>
 <body>
-    <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-<link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js">
-</script>
- <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js">
-   </script>
+
 
 <!----------HTML code starts here------->
 
@@ -75,28 +65,23 @@
                     <h3>{{__('Success')}} <span>{{__('Stories')}}</span></h3>
                 </div>
                 <!-- title end -->
-
         <div class="owl-carousel owl-theme owl-loaded owl-drag">
-        
             <div class="owl-stage-outer">
-          
                 <div class="owl-stage" style="transform: translate3d(-1527px, 0px, 0px); transition: all 0.25s ease 0s; width: 3334px;">
                     @if(isset($testimonials) && count($testimonials))
                     @foreach($testimonials as $testimonial)
- 
                         <div class="owl-item cloned">
                             <div class="item" style="margin-left:-25% !important">
                                 <div class="row" style="margin-right: 25% !important;">
                                     <div class="col-2">
                                         <img src="{{ asset($testimonial->image) }}" alt="" class="img" >
                                     </div>                                  
-                                    <div class="col-10">
+                                    <div id="testi" class="col-10">
                                         <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                         <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
-                                        <p class="description" style="text-align: left">"{{$testimonial->testimonial}}"</p>
+                                        <p class="description" style="text-align: left">"{{\Illuminate\Support\Str::limit($testimonial->testimonial, 150) }}"</p>
                                     </div>
                                 </div>
-                            
                                 {{-- <div class="ratinguser">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -108,8 +93,6 @@
                                 <div class="clientname" style="text:white">{{$testimonial->testimonial_by}}</div>
                                 <div class="clientinfo" style="text:white">{{$testimonial->company}}</div>
                                 <p class="description">"{{$testimonial->testimonial}}"</p> --}}
-
-
                             </div>
                         </div>
                         @endforeach
@@ -123,17 +106,5 @@
 </div>
 
 </body>
-<script>
-    // var owl = $('.owl-carousel');
-    // owl.owlCarousel({
-    //     items:2.35, 
-    //     // items change number for slider display on desktop
-    //     loop:true,
-    //     margin:0,
-    //     autoplay:true,
-    //     autoplayTimeout:1000,
-    //     autoplayHoverPause:true
-    // });
 
-</script>
 </html>

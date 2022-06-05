@@ -14,12 +14,12 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Job Titles</span> </li>
+                <li> <span>Tution Titles</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR --> 
         <!-- BEGIN PAGE TITLE-->
-        <h3 class="page-title">Manage Job Titles <small>Job Titles</small> </h3>
+        <h3 class="page-title">Manage Tution Titles <small>Tution Titles</small> </h3>
         <!-- END PAGE TITLE--> 
         <!-- END PAGE HEADER-->
         <div class="row">
@@ -27,8 +27,8 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light portlet-fit portlet-datatable bordered">
                     <div class="portlet-title">
-                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Job Titles</span> </div>
-                        <div class="actions"> <a href="{{ route('create.job.title') }}" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Add New Job Title</a> </div>
+                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Tution Titles</span> </div>
+                        <div class="actions"> <a href="{{ route('create.job.title') }}" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Add New Tution Title</a> </div>
                     </div>
                     <div class="portlet-body">
                         <div class="table-container">
@@ -37,7 +37,7 @@
                                     <thead>
                                         <tr role="row" class="filter"> 
                                             <td>{!! Form::select('lang', ['' => 'Select Language']+$languages, config('default_lang'), array('id'=>'lang', 'class'=>'form-control')) !!}</td>
-                                            <td><input type="text" class="form-control" name="job_title" id="job_title" autocomplete="off" placeholder="Job Title"></td>                      
+                                            <td><input type="text" class="form-control" name="job_title" id="job_title" autocomplete="off" placeholder="Tution Title"></td>                      
                                             <td><select name="is_active" id="is_active"  class="form-control">
                                                     <option value="-1">Is Active?</option>
                                                     <option value="1" selected="selected">Active</option>
@@ -45,7 +45,7 @@
                                                 </select></td></tr>
                                         <tr role="row" class="heading">                                            
                                             <th>Language</th>
-                                            <th>Job Title</th>
+                                            <th>Tution Title</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -108,7 +108,7 @@
     function deleteJobTitle(id, is_default) {
         var msg = 'Are you sure?';
         if (is_default == 1) {
-            msg = 'Are you sure? You are going to delete default Job Title, all other non default Job Titles will be deleted too!';
+            msg = 'Are you sure? You are going to delete default Tution Title, all other non default Tution Titles will be deleted too!';
         }
         if (confirm(msg)) {
             $.post("{{ route('delete.job.title') }}", {id: id, _method: 'DELETE', _token: '{{ csrf_token() }}'})

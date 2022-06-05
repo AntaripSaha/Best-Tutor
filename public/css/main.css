@@ -133,7 +133,7 @@ p {
 	line-height: 22px;
 }
 img {
-	max-width: 100%;
+	max-width: 200%;
 }
 select {
 	-webkit-border-radius: 0;
@@ -600,6 +600,7 @@ h3.seekertxt span{color: #009c46;}
 .additional_fields .form-control{margin-bottom: 15px; }
 .searchbar .form-control {
 	height: 50px;
+	width: 100%;
 	padding: 13px 15px;
 	border: none;
 	font-size: 18px;
@@ -4657,7 +4658,9 @@ Large Mobile Screen
 .searchwrap h3 {
 	font-size: 24px;
 }
-.searchbar .input-group{display: block;}
+.searchbar .input-group{
+	/* display: block; */
+}
 .searchbar .btn{margin: 15px 0 0 0}
 
 .usernav li a {

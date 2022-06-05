@@ -20,7 +20,7 @@
                                     <p>You have rejected on a job, posted by "{{ $company_name }}"</p>                  
                                     <p>
                                         <br>
-                                        Job details link :
+                                        Tution details link :
                                         <span style="color: #fff;text-decoration: none;background: #f25a55; padding: 7px 10px;text-align: center;display: inline-block;margin-top: 20px;"><a href="{{ $job_link }}">{{ $job_link }}</a></span>
                                         <br>
 

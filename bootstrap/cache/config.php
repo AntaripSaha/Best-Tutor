@@ -1,9 +1,9 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'JobsPortal',
+    'name' => 'Besttutorservice',
     'env' => 'local',
-    'debug' => false,
+    'debug' => true,
     'url' => 'http://127.0.0.1:8000/',
     'timezone' => 'UTC',
     'locale' => 'en',
@@ -261,12 +261,12 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'jobsportal_cache',
+    'prefix' => 'besttutorservice_cache',
   ),
   'captcha' => 
   array (
-    'sitekey' => '6LdLUZMUAAAAAF1F0GWT6nq7nh_mCqyet58GySE3',
-    'secret' => '6LdLUZMUAAAAAOILYE45Skx7rFJ95SJQJUkK4iWJ',
+    'sitekey' => '6Lemfc4fAAAAAADDIcX4TJ9FzbtFP_Lc4wr3-9fT',
+    'secret' => '6Lemfc4fAAAAACiJ_JFs-0-ApzPNDKVfWmokLWWO',
     'options' => 
     array (
       'timeout' => 2.0,
@@ -506,7 +506,7 @@
       ),
       'csv' => 
       array (
-        'delimiter' => ',',
+        'delimiter' => NULL,
         'enclosure' => '"',
         'escape_character' => '\\',
         'contiguous' => false,
@@ -563,10 +563,14 @@
     'transactions' => 
     array (
       'handler' => 'db',
+      'db' => 
+      array (
+        'connection' => NULL,
+      ),
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'C:\\xampp\\htdocs\\tutor\\storage\\framework/laravel-excel',
+      'local_path' => 'C:\\xampp\\htdocs\\tutor\\storage\\framework/cache/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -651,13 +655,13 @@
     'port' => 25,
     'from' => 
     array (
-      'address' => 'support@besttutors.com',
+      'address' => 'support@jobsportal.com',
       'name' => 'Best Tutor',
     ),
     'recieve_to' => 
     array (
-      'address' => 'besttutor@gmail.com',
-      'name' => 'Tutor',
+      'address' => 'info@besttutorservice.com',
+      'name' => 'Best Tutor',
     ),
     'encryption' => NULL,
     'username' => 'support@jobsportal.com',
@@ -948,7 +952,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'jobsportal_session',
+    'cookie' => 'besttutorservice_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -1027,7 +1031,7 @@
   ),
   'company' => 
   array (
-    'is_company_package_active' => 1,
+    'is_company_package_active' => 0,
   ),
   'default_lang' => 'en',
 );

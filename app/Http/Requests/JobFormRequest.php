@@ -69,14 +69,14 @@ class JobFormRequest extends Request
     {
         return [
             'company_id.required' => 'Please select Company.',
-            'title.required' => 'Please enter Job title.',
-            'description.required' => 'Please enter Job description.',
-            'benefits.required' => 'Please enter Job Benefits.',
-            'skills.required' => 'Please enter Job skills.',
+            'title.required' => 'Please enter Tution title.',
+            'description.required' => 'Please enter Tution description.',
+            'benefits.required' => 'Please enter Tution Benefits.',
+            'skills.required' => 'Please enter Tution skills.',
             'country_id.required' => 'Please select Country.',
             'state_id.required' => 'Please select Division.',
             'city_id.required' => 'Please select City.',
-            //'is_freelance.required' => 'Is this freelance Job?',
+            //'is_freelance.required' => 'Is this freelance Tution?',
             //'career_level_id.required' => 'Please select Career level.',
             //'salary_from.required' => 'Please select salary from.',
             //'salary_to.required' => 'Please select salary to.',
@@ -88,11 +88,11 @@ class JobFormRequest extends Request
             //'job_shift_id.required' => 'Please select job shift.',
             //'num_of_positions.required' => 'Please select number of positions.',
             //'gender_id.required' => 'Please select gender.',
-            'expiry_date.required' => 'Please enter Job expiry date.',
+            'expiry_date.required' => 'Please enter Tution expiry date.',
             //'degree_level_id.required' => 'Please select degree level.',
             'job_experience_id.required' => 'Please select job experience.',
-            'is_active.required' => 'Is this Job active?',
-            'is_featured.required' => 'Is this Job featured?',
+            'is_active.required' => 'Is this Tution active?',
+            'is_featured.required' => 'Is this Tution featured?',
         ];
     }
 

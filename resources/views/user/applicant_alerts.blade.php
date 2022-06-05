@@ -4,14 +4,14 @@
 @include('includes.header')
 <!-- Header end -->
 <!-- Inner Page Title start -->
-@include('includes.inner_page_title', ['page_title'=>__('My Job Alerts')])
+@include('includes.inner_page_title', ['page_title'=>__('My Tution Alerts')])
 <!-- Inner Page Title end -->
 <div class="listpgWraper">
     <div class="container">
         <div class="row"> @include('includes.user_dashboard_menu')
             <div class="col-lg-9 col-sm-8">
                 <div class="userdashbox">
-                    <h3>{{__('My Job Alerts')}}</h3>
+                    <h3>{{__('My Tution Alerts')}}</h3>
                    
 						<table class="table">
 						  <tbody>

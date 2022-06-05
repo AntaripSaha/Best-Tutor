@@ -15,8 +15,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'lang') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_shift') !!}">
-        {!! Form::label('job_shift', 'Job Shift', ['class' => 'bold']) !!}                    
-        {!! Form::text('job_shift', null, array('class'=>'form-control', 'id'=>'job_shift', 'placeholder'=>'Job Shift', 'dir'=>$direction)) !!}
+        {!! Form::label('job_shift', 'Tution Shift', ['class' => 'bold']) !!}                    
+        {!! Form::text('job_shift', null, array('class'=>'form-control', 'id'=>'job_shift', 'placeholder'=>'Tution Shift', 'dir'=>$direction)) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_shift') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_default') !!}">
@@ -40,8 +40,8 @@ $queryString = MiscHelper::getLangQueryStr();
         {!! APFrmErrHelp::showErrors($errors, 'is_default') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_shift_id') !!}" id="job_shift_id_div">
-        {!! Form::label('job_shift_id', 'Default Job Shift', ['class' => 'bold']) !!}                    
-        {!! Form::select('job_shift_id', ['' => 'Select Default Job Shift']+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
+        {!! Form::label('job_shift_id', 'Default Tution Shift', ['class' => 'bold']) !!}                    
+        {!! Form::select('job_shift_id', ['' => 'Select Default Tution Shift']+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_shift_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_active') !!}">

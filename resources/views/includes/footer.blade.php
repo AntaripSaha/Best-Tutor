@@ -68,7 +68,7 @@
 
             <!--Jobs By Industry-->
             <div class="col-md-3 col-sm-6">
-                <h5>{{__('Jobs By Industry')}}</h5>
+                <h5>{{__('Tution By Categories')}}</h5>
                 <!--Industry menu Start-->
                 <ul class="quicklinks">
                     @php

@@ -1,6 +1,40 @@
+<style>
+    @media only screen and (min-width: 260px) and (max-width: 550px) {
+            .empsearch {
+                height: 5000px !important;
+                padding: 22px 74px !important;
+                border: none !important;
+                font-size: 16px !important;
+                width: 100% !important;
+                box-shadow: 0px 20px 40px 5px rgb(0 0 0 / 20%) !important;
+            }
+            .seekersrch {
+                max-width: 700px !important;
+                background: #fff !important;
+                padding: 10px !important;
+                box-shadow: 0px 20px 40px 5px rgb(0 0 0 / 20%) !important;
+                border-radius: 5px !important;
+            }
+            .section {
+                padding: 16px 0 !important;
+                overflow: hidden !important;
+            }
+            #title_seekertxt{
+                font-size: 25px !important;
+                margin-bottom: -7% !important;
+            }
+            .searchbar .btn {
+                width: 50% !important;
+                margin-top: 5px !important;
+                margin-right: 213px !important;
+            }
+}
+
+</style>
+
 <div class="section greybg">
     <div class="container">
-        <h3 class="seekertxt"> <span>{{__('Search Available Tutors & Tution')}}.</span></h3>
+        <h3 id="title_seekertxt" class="seekertxt"> <span>{{__('Search Available Tutors & Tution')}}.</span></h3>
         <div class="row">
             <div class="col-md-6">
                 <div class="topsearchwrap">
@@ -31,7 +65,7 @@
                         <div class="searchbar">
                             <div class="srchbox seekersrch">		
                             <div class="input-group">
-                              <input type="text"  name="search" id="empsearch" value="{{Request::get('search', '')}}" class="form-control" placeholder="" autocomplete="off" />
+                              <input type="text"  name="search" id="" value="{{Request::get('search', '')}}" class="form-control" placeholder="" autocomplete="off" />
                               <span class="input-group-btn">
                                 <input type="submit" class="btn" value="{{__('Search Tution')}}">
                               </span>
@@ -42,13 +76,6 @@
                 </div>            
             </div>
         </div>
-
-
-
-
-
-
-
 
     </div>
 </div>

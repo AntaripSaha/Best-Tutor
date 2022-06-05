@@ -250,6 +250,8 @@ class JobController extends Controller
 
     public function applyJob(Request $request, $job_slug)
     {
+
+       // return $request;
         $user = Auth::user();
         $job = Job::where('slug', 'like', $job_slug)->first();
         

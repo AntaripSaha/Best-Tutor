@@ -8,20 +8,20 @@
         {!! APFrmErrHelp::showErrors($errors, 'company_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'title') !!}">
-        {!! Form::label('title', 'Job title', ['class' => 'bold']) !!}
-        {!! Form::text('title', null, array('class'=>'form-control', 'id'=>'title', 'placeholder'=>'Job title')) !!}
+        {!! Form::label('title', 'Tution title', ['class' => 'bold']) !!}
+        {!! Form::text('title', null, array('class'=>'form-control', 'id'=>'title', 'placeholder'=>'Tution title')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'title') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'description') !!}">
-        {!! Form::label('description', 'Job description', ['class' => 'bold']) !!}
-        {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>'Job description')) !!}
+        {!! Form::label('description', 'Tution description', ['class' => 'bold']) !!}
+        {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>'Tution description')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'description') !!}
     </div>
 	
 	
 	<div class="form-group {!! APFrmErrHelp::hasError($errors, 'benefits') !!}"> 
 		{!! Form::label('description', 'Benefits', ['class' => 'bold']) !!}
-	{!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits', 'placeholder'=>__('Job Benefits'))) !!}
+	{!! Form::textarea('benefits', null, array('class'=>'form-control', 'id'=>'benefits', 'placeholder'=>__('Tution Benefits'))) !!}
 	{!! APFrmErrHelp::showErrors($errors, 'benefits') !!} 
 	</div>
   
@@ -30,7 +30,7 @@
 	
 	
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'skills') !!}">
-        {!! Form::label('skills', 'Job skills', ['class' => 'bold']) !!}
+        {!! Form::label('skills', 'Tution skills', ['class' => 'bold']) !!}
         <?php
         $skills = old('skills', $jobSkillIds);
         ?>
@@ -127,13 +127,13 @@
         {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_type_id') !!}" id="job_type_id_div">
-        {!! Form::label('job_type_id', 'Job Type', ['class' => 'bold']) !!}                    
-        {!! Form::select('job_type_id', ['' => 'Select Job Type']+$jobTypes, null, array('class'=>'form-control', 'id'=>'job_type_id')) !!}
+        {!! Form::label('job_type_id', 'Tution Type', ['class' => 'bold']) !!}                    
+        {!! Form::select('job_type_id', ['' => 'Select Tution Type']+$jobTypes, null, array('class'=>'form-control', 'id'=>'job_type_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_type_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_shift_id') !!}" id="job_shift_id_div">
-        {!! Form::label('job_shift_id', 'Job Shift', ['class' => 'bold']) !!}                    
-        {!! Form::select('job_shift_id', ['' => 'Select Job Shift']+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
+        {!! Form::label('job_shift_id', 'Tution Shift', ['class' => 'bold']) !!}                    
+        {!! Form::select('job_shift_id', ['' => 'Select Tution Shift']+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_shift_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'num_of_positions') !!}" id="num_of_positions_div">
@@ -147,8 +147,8 @@
         {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}                                       
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'expiry_date') !!}">
-        {!! Form::label('expiry_date', 'Job expiry date', ['class' => 'bold']) !!}
-        {!! Form::text('expiry_date', null, array('class'=>'form-control datepicker', 'id'=>'expiry_date', 'placeholder'=>'Job expiry date', 'autocomplete'=>'off')) !!}
+        {!! Form::label('expiry_date', 'Tution expiry date', ['class' => 'bold']) !!}
+        {!! Form::text('expiry_date', null, array('class'=>'form-control datepicker', 'id'=>'expiry_date', 'placeholder'=>'Tution expiry date', 'autocomplete'=>'off')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'expiry_date') !!}
     </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'degree_level_id') !!}" id="degree_level_id_div">

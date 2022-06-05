@@ -5,7 +5,6 @@
             <h3>{{__('Featured')}} <span>{{__('Jobs')}}</span></h3>
         </div>
         <!-- title end --> 
-
         <!--Featured Job start-->
         <ul class="jobslist row">
             @if(isset($featuredJobs) && count($featuredJobs))
@@ -35,10 +34,8 @@
             @endif
             @endforeach
             @endif
-
         </ul>
         <!--Featured Job end--> 
-
         <!--button start-->
         <div class="viewallbtn"><a href="{{route('job.list', ['is_featured'=>1])}}">{{__('View All Featured Tution')}}</a></div>
         <!--button end--> 

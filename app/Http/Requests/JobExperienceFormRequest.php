@@ -47,9 +47,9 @@ class JobExperienceFormRequest extends Request
     public function messages()
     {
         return [
-            'job_experience.required' => 'Please enter Job Experience.',
-            'job_experience_id.required_if' => 'Please select default/fallback Job Experience.',
-            'is_default.required' => 'Is this Job Experience default?',
+            'job_experience.required' => 'Please enter Tution Experience.',
+            'job_experience_id.required_if' => 'Please select default/fallback Tution Experience.',
+            'is_default.required' => 'Is this Tution Experience default?',
             'is_active.required' => 'Please select status.',
             'lang.required' => 'Please select language.',
         ];

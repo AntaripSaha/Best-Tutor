@@ -4,7 +4,7 @@
 @include('includes.header') 
 <!-- Header end --> 
 <!-- Inner Page Title start --> 
-@include('includes.inner_page_title', ['page_title'=>__('Job Detail')]) 
+@include('includes.inner_page_title', ['page_title'=>__('Tution Detail')]) 
 <!-- Inner Page Title end -->
 @include('flash::message')
 @include('includes.inner_top_search')
@@ -48,7 +48,7 @@ $company = $job->getCompany();
 			<!-- Job Detail start -->
                 <div class="jobmainreq">
                     <div class="jobdetail">
-                       <h3><i class="fa fa-align-left" aria-hidden="true"></i> {{__('Job Detail')}}</h3>
+                       <h3><i class="fa fa-align-left" aria-hidden="true"></i> {{__('Tution Detail')}}</h3>
 						
 							
 							 <ul class="jbdetail">
@@ -109,7 +109,7 @@ $company = $job->getCompany();
 			<hr>
             <div class="jobButtons">
                 <a href="{{route('email.to.friend', $job->slug)}}" class="btn"><i class="fa fa-envelope" aria-hidden="true"></i> {{__('Email to Friend')}}</a>
-                @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug)) <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn"><i class="fa fa-floppy-o" aria-hidden="true"></i> {{__('Favourite Job')}} </a> @else <a href="{{route('add.to.favourite', $job->slug)}}" class="btn"><i class="fa fa-floppy-o" aria-hidden="true"></i> {{__('Add to Favourite')}}</a> @endif
+                @if(Auth::check() && Auth::user()->isFavouriteJob($job->slug)) <a href="{{route('remove.from.favourite', $job->slug)}}" class="btn"><i class="fa fa-floppy-o" aria-hidden="true"></i> {{__('Favourite Tution')}} </a> @else <a href="{{route('add.to.favourite', $job->slug)}}" class="btn"><i class="fa fa-floppy-o" aria-hidden="true"></i> {{__('Add to Favourite')}}</a> @endif
                 <a href="{{route('report.abuse', $job->slug)}}" class="btn report"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{__('Report Abuse')}}</a>
             </div>
         </div>
@@ -119,7 +119,7 @@ $company = $job->getCompany();
                 <!-- Job Description start -->
                 <div class="job-header">
                     <div class="contentbox">
-                        <h3><i class="fa fa-file-text-o" aria-hidden="true"></i> {{__('Job Description')}}</h3>
+                        <h3><i class="fa fa-file-text-o" aria-hidden="true"></i> {{__('Tution Description')}}</h3>
                         <p>{!! $job->description !!}</p>                       
                     </div>
                 </div>
@@ -167,7 +167,7 @@ $company = $job->getCompany();
                             <div class="ptext">{{$company->getLocation()}}</div>
                             <div class="opening">
                                 <a href="{{route('company.detail',$company->slug)}}">
-                                    {{App\Company::countNumJobs('company_id', $company->id)}} {{__('Current Jobs Openings')}}
+                                    {{App\Company::countNumJobs('company_id', $company->id)}} {{__('Current Tutions Openings')}}
                                 </a>
                             </div>
                             <div class="clearfix"></div>
@@ -182,7 +182,7 @@ $company = $job->getCompany();
 				
 				<!-- related jobs start -->
                 <div class="relatedJobs">
-                    <h3>{{__('Related Jobs')}}</h3>
+                    <h3>{{__('Related Tutions')}}</h3>
                     <ul class="searchList">
                         @if(isset($relatedJobs) && count($relatedJobs))
                         @foreach($relatedJobs as $relatedJob)

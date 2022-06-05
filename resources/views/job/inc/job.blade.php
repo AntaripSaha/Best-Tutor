@@ -1,4 +1,4 @@
-<h5>{{__('Job Details')}}</h5>
+<h5>{{__('Tution Details')}}</h5>
 @if(isset($job))
 {!! Form::model($job, array('method' => 'put', 'route' => array('update.front.job', $job->id), 'class' => 'form')) !!}
 {!! Form::hidden('id', $job->id) !!}
@@ -7,11 +7,11 @@
 @endif
 <div class="row">  
     <div class="col-md-12">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'title') !!}"> {!! Form::text('title', null, array('class'=>'form-control', 'id'=>'title', 'placeholder'=>__('Job title'))) !!}
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'title') !!}"> {!! Form::text('title', null, array('class'=>'form-control', 'id'=>'title', 'placeholder'=>__('Tution title'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'title') !!} </div>
     </div>
     <div class="col-md-12">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'description') !!}"> {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>__('Job description'))) !!}
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'description') !!}"> {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>__('Tution description'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'description') !!} 
         </div>
     </div>
@@ -103,7 +103,7 @@
     </div> --}}
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'job_shift_id') !!}" id="job_shift_id_div">
-            {!! Form::select('job_shift_id', ['' => __('Select Job Shift')]+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
+            {!! Form::select('job_shift_id', ['' => __('Select Tution Shift')]+$jobShifts, null, array('class'=>'form-control', 'id'=>'job_shift_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'job_shift_id') !!} 
         </div>
     </div>
@@ -145,7 +145,7 @@
     </div>
     <div class="col-md-12">
         <div class="formrow">
-            <button type="submit" class="btn">{{__('Update Job')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+            <button type="submit" class="btn">{{__('Update Tution')}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
         </div>
     </div>
 </div>
