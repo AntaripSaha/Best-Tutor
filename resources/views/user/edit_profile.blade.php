@@ -37,7 +37,6 @@
     .tab button.active {
     background-color: #ccc;
     }
-
     /* Style the tab content */
     .tabcontent {
     display: none;
@@ -50,17 +49,13 @@
     <div class="container">
         <div class="row">
             @include('includes.user_dashboard_menu')
-
             <div class="col-md-9 col-sm-8"> 
-              
                         <div class="userccount">
                             <div class="formpanel mt0"> @include('flash::message') 
                                 <!-- Personal Information -->
                                 {{-- @include('user.inc.profile')   --}}
-                                
                                 <h2>Edit Profile</h2>
                                 <p>Give Your Exact Information:</p>
-                                
                                 <div class="tab">
                                   <button class="tablinks" onclick="openCity(event, 'Profile')">Profile</button>
                                   <button class="tablinks" onclick="openCity(event, 'Description')">Description</button>
@@ -68,7 +63,7 @@
                                   <button class="tablinks" onclick="openCity(event, 'Skill')">Subjects</button>
                                   <button class="tablinks" onclick="openCity(event, 'Education')">Education</button>
                                   <button class="tablinks" onclick="openCity(event, 'Credential')">Credential</button>
-                                  <button class="tablinks" onclick="openCity(event, 'Language')">Language</button>
+                                  {{-- <button class="tablinks" onclick="openCity(event, 'Language')">Language</button> --}}
                                 </div>
                                 <div id="Profile" class="tabcontent" style="display: block !important">
                                   <h3></h3>@include('flash::message')
