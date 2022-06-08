@@ -32,14 +32,14 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Categories</label>
-                        <select class="form-control select2-multiple" name="category[]" multiple="multiple" style="width: 260px !important;">
-                            @foreach ($cat as $cat)
-                                <option value="{{$cat}}" selected>{{$cat}}</option>
-                            @endforeach
-                            @foreach ($category as $category)
-                                <option value="{{$category->name}}">{{$category->name}}</option>
-                            @endforeach
-                        </select>
+                <select class="form-control select2-multiple" name="category[]" multiple="multiple" style="width: 260px !important;">
+                    @foreach ($cat as $cat)
+                        <option value="{{$cat}}" selected>{{$cat}}</option>
+                    @endforeach
+                    @foreach ($category as $category)
+                        <option value="{{$category->name}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-md-6">

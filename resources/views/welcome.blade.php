@@ -7,12 +7,9 @@
 @include('includes.search')
 <!-- Search End --> 
 
-{{-- 
-<!-- Top Employers start -->
-@include('includes.top_employers')
-<!-- Top Employers ends -->  --}}
-
-
+{{--<!-- Top Employers start -->
+        @include('includes.top_employers')
+    <!-- Top Employers ends -->--}}
 
 <!-- Popular Searches start -->
 @include('includes.all_search_board')
