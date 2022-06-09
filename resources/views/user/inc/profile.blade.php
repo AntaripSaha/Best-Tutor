@@ -88,7 +88,8 @@
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
 			<label for="">{{__('Gender')}}</label>
 			{!! Form::select('gender_id', [''=>__('Select Gender')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} </div>
+            {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} 
+        </div>
     </div>
     {{-- <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'marital_status_id') !!}">
@@ -122,7 +123,8 @@
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
 			<label for="">{{__('Nationality')}}</label>
 			{!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, null, array('class'=>'form-control', 'id'=>'nationality_id')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!} </div>
+            {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!} 
+        </div>
     </div>
     <div class="col-md-6">
        
@@ -142,7 +144,8 @@
             ?>
 			<label for="">{{__('Date of Birth')}}</label>
 			{!! Form::date('date_of_birth', $dob, array('class'=>'form-control', 'id'=>'date_of_birth', 'placeholder'=>__('Date of Birth'), 'autocomplete'=>'off')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!} </div>
+            {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!} 
+        </div>
 		
 		
 		

@@ -223,21 +223,17 @@
       top: 25px;
       z-index: -1;
   }
-
   /*Color number of the step and the connector before it*/
   #progressbar li.active:before, #progressbar li.active:after {
       background: #673AB7;
   }
-
   /*Animated Progress Bar*/
   .progress {
     height: 20px;
   }
-
   .progress-bar {
     background-color: #673AB7;
   }
-
   /*Fit image in bootstrap div*/
   .fit-image{
       width: 100%;
@@ -249,7 +245,6 @@
         max-width: 100% !important;
     }
   }
-
   #sel{
     height: auto;
     width:80%;
@@ -276,8 +271,7 @@
                                   <div class="row justify-content-center">
                                     <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                                             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                                                <h2 id="heading">Sign Up Your User Account</h2>
-                                
+                                                <h2 id="heading">Enter All Valid Information</h2>
                                                 <form id="msform" action="{{route('all.store')}}" enctype="multipart/form-data">
                                                     @csrf
                                                     <!-- progressbar -->
@@ -381,25 +375,47 @@
                                                                         <label for="">{{__('Gender')}}</label>
                                                                         {!! Form::select('gender_id', [''=>__('Select Gender')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
                                                                         {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} 
-                                                                    </div>                                                                       
-                                                                    <label class="fieldlabels in">Additional Numbers:</label>
-                                                                    <input type="text" class="form-control" name="father_name" placeholder="Additional Numbers"/>
-                                                                    <label class="fieldlabels in">Details Address:</label>
-                                                                    <input type="text" class="form-control" name="father_no" placeholder="Details Address"/>
+                                                                    </div>                                                                      
+                                                                    <label class="fieldlabels in">Detailed Address:</label>
+                                                                    <textarea name="address" class="form-control" id="summary" placeholder="Detailed Address">{{$user->address }}</textarea>
+                                                                    
+                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
+                                                                        <?php 
+                                                            
+                                                                        if(!empty($user->date_of_birth)){
+                                                            
+                                                                            $d = $user->date_of_birth;
+                                                                        }else{
+                                                                            $d = date('Y-m-d', strtotime('-16 years'));
+                                                                        }
+                                                                        $dob = old('date_of_birth')?date('Y-m-d',strtotime(old('date_of_birth'))):date('Y-m-d',strtotime($d));
+                                                            
+                                                            
+                                                                        ?>
+                                                                        <label for="">{{__('Date of Birth')}}</label>
+                                                                        {!! Form::date('date_of_birth', $dob, array('class'=>'form-control', 'id'=>'date_of_birth', 'placeholder'=>__('Date of Birth'), 'autocomplete'=>'off')) !!}
+                                                                        {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!} 
+                                                                    </div>
+                                                                    
                                                                     <label class="fieldlabels in">Identity Type:</label>
-                                                                    <select id="id" name="id" class="form-control">
+                                                                    <select id="id" name="identity_type" class="form-control">
                                                                         <option value="bic">Birth Certificate</option>
                                                                         <option value="nid">National ID Card</option>
                                                                     </select>
+
                                                                     <label class="fieldlabels in">Identity Number:</label>
-                                                                    <input type="text" class="form-control" name="mother_no" placeholder="Identity Number"/>
-                                                                    <label class="fieldlabels in">Date of Birth:</label>
-                                                                    <input type="date" class="form-control" name="lname" placeholder="Date of Birth"/>
+                                                                    <input type="text" class="form-control" name="national_id_card_number" placeholder="Identity Number" value="{{ $user->national_id_card_number }}"/>
+
 
                                                                     <label class="fieldlabels in">Religion.:</label>
-                                                                    <input type="text" class="form-control" name="phno" placeholder="Religion"/>
-                                                                    <label class="fieldlabels in">Nationality:</label>
-                                                                    <input type="text" class="form-control" name="phno_2" placeholder="Nationality"/>
+                                                                    <input type="text" class="form-control" name="religion" placeholder="Religion" value="{{$user->religion}}"/>
+
+                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
+                                                                        <label for="">{{__('Nationality')}}</label>
+                                                                        {!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, null, array('class'=>'form-control', 'id'=>'nationality_id')) !!}
+                                                                        {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!} 
+                                                                    </div>
+
                                                                     <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}">
                                                                         <label for="">{{__('Country')}}</label>
                                                                         <?php $country_id = old('country_id', (isset($user) && (int) $user->country_id > 0) ? $user->country_id : $siteSetting->default_country_id); ?>
@@ -409,20 +425,17 @@
                                                                 </div>
 
                                                                 <div class="col-6">
-                                                                    <label class="fieldlabels in ">Father's Name:</label>
-                                                                    <input type="text" class="form-control" name="father_name" placeholder="Father's Name"/>
+                                                                    <label class="fieldlabels in">Father's Name:</label>
+                                                                    <input type="text" class="form-control" name="father_name" placeholder="Father's Name" value="{{ $user->father_name }}"/>
                                                                     <label class="fieldlabels in ">Father's Number:</label>
-                                                                    <input type="text" class="form-control" name="father_no" placeholder="Father's Number"/>
-                                                                    <label class="fieldlabels in ">Mother's Name:</label>
-                                                                    <input type="text" class="form-control" name="mother_name" placeholder="Mother's Name"/>
-                                                                    <label class="fieldlabels in ">Mother's Number:</label>
-                                                                    <input type="text" class="form-control" name="mother_no" placeholder="Mother's Number"/>
-                                                                    <label class="fieldlabels in">Last Name:</label>
-                                                                    <input type="text" class="form-control" name="lname" placeholder="Last Name"/>
-                                                                    <label class="fieldlabels in">Contact No.:</label>
-                                                                    <input type="text" class="form-control" name="phno" placeholder="Contact No."/>
-                                                                    <label class="fieldlabels in">Alternate Contact No.:</label>
-                                                                    <input type="text" class="form-control" name="phno_2" placeholder="Alternate Contact No."/>
+                                                                    <input type="text" class="form-control" name="father_no" placeholder="Father's Number" value="{{ $user->father_no }}"/>
+                                                                    <label class="fieldlabels in">Mother's Name:</label>
+                                                                    <input type="text" class="form-control" name="mother_name" placeholder="Mother's Name" value="{{ $user->mother_name }}"/>
+                                                                    <label class="fieldlabels in">Mother's Number:</label>
+                                                                    <input type="text" class="form-control" name="mother_no" placeholder="Mother's Number" value="{{ $user->mother_no }}"/>
+                                                                    <label class="fieldlabels in">Emergency Contact No.:</label>
+                                                                    <input type="text" class="form-control" name="e_no" placeholder="Emergency Contact No." value="{{ $user->mobile_num }}"/>
+                                                                    
                                                                     <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
                                                                         <label for="">{{__('Division')}}</label>
                                                                         <span id="state_dd"> {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'state_id')) !!}</span>
@@ -607,6 +620,18 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script type="text/javascript">
+    $(document).ready(function () {
+        initdatepicker();
+        $('#salary_currency').typeahead({
+            source: function (query, process) {
+                return $.get("{{ route('typeahead.currency_codes') }}", {query: query}, function (data) {
+                    console.log(data);
+                    data = $.parseJSON(data);
+                    return process(data);
+                });
+            }
+        });
+
         $('#country_id').on('change', function (e) {
             e.preventDefault();
             filterStates(0);
@@ -616,6 +641,72 @@
             filterCities(0);
         });
         filterStates(<?php echo old('state_id', $user->state_id); ?>);
+
+        /*******************************/
+        var fileInput = document.getElementById("image");
+        fileInput.addEventListener("change", function (e) {
+            var files = this.files
+            showThumbnail(files)
+        }, false)
+		
+		var fileInput_cover_image = document.getElementById("cover_image");
+
+        fileInput_cover_image.addEventListener("change", function (e) {
+
+            var files_cover_image = this.files
+
+            showThumbnail_cover_image(files_cover_image)
+
+        }, false)
+		
+		
+        function showThumbnail(files) {
+            $('#thumbnail').html('');
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i]
+                var imageType = /image.*/
+                if (!file.type.match(imageType)) {
+                    console.log("Not an Image");
+                    continue;
+                }
+                var reader = new FileReader()
+                reader.onload = (function (theFile) {
+                    return function (e) {
+                        $('#thumbnail').append('<div class="fileattached"><img height="100px" src="' + e.target.result + '" > <div>' + theFile.name + '</div><div class="clearfix"></div></div>');
+                    };
+                }(file))
+                var ret = reader.readAsDataURL(file);
+            }
+        }
+		
+		
+		function showThumbnail_cover_image(files) {
+
+        $('#thumbnail_cover_image').html('');
+
+        for (var i = 0; i < files.length; i++) {
+
+            var file = files[i]
+
+            var imageType = /image.*/
+
+            if (!file.type.match(imageType)) {
+
+                console.log("Not an Image");
+
+                continue;
+
+            }
+            var reader = new FileReader()
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    $('#thumbnail_cover_image').append('<div class="fileattached"><img height="100px" src="' + e.target.result + '" > <div>' + theFile.name + '</div><div class="clearfix"></div></div>');
+                };
+            }(file))
+            var ret = reader.readAsDataURL(file);
+        }
+    }
+    });
     function filterStates(state_id)
     {
         var country_id = $('#country_id').val();
@@ -636,6 +727,12 @@
                         $('#city_dd').html(response);
                     });
         }
+    }
+    function initdatepicker() {
+        $(".datepicker").datepicker({
+            autoclose: true,
+            format: 'yyyy-m-d'
+        });
     }
 </script>
 @include('includes.footer')
