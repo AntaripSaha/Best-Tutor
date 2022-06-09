@@ -9,13 +9,12 @@ use App\Models\TutionInfoStore;
 
 class TutorController extends Controller
 {
-
+    public function store(Request $req){
+        return $req;
+    }
     public function category(Request $req){
         // return $req;
-
         $tutor = TutionInfoStore::where('user_id', auth()->user()->id)->get();
-
-
         if(count($tutor) == 0){
             $tutor = new TutionInfoStore();
             $tutor->user_id = auth()->user()->id;
@@ -26,7 +25,6 @@ class TutorController extends Controller
             if($tutor->save()){
                 return redirect()->back()->with('success', 'Information Updated Successfully');
             }
-
         }else{
             $tutor = TutionInfoStore::where('user_id', auth()->user()->id)->update([
                                     'category'=>serialize($req->category),
@@ -34,12 +32,7 @@ class TutorController extends Controller
                                     'subject'=>serialize($req->subject),
                                     'place'=>serialize($req->place)
                                 ]);
-           
             return redirect()->back()->with('success', 'Information Updated Successfully');
-            
-
         }
-        
-
     }
 }

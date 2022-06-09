@@ -253,34 +253,33 @@
   #sel{
     height: auto;
     width:80%;
-
   }
-
+  .in{
+      margin-top: 6% !important;
+  }
 </style>
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
 <div class="listpgWraper">
     <div class="container">
         <div class="row">
             @include('includes.user_dashboard_menu')
             <div class="col-md-9 col-sm-8"> 
                         <div class="userccount">
-                            <div class="formpanel mt0"> @include('flash::message') 
+                            <div class="formpanel mt0"> @include('flash::message')
+
                                 <!-- Personal Information -->
                                 {{-- @include('user.inc.profile')   --}}
                                 <h2>Edit Profile</h2>
-
-
                                 <div class="container-fluid">
                                   <div class="row justify-content-center">
                                     <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                                             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                                                 <h2 id="heading">Sign Up Your User Account</h2>
                                 
-                                                <form id="msform">
+                                                <form id="msform" action="{{route('all.store')}}" enctype="multipart/form-data">
+                                                    @csrf
                                                     <!-- progressbar -->
                                                     <ul id="progressbar">
                                                         <li class="active" id="account"><strong>Tuition</strong></li>
@@ -306,7 +305,7 @@
                                                             </div>
                                                             <div>
                                                                 <h6>Preferable Categories</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="states[]" multiple="multiple" >
+                                                                <select class="js-example-basic-multiple" id="sel" name="category[]" multiple="multiple" >
                                                                     @foreach ($cat as $cat)
                                                                         <option value="{{$cat}}" selected>{{$cat}}</option>
                                                                     @endforeach
@@ -318,7 +317,7 @@
                                                             <hr>
                                                             <div>
                                                                 <h6>Preferable Classes</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="states[]" multiple="multiple" >
+                                                                <select class="js-example-basic-multiple" id="sel" name="class[]" multiple="multiple" >
                                                                     @foreach($cla as $cla)
                                                                     <option value="{{$cla}}" selected>{{$cla}}</option>
                                                                     @endforeach
@@ -330,7 +329,7 @@
                                                                 <hr>                                                          
                                                                 {{-- <label for="">Preferable Subjects</label> --}}
                                                                 <h6>Preferable Subjects</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="states[]" multiple="multiple" >
+                                                                <select class="js-example-basic-multiple" id="sel" name="subject[]" multiple="multiple" >
                                                                     @foreach($sub as $sub)
                                                                     <option value="{{$sub}}" selected>{{$sub}}</option>
                                                                     @endforeach
@@ -340,7 +339,7 @@
                                                                 </select>
                                                                 <hr>                                                            
                                                                 <h6>Place of Tutoring</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="states[]" multiple="multiple" >
+                                                                <select class="js-example-basic-multiple" id="sel" name="place[]" multiple="multiple" >
                                                                     @foreach($pla as $pla)
                                                                         <option value="{{$pla}}" selected>{{$pla}}</option>
                                                                     @endforeach
@@ -351,7 +350,6 @@
                                                         </div>
                                                         <input type="button" name="next" class="next action-button" value="Next"/>
                                                     </fieldset>
-
                                                     <fieldset>
                                                         <div class="form-card">
                                                             <div class="row">
@@ -379,42 +377,62 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-6">
-                                                                    <label class="fieldlabels ">Additional Numbers:</label>
+                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
+                                                                        <label for="">{{__('Gender')}}</label>
+                                                                        {!! Form::select('gender_id', [''=>__('Select Gender')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
+                                                                        {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} 
+                                                                    </div>                                                                       
+                                                                    <label class="fieldlabels in">Additional Numbers:</label>
                                                                     <input type="text" class="form-control" name="father_name" placeholder="Additional Numbers"/>
-                                                                    <label class="fieldlabels ">Details Address:</label>
+                                                                    <label class="fieldlabels in">Details Address:</label>
                                                                     <input type="text" class="form-control" name="father_no" placeholder="Details Address"/>
-                                                                    <label class="fieldlabels ">Identity Type:</label>
+                                                                    <label class="fieldlabels in">Identity Type:</label>
                                                                     <select id="id" name="id" class="form-control">
                                                                         <option value="bic">Birth Certificate</option>
                                                                         <option value="nid">National ID Card</option>
                                                                     </select>
-                                                                    <label class="fieldlabels ">Identity Number:</label>
+                                                                    <label class="fieldlabels in">Identity Number:</label>
                                                                     <input type="text" class="form-control" name="mother_no" placeholder="Identity Number"/>
-                                                                    <label class="fieldlabels">Date of Birth:</label>
+                                                                    <label class="fieldlabels in">Date of Birth:</label>
                                                                     <input type="date" class="form-control" name="lname" placeholder="Date of Birth"/>
 
-
-                                                                    <label class="fieldlabels">Religion.:</label>
+                                                                    <label class="fieldlabels in">Religion.:</label>
                                                                     <input type="text" class="form-control" name="phno" placeholder="Religion"/>
-                                                                    <label class="fieldlabels">Nationality:</label>
+                                                                    <label class="fieldlabels in">Nationality:</label>
                                                                     <input type="text" class="form-control" name="phno_2" placeholder="Nationality"/>
+                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}">
+                                                                        <label for="">{{__('Country')}}</label>
+                                                                        <?php $country_id = old('country_id', (isset($user) && (int) $user->country_id > 0) ? $user->country_id : $siteSetting->default_country_id); ?>
+                                                                        {!! Form::select('country_id', [''=>__('Select Country')]+$countries, $country_id, array('class'=>'form-control', 'id'=>'country_id')) !!}
+                                                                        {!! APFrmErrHelp::showErrors($errors, 'country_id') !!} 
+                                                                    </div>
                                                                 </div>
 
                                                                 <div class="col-6">
-                                                                    <label class="fieldlabels ">Father's Name:</label>
+                                                                    <label class="fieldlabels in ">Father's Name:</label>
                                                                     <input type="text" class="form-control" name="father_name" placeholder="Father's Name"/>
-                                                                    <label class="fieldlabels ">Father's Number:</label>
+                                                                    <label class="fieldlabels in ">Father's Number:</label>
                                                                     <input type="text" class="form-control" name="father_no" placeholder="Father's Number"/>
-                                                                    <label class="fieldlabels ">Mother's Name:</label>
+                                                                    <label class="fieldlabels in ">Mother's Name:</label>
                                                                     <input type="text" class="form-control" name="mother_name" placeholder="Mother's Name"/>
-                                                                    <label class="fieldlabels ">Mother's Number:</label>
+                                                                    <label class="fieldlabels in ">Mother's Number:</label>
                                                                     <input type="text" class="form-control" name="mother_no" placeholder="Mother's Number"/>
-                                                                    <label class="fieldlabels">Last Name:</label>
+                                                                    <label class="fieldlabels in">Last Name:</label>
                                                                     <input type="text" class="form-control" name="lname" placeholder="Last Name"/>
-                                                                    <label class="fieldlabels">Contact No.:</label>
+                                                                    <label class="fieldlabels in">Contact No.:</label>
                                                                     <input type="text" class="form-control" name="phno" placeholder="Contact No."/>
-                                                                    <label class="fieldlabels">Alternate Contact No.:</label>
+                                                                    <label class="fieldlabels in">Alternate Contact No.:</label>
                                                                     <input type="text" class="form-control" name="phno_2" placeholder="Alternate Contact No."/>
+                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
+                                                                        <label for="">{{__('Division')}}</label>
+                                                                        <span id="state_dd"> {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'state_id')) !!}</span>
+                                                                        {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} 
+                                                                    </div>
+                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
+                                                                        <label for="">{{__('Area')}}</label>
+                                                                        <span id="city_dd"> {!! Form::select('city_id', [''=>__('Select Area')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> 
+                                                                        {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} 
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -440,7 +458,25 @@
                                                         <input type="button" name="next" class="next action-button" value="Submit"/>
                                                         <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                                                     </fieldset>
+
                                                     <fieldset>
+                                                        <div class="form-card">
+                                                            <div class="row">
+                                                            <div class="col-7">
+                                                                <h2 class="fs-title">Image Upload:</h2>
+                                                              </div>
+                                                              <div class="col-5">
+                                                                <h2 class="steps">Step 4 - 5</h2>
+                                                              </div>
+                                                            </div>
+                                                            <label class="fieldlabels">Upload Your Photo:</label>
+                                                            <input type="file" name="pic" accept="image/*">
+                                                            <label class="fieldlabels">Upload Signature Photo:</label>
+                                                            <input type="file" name="pic" accept="image/*">
+                                                        </div>
+                                                        <input type="submit" >
+                                                    </fieldset>
+                                                    {{-- <fieldset>
                                                         <div class="form-card">
                                                           <div class="row">
                                                             <div class="col-7">
@@ -465,7 +501,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </fieldset>
+                                                    </fieldset> --}}
                                                 </form>
                                             </div>
                                         </div>
@@ -481,7 +517,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-
 <script>
 
 
@@ -571,7 +606,38 @@
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
+<script type="text/javascript">
+        $('#country_id').on('change', function (e) {
+            e.preventDefault();
+            filterStates(0);
+        });
+        $(document).on('change', '#state_id', function (e) {
+            e.preventDefault();
+            filterCities(0);
+        });
+        filterStates(<?php echo old('state_id', $user->state_id); ?>);
+    function filterStates(state_id)
+    {
+        var country_id = $('#country_id').val();
+        if (country_id != '') {
+            $.post("{{ route('filter.lang.states.dropdown') }}", {country_id: country_id, state_id: state_id, _method: 'POST', _token: '{{ csrf_token() }}'})
+                    .done(function (response) {
+                        $('#state_dd').html(response);
+                        filterCities(<?php echo old('city_id', $user->city_id); ?>);
+                    });
+        }
+    }
+    function filterCities(city_id)
+    {
+        var state_id = $('#state_id').val();
+        if (state_id != '') {
+            $.post("{{ route('filter.lang.cities.dropdown') }}", {state_id: state_id, city_id: city_id, _method: 'POST', _token: '{{ csrf_token() }}'})
+                    .done(function (response) {
+                        $('#city_dd').html(response);
+                    });
+        }
+    }
+</script>
 @include('includes.footer')
 @endsection
 @push('styles')

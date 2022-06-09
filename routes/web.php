@@ -54,6 +54,8 @@ Route::get('/linkstorage', function () {
   return 'ok';
 });
 
+Route::any('/all/store', 'Tution\TutorController@store')->name('all.store');
+
 Route::any('/tutor/store', 'Tution\TutorController@category')->name('tutor.store');
 
 

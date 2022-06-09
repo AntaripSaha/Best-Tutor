@@ -101,17 +101,22 @@
 			<label for="">{{__('Country')}}</label>
             <?php $country_id = old('country_id', (isset($user) && (int) $user->country_id > 0) ? $user->country_id : $siteSetting->default_country_id); ?>
             {!! Form::select('country_id', [''=>__('Select Country')]+$countries, $country_id, array('class'=>'form-control', 'id'=>'country_id')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'country_id') !!} </div>
+            {!! APFrmErrHelp::showErrors($errors, 'country_id') !!} 
+        </div>
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
 			<label for="">{{__('Division')}}</label>
-			<span id="state_dd"> {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'state_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} </div>
+			<span id="state_dd"> {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'state_id')) !!}</span>
+            {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} 
+        </div>
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
 			<label for="">{{__('Area')}}</label>
-			<span id="city_dd"> {!! Form::select('city_id', [''=>__('Select Area')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} </div>
+			<span id="city_dd"> {!! Form::select('city_id', [''=>__('Select Area')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> 
+            {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} 
+        </div>
     </div>
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
