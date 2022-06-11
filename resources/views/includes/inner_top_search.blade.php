@@ -9,7 +9,7 @@
 						</div>
 
 						<div class="col-lg-3">
-							<button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i> {{__('Search Jobs')}}</button>
+							<button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i> {{__('Search Tution')}}</button>
 						</div>
 
 					</div>

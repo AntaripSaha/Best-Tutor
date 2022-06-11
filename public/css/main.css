@@ -133,7 +133,7 @@ p {
 	line-height: 22px;
 }
 img {
-	max-width: 200%;
+	max-width: 100%;
 }
 select {
 	-webkit-border-radius: 0;

@@ -1,13 +1,13 @@
 <div class="col-md-3 col-sm-6"> 
 	<div class="jobreqbtn">
-	@if (Request::get('search') != '' || Request::get('functional_area_id') != '' || Request::get('country_id') != ''|| Request::get('state_id') != '' || Request::get('city_id') != ''|| Request::get('city_id') != '')
+	{{-- @if (Request::get('search') != '' || Request::get('functional_area_id') != '' || Request::get('country_id') != ''|| Request::get('state_id') != '' || Request::get('city_id') != ''|| Request::get('city_id') != '')
 	<a class="btn btn-job-alert" href="javascript:;">
 		<i class="fa fa-bell" style="font-size:1.125rem;"></i> {{__('Save Tution Alert')}} </a>
 	@else
 	<a class="btn btn-job-alert-disabled" disabled href="javascript:;">
 		<i class="fa fa-bell" style="font-size:1.125rem;"></i> {{__('Save Tution Alert')}}</a>
 	@endif
-	
+	 --}}
 	
 	@if(Auth::guard('company')->check())
 	<a href="{{ route('post.job') }}" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> {{__('Post Tution')}}</a>
@@ -20,8 +20,8 @@
         <input type="hidden" name="search" value="{{Request::get('search', '')}}"/>
         
         <!-- Jobs By Title -->
-        <div class="widget">
-            <h4 class="widget-title">{{__('Tutions By Title')}}</h4>
+        <div class="">
+            {{-- <h4 class="widget-title">{{__('Tutions By Title')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($jobTitlesArray) && count($jobTitlesArray))
                 @foreach($jobTitlesArray as $key=>$jobTitle)
@@ -35,13 +35,16 @@
 
                 @endforeach
                 @endif
-            </ul>
+            </ul> --}}
             <!-- title end --> 
-            <span class="text text-primary view_more hide_vm">{{__('View More')}}</span> </div>
+            {{-- <span class="text text-primary view_more hide_vm" style="margin-top:10px;">{{__('View More')}}</span> --}}
+            
+            
+        </div>
 
         <!-- Jobs By Country -->
-        <div class="widget">
-            <h4 class="widget-title">{{__('Tution By Country')}}</h4>
+        <div class="">
+            {{-- <h4 class="widget-title">{{__('Tution By Country')}}</h4>
             <ul class="optionlist view_more_ul">
                 @if(isset($countryIdsArray) && count($countryIdsArray))
                 @foreach($countryIdsArray as $key=>$country_id)
@@ -60,7 +63,8 @@
                 @endforeach
                 @endif
             </ul>
-            <span class="text text-primary view_more hide_vm">{{__('View More')}}</span> </div>
+            <span class="text text-primary view_more hide_vm">{{__('View More')}}</span>  --}}
+        </div>
         <!-- Jobs By Country end--> 
 
 

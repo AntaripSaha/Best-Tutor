@@ -146,9 +146,9 @@ if(null!==($package)){
                  <!-- Candidate Contact -->
                 <div class="job-header">
                     <div class="jobdetail">
-                        <h3>{{__('Candidate Contact')}}</h3>
+                        <h3>{{__('Candidate Info')}}</h3>
                         <div class="candidateinfo">            
-                            @if(!empty($user->phone))
+                            {{-- @if(!empty($user->phone))
                             <div class="loctext"><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:{{$user->phone}}">{{$user->phone}}</a></div>
                             @endif
                             @if(!empty($user->mobile_num))
@@ -156,7 +156,7 @@ if(null!==($package)){
                             @endif
                             @if(!empty($user->email))
                             <div class="loctext"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:{{$user->email}}">{{$user->email}}</a></div>
-                            @endif
+                            @endif --}}
                             <div class="loctext"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$user->street_address}}</div>
                         </div>  
                     </div>
