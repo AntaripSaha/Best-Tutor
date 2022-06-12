@@ -29,7 +29,7 @@ class JobAppliedJobSeekerMailable extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build() 
     {
         $company = $this->job->getCompany();
         $user = $this->jobApply->getUser();

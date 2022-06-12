@@ -24,6 +24,7 @@
         "laravel/ui": "^3.0",
         "maatwebsite/excel": "^3.1",
         "paypal/rest-api-sdk-php": "^1.14",
+        "phpmailer/phpmailer": "^6.6",
         "socialiteproviders/twitter": "^4.1",
         "spatie/laravel-newsletter": "^4.8",
         "stripe/stripe-php": "^7.49",

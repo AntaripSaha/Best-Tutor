@@ -36,10 +36,10 @@ $company = $job->getCompany();
                         <div class="ptext">{{__('Date Posted')}}: {{$job->created_at->format('M d, Y')}}</div>
 						
 						@if(!Auth::user() && !Auth::guard('company')->user())
-                        <a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{__('Login to View Salary')}} </a>
+                        <a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{__('Login to View Fees')}} </a>
 						@else
 						@if(!(bool)$job->hide_salary)
-                        <div class="salary">{{$job->getSalaryPeriod('salary_period')}}: <strong>{{$job->salary_from.' '.$job->salary_currency}} - {{$job->salary_to.' '.$job->salary_currency}}</strong></div>
+                        {{-- <div class="salary">{{$job->getSalaryPeriod('salary_period')}}: <strong>{{$job->salary_from.' '.$job->salary_currency}} - {{$job->salary_to.' '.$job->salary_currency}}</strong></div> --}}
                         @endif
 						@endif
                     

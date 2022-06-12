@@ -10,7 +10,7 @@
 
 <!-- Inner Page Title start --> 
 
-@include('includes.inner_page_title', ['page_title'=>__('Unlocked Seekers')]) 
+@include('includes.inner_page_title', ['page_title'=>__('Unlocked Tutors')]) 
 
 <!-- Inner Page Title end -->
 
@@ -28,7 +28,7 @@
 
                 <div class="myads">
 
-                    <h3>{{__('Unlocked Seekers')}}</h3>
+                    <h3>{{__('Unlocked Tutors')}}</h3>
 
                     <ul class="searchList">
 

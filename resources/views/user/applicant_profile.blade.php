@@ -198,14 +198,14 @@ if(null!==($package)){
                                 <div class="col-md-6 col-xs-6">{{__('Career Level')}}</div>
                                 <div class="col-md-6 col-xs-6"><span>{{$user->getCareerLevel('career_level')}}</span></div>
                             </li>             
-                            <li class="row">
+                            {{-- <li class="row">
                                 <div class="col-md-6 col-xs-6">{{__('Current Salary')}}</div>
                                 <div class="col-md-6 col-xs-6"><span class="permanent">{{$user->current_salary}} {{$user->salary_currency}}</span></div>
                             </li>
                             <li class="row">
                                 <div class="col-md-6 col-xs-6">{{__('Expected Salary')}}</div>
                                 <div class="col-md-6 col-xs-6"><span class="freelance">{{$user->expected_salary}} {{$user->salary_currency}}</span></div>
-                            </li>              
+                            </li>               --}}
                         </ul>
                     </div>
                 </div>

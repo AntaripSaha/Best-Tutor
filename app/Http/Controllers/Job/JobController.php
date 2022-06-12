@@ -37,6 +37,8 @@ use App\Http\Requests\Front\ApplyJobFormRequest;
 use App\Http\Controllers\Controller;
 use App\Traits\FetchJobs;
 use App\Events\JobApplied;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class JobController extends Controller
 {
@@ -289,7 +291,7 @@ class JobController extends Controller
 
     public function postApplyJob(ApplyJobFormRequest $request, $job_slug)
     {
-        $user = Auth::user();
+        $user = Auth::user(); 
         $user_id = $user->id;
         $job = Job::where('slug', 'like', $job_slug)->first();
 
@@ -307,8 +309,45 @@ class JobController extends Controller
             $user->availed_jobs_quota = $user->availed_jobs_quota + 1;
             $user->update();
         }
-        /*         * ******************************* */
-        event(new JobApplied($job, $jobApply));
+        /*         * *******************************  */
+        // event(new JobApplied($job, $jobApply));
+
+        require base_path("vendor/autoload.php");
+        $mail = new PHPMailer(true);     
+
+        //Enable SMTP debugging.
+        $mail->SMTPDebug = 0;                               
+        //Set PHPMailer to use SMTP.
+        $mail->isSMTP();            
+        //Set SMTP host name                          
+        $mail->Host = "smtp.gmail.com";
+        //Set this to true if SMTP host requires authentication to send email
+        $mail->SMTPAuth = true;                          
+        //Provide username and password     
+        $mail->Username = "info@besttutorservice.com";                 
+        $mail->Password = "RihrfX7m{&{.";                           
+        //If SMTP requires TLS encryption then set it
+        $mail->SMTPSecure = "tls";                           
+        //Set TCP port to connect to
+        $mail->Port = 587;                                   
+
+        $mail->From = "info@besttutorservice.com";
+        $mail->FromName = "Sender Name";
+
+        $mail->addAddress("antarip15@gmail.com", "Recepient Name");
+
+        $mail->isHTML(true);
+
+        $mail->Subject = "Subject Text";
+        $mail->Body = "<i>Mail body in HTML</i>";
+        $mail->AltBody = "This is the plain text version of the email content";
+
+        try {
+            $mail->send();
+            echo "Message has been sent successfully";
+        } catch (Exception $e) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        }
 
         flash(__('You have successfully applied for this job'))->success();
         return \Redirect::route('job.detail', $job_slug);

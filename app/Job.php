@@ -63,7 +63,7 @@ class Job extends Model
     }
 
     public function getJobSkillsList()
-    {
+    { 
         $str = '';
         if ($this->jobSkills->count()) {
             $jobSkills = $this->jobSkills;

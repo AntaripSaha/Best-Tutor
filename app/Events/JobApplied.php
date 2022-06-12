@@ -2,8 +2,8 @@
 
 namespace App\Events;
 
-use App\Job;
-use App\JobApply;
+use App\Job; 
+use App\JobApply; 
 use Illuminate\Queue\SerializesModels;
 
 class JobApplied

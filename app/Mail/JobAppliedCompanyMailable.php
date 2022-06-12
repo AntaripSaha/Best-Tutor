@@ -31,7 +31,7 @@ class JobAppliedCompanyMailable extends Mailable
      */
     public function build()
     {
-        $company = $this->job->getCompany();
+        $company = $this->job->getCompany(); 
         $user = $this->jobApply->getUser();
 
         return $this->from(config('mail.recieve_to.address'), config('mail.recieve_to.name'))
