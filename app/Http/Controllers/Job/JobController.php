@@ -309,38 +309,37 @@ class JobController extends Controller
             $user->availed_jobs_quota = $user->availed_jobs_quota + 1;
             $user->update();
         }
-        /*         * *******************************  */
+        /*         ********************************        */
         // event(new JobApplied($job, $jobApply));
 
-        require base_path("vendor/autoload.php");
-        $mail = new PHPMailer(true);     
+        // require base_path("vendor/autoload.php");
+        // $mail = new PHPMailer(true);     
+        // //Enable SMTP debugging.
+        // $mail->SMTPDebug = 0;                               
+        // //Set PHPMailer to use SMTP.
+        // $mail->isSMTP();
+        // //Set SMTP host name                          
+        // $mail->Host = "smtp.gmail.com";
+        // //Set this to true if SMTP host requires authentication to send email
+        // $mail->SMTPAuth = true;                          
+        // //Provide username and password     
+        // $mail->Username = "info@besttutorservice.com";                 
+        // $mail->Password = "RihrfX7m{&{.";                           
+        // //If SMTP requires TLS encryption then set it
+        // $mail->SMTPSecure = "tls";                           
+        // //Set TCP port to connect to
+        // $mail->Port = 587;                                   
 
-        //Enable SMTP debugging.
-        $mail->SMTPDebug = 0;                               
-        //Set PHPMailer to use SMTP.
-        $mail->isSMTP();            
-        //Set SMTP host name                          
-        $mail->Host = "smtp.gmail.com";
-        //Set this to true if SMTP host requires authentication to send email
-        $mail->SMTPAuth = true;                          
-        //Provide username and password     
-        $mail->Username = "info@besttutorservice.com";                 
-        $mail->Password = "RihrfX7m{&{.";                           
-        //If SMTP requires TLS encryption then set it
-        $mail->SMTPSecure = "tls";                           
-        //Set TCP port to connect to
-        $mail->Port = 587;                                   
+        // $mail->From = "info@besttutorservice.com";
+        // $mail->FromName = "Sender Name";
 
-        $mail->From = "info@besttutorservice.com";
-        $mail->FromName = "Sender Name";
+        // $mail->addAddress("abc@gmail.com", "Recepient Name");
 
-        $mail->addAddress("antarip15@gmail.com", "Recepient Name");
+        // $mail->isHTML(true);
 
-        $mail->isHTML(true);
-
-        $mail->Subject = "Subject Text";
-        $mail->Body = "<i>Mail body in HTML</i>";
-        $mail->AltBody = "This is the plain text version of the email content";
+        // $mail->Subject = "Subject Text";
+        // $mail->Body = "<i>Mail body in HTML</i>";
+        // $mail->AltBody = "This is the plain text version of the email content";
 
         try {
             $mail->send();

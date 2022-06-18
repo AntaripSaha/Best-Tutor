@@ -260,279 +260,272 @@
     <div class="container">
         <div class="row">
             @include('includes.user_dashboard_menu')
-            <div class="col-md-9 col-sm-8"> 
-                        <div class="userccount">
-                            <div class="formpanel mt0"> @include('flash::message')
-
-                                <!-- Personal Information -->
-                                {{-- @include('user.inc.profile')   --}}
-                                <h2>Edit Profile</h2>
-                                <div class="container-fluid">
-                                  <div class="row justify-content-center">
-                                    <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-                                            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                                                <h2 id="heading">Enter All Valid Information</h2>
-                                                <form id="msform" action="{{route('all.store')}}" enctype="multipart/form-data">
-                                                    @csrf
-                                                    <!-- progressbar -->
-                                                    <ul id="progressbar">
-                                                        <li class="active" id="account"><strong>Tuition</strong></li>
-                                                        <li id="personal"><strong>Education</strong></li>
-                                                        <li id="payment"><strong>Personal</strong></li>
-                                                        <li id="confirm"><strong>Credentials</strong></li>
-                                                        <li id="complete"><strong>Quiz</strong></li>
-                                                    </ul>
-                                                    <div class="progress">
-                                                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <br>
-                                                    <!-- fieldsets -->
-                                                    <fieldset>
-                                                        <div class="form-card">
-                                                          <div class="row">
-                                                            <div class="col-7">
-                                                                <h2 class="fs-title">Tution:</h2>
-                                                              </div>
-                                                              <div class="col-5">
-                                                                <h2 class="steps">Step 1 - 5</h2>
-                                                              </div>
-                                                            </div>
-                                                            <div>
-                                                                <h6>Preferable Categories</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="category[]" multiple="multiple" >
-                                                                    @foreach ($cat as $cat)
-                                                                        <option value="{{$cat}}" selected>{{$cat}}</option>
-                                                                    @endforeach
-                                                                    @foreach ($category as $category)
-                                                                        <option value="{{$category->name}}">{{$category->name}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                            <hr>
-                                                            <div>
-                                                                <h6>Preferable Classes</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="class[]" multiple="multiple" >
-                                                                    @foreach($cla as $cla)
-                                                                    <option value="{{$cla}}" selected>{{$cla}}</option>
-                                                                    @endforeach
-                                                                    @foreach($classes as $class)
-                                                                        <option value="{{$class->name}}">{{$class->name}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                                <hr>                                                          
-                                                                {{-- <label for="">Preferable Subjects</label> --}}
-                                                                <h6>Preferable Subjects</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="subject[]" multiple="multiple" >
-                                                                    @foreach($sub as $sub)
-                                                                    <option value="{{$sub}}" selected>{{$sub}}</option>
-                                                                    @endforeach
-                                                                    @foreach($subjects as $subject)
-                                                                        <option value="{{$subject->name}}">{{$subject->name}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                                <hr>                                                            
-                                                                <h6>Place of Tutoring</h6>
-                                                                <select class="js-example-basic-multiple" id="sel" name="place[]" multiple="multiple" >
-                                                                    @foreach($pla as $pla)
-                                                                        <option value="{{$pla}}" selected>{{$pla}}</option>
-                                                                    @endforeach
-                                                                    <option value="Student Home">Student Home</option>
-                                                                    <option value="My Home">My Home</option>
-                                                                    <option value="Online">Online</option>
-                                                                </select>                                                          
-                                                        </div>
-                                                        <input type="button" name="next" class="next action-button" value="Next"/>
-                                                    </fieldset>
-                                                    <fieldset>
-                                                        <div class="form-card">
-                                                            <div class="row">
-                                                                <div class="col-7">
-                                                                    <h2 class="fs-title">Education:</h2>
-                                                                </div>
-                                                                <div class="col-5">
-                                                                    <h2 class="steps">Step 2 - 5</h2>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <input type="button" name="next" class="next action-button" value="Next"/>
-                                                        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                                                    </fieldset>
-
-                                                    <fieldset>
-                                                        <div class="form-card">
-                                                            <div class="row">
-                                                                <div class="col-7">
-                                                                    <h2 class="fs-title">Personal Information:</h2>
-                                                                </div>
-                                                                <div class="col-5">
-                                                                    <h2 class="steps">Step 3 - 5</h2>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
-                                                                        <label for="">{{__('Gender')}}</label>
-                                                                        {!! Form::select('gender_id', [''=>__('Select Gender')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
-                                                                        {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} 
-                                                                    </div>                                                                      
-                                                                    <label class="fieldlabels in">Detailed Address:</label>
-                                                                    <textarea name="address" class="form-control" id="summary" placeholder="Detailed Address">{{$user->address }}</textarea>
-                                                                    
-                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
-                                                                        <?php 
-                                                            
-                                                                        if(!empty($user->date_of_birth)){
-                                                            
-                                                                            $d = $user->date_of_birth;
-                                                                        }else{
-                                                                            $d = date('Y-m-d', strtotime('-16 years'));
-                                                                        }
-                                                                        $dob = old('date_of_birth')?date('Y-m-d',strtotime(old('date_of_birth'))):date('Y-m-d',strtotime($d));
-                                                            
-                                                            
-                                                                        ?>
-                                                                        <label for="">{{__('Date of Birth')}}</label>
-                                                                        {!! Form::date('date_of_birth', $dob, array('class'=>'form-control', 'id'=>'date_of_birth', 'placeholder'=>__('Date of Birth'), 'autocomplete'=>'off')) !!}
-                                                                        {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!} 
-                                                                    </div>
-                                                                    
-                                                                    <label class="fieldlabels in">Identity Type:</label>
-                                                                    <select id="id" name="identity_type" class="form-control">
-                                                                        <option value="bic">Birth Certificate</option>
-                                                                        <option value="nid">National ID Card</option>
-                                                                    </select>
-
-                                                                    <label class="fieldlabels in">Identity Number:</label>
-                                                                    <input type="text" class="form-control" name="national_id_card_number" placeholder="Identity Number" value="{{ $user->national_id_card_number }}"/>
-
-
-                                                                    <label class="fieldlabels in">Religion.:</label>
-                                                                    <input type="text" class="form-control" name="religion" placeholder="Religion" value="{{$user->religion}}"/>
-
-                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
-                                                                        <label for="">{{__('Nationality')}}</label>
-                                                                        {!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, null, array('class'=>'form-control', 'id'=>'nationality_id')) !!}
-                                                                        {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!} 
-                                                                    </div>
-
-                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}">
-                                                                        <label for="">{{__('Country')}}</label>
-                                                                        <?php $country_id = old('country_id', (isset($user) && (int) $user->country_id > 0) ? $user->country_id : $siteSetting->default_country_id); ?>
-                                                                        {!! Form::select('country_id', [''=>__('Select Country')]+$countries, $country_id, array('class'=>'form-control', 'id'=>'country_id')) !!}
-                                                                        {!! APFrmErrHelp::showErrors($errors, 'country_id') !!} 
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-6">
-                                                                    <label class="fieldlabels in">Father's Name:</label>
-                                                                    <input type="text" class="form-control" name="father_name" placeholder="Father's Name" value="{{ $user->father_name }}"/>
-                                                                    <label class="fieldlabels in ">Father's Number:</label>
-                                                                    <input type="text" class="form-control" name="father_no" placeholder="Father's Number" value="{{ $user->father_no }}"/>
-                                                                    <label class="fieldlabels in">Mother's Name:</label>
-                                                                    <input type="text" class="form-control" name="mother_name" placeholder="Mother's Name" value="{{ $user->mother_name }}"/>
-                                                                    <label class="fieldlabels in">Mother's Number:</label>
-                                                                    <input type="text" class="form-control" name="mother_no" placeholder="Mother's Number" value="{{ $user->mother_no }}"/>
-                                                                    <label class="fieldlabels in">Emergency Contact No.:</label>
-                                                                    <input type="text" class="form-control" name="e_no" placeholder="Emergency Contact No." value="{{ $user->mobile_num }}"/>
-                                                                    
-                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
-                                                                        <label for="">{{__('Division')}}</label>
-                                                                        <span id="state_dd"> {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'state_id')) !!}</span>
-                                                                        {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} 
-                                                                    </div>
-                                                                    <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
-                                                                        <label for="">{{__('Area')}}</label>
-                                                                        <span id="city_dd"> {!! Form::select('city_id', [''=>__('Select Area')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> 
-                                                                        {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} 
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <input type="button" name="next" class="next action-button" value="Next"/>
-                                                        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                                                    </fieldset>
-
-                                                    <fieldset>
-                                                        <div class="form-card">
-                                                            <div class="row">
-                                                            <div class="col-7">
-                                                                <h2 class="fs-title">Image Upload:</h2>
-                                                              </div>
-                                                              <div class="col-5">
-                                                                <h2 class="steps">Step 4 - 5</h2>
-                                                              </div>
-                                                            </div>
-                                                            <label class="fieldlabels">Upload Your Photo:</label>
-                                                            <input type="file" name="pic" accept="image/*">
-                                                            <label class="fieldlabels">Upload Signature Photo:</label>
-                                                            <input type="file" name="pic" accept="image/*">
-                                                        </div>
-                                                        <input type="button" name="next" class="next action-button" value="Submit"/>
-                                                        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                                                    </fieldset>
-
-                                                    <fieldset>
-                                                        <div class="form-card">
-                                                            <div class="row">
-                                                            <div class="col-7">
-                                                                <h2 class="fs-title">Image Upload:</h2>
-                                                              </div>
-                                                              <div class="col-5">
-                                                                <h2 class="steps">Step 4 - 5</h2>
-                                                              </div>
-                                                            </div>
-                                                            <label class="fieldlabels">Upload Your Photo:</label>
-                                                            <input type="file" name="pic" accept="image/*">
-                                                            <label class="fieldlabels">Upload Signature Photo:</label>
-                                                            <input type="file" name="pic" accept="image/*">
-                                                        </div>
-                                                        <input type="submit" >
-                                                    </fieldset>
-                                                    {{-- <fieldset>
-                                                        <div class="form-card">
-                                                          <div class="row">
-                                                            <div class="col-7">
-                                                                <h2 class="fs-title">Quiz:</h2>
-                                                              </div>
-                                                              <div class="col-5">
-                                                                <h2 class="steps">Step 5 - 5</h2>
-                                                              </div>
-                                                            </div>
-                                                            <br><br>
-                                                            <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2>
-                                                            <br>
-                                                            <div class="row justify-content-center">
-                                                                <div class="col-3">
-                                                                    <img src="https://i.imgur.com/GwStPmg.png" class="fit-image">
-                                                                </div>
-                                                            </div>
-                                                            <br><br>
-                                                            <div class="row justify-content-center">
-                                                                <div class="col-7 text-center">
-                                                                    <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset> --}}
-                                                </form>
-                                            </div>
+            <div class="col-md-9 col-sm-8">
+                <div class="userccount">
+                    <div class="formpanel mt0"> @include('flash::message')
+                        <!-- Personal Information -->
+                        {{-- @include('user.inc.profile')   --}}
+                        <h2>Edit Profile</h2>
+                        <div class="container-fluid">
+                          <div class="row justify-content-center">
+                            <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                                    <h2 id="heading">Enter All Valid Information</h2>
+                                    <form style="width: 90%; margin:0px auto" id="msform" action="{{route('all.store')}}" enctype="multipart/form-data">
+                                        @csrf
+                                        <!-- progressbar -->
+                                        <ul id="progressbar">
+                                            <li class="active" id="account"><strong>Tuition</strong></li>
+                                            <li id="personal"><strong>Education</strong></li>
+                                            <li id="payment"><strong>Personal</strong></li>
+                                            <li id="confirm"><strong>Credentials</strong></li>
+                                            {{-- <li id="complete"><strong>Quiz</strong></li> --}}
+                                        </ul>
+                                        <div class="progress">
+                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                  </div>
+                                        <br>
+                                        <!-- fieldsets -->
+                                        <fieldset>
+                                            <div class="form-card">
+                                              <div class="row">
+                                                <div class="col-7">
+                                                    <h2 class="fs-title">Tution:</h2>
+                                                  </div>
+                                                  <div class="col-5">
+                                                    <h2 class="steps">Step 1 - 5</h2>
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                    <h6>Preferable Categories</h6>
+                                                    <select class="js-example-basic-multiple" id="sel" name="category[]" multiple="multiple" >
+                                                        @foreach ($cat as $cat)
+                                                            <option value="{{$cat}}" selected>{{$cat}}</option>
+                                                        @endforeach
+                                                        @foreach ($category as $category)
+                                                            <option value="{{$category->name}}">{{$category->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <hr>
+                                                <div>
+                                                    <h6>Preferable Classes</h6>
+                                                    <select class="js-example-basic-multiple" id="sel" name="class[]" multiple="multiple" >
+                                                        @foreach($cla as $cla)
+                                                        <option value="{{$cla}}" selected>{{$cla}}</option>
+                                                        @endforeach
+                                                        @foreach($classes as $class)
+                                                            <option value="{{$class->name}}">{{$class->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                    <hr>                                                          
+                                                    {{-- <label for="">Preferable Subjects</label> --}}
+                                                    <h6>Preferable Subjects</h6>
+                                                    <select class="js-example-basic-multiple" id="sel" name="subject[]" multiple="multiple" >
+                                                        @foreach($sub as $sub)
+                                                        <option value="{{$sub}}" selected>{{$sub}}</option>
+                                                        @endforeach
+                                                        @foreach($subjects as $subject)
+                                                            <option value="{{$subject->name}}">{{$subject->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <hr>                                                            
+                                                    <h6>Place of Tutoring</h6>
+                                                    <select class="js-example-basic-multiple" id="sel" name="place[]" multiple="multiple" >
+                                                        @foreach($pla as $pla)
+                                                            <option value="{{$pla}}" selected>{{$pla}}</option>
+                                                        @endforeach
+                                                        <option value="Student Home">Student Home</option>
+                                                        <option value="My Home">My Home</option>
+                                                        <option value="Online">Online</option>
+                                                    </select>                                                          
+                                            </div>
+                                            <input type="button" name="next" class="next action-button" value="Next"/>
+                                        </fieldset>
+                                        
+                                        <fieldset>
+                                            <div class="form-card">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2 class="fs-title">Education:</h2>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <h2 class="steps">Step 2 - 5</h2>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    @include('user.forms.education.education')
+                                                </div>
+                                            </div>
+                                            <input type="button" name="next" class="next action-button" value="Next"/>
+                                            <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                        </fieldset>
+
+                                        <fieldset>
+                                            <div class="form-card">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2 class="fs-title">Personal Information:</h2>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <h2 class="steps">Step 3 - 5</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
+                                                            <label for="">{{__('Gender')}}</label>
+                                                            {!! Form::select('gender_id', [''=>__('Select Gender')]+$genders, null, array('class'=>'form-control', 'id'=>'gender_id')) !!}
+                                                            {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!} 
+                                                        </div>                                                                      
+                                                        <label class="fieldlabels in">Detailed Address:</label>
+                                                        <textarea name="address" class="form-control" id="summary" placeholder="Detailed Address">{{$user->address }}</textarea>
+                                                        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'date_of_birth') !!}">
+                                                            <?php 
+                                                            if(!empty($user->date_of_birth)){
+                                                                $d = $user->date_of_birth;
+                                                            }else{
+                                                                $d = date('Y-m-d', strtotime('-16 years'));
+                                                            }
+                                                            $dob = old('date_of_birth')?date('Y-m-d',strtotime(old('date_of_birth'))):date('Y-m-d',strtotime($d));
+                                                            ?>
+                                                            <label for="">{{__('Date of Birth')}}</label>
+                                                            {!! Form::date('date_of_birth', $dob, array('class'=>'form-control', 'id'=>'date_of_birth', 'placeholder'=>__('Date of Birth'), 'autocomplete'=>'off')) !!}
+                                                            {!! APFrmErrHelp::showErrors($errors, 'date_of_birth') !!} 
+                                                        </div>
+                                                        
+                                                        <label class="fieldlabels in">Identity Type:</label>
+                                                        <select id="id" name="identity_type" class="form-control">
+                                                            <option value="bic">Birth Certificate</option>
+                                                            <option value="nid">National ID Card</option>
+                                                        </select>
+
+                                                        <label class="fieldlabels in">Identity Number:</label>
+                                                        <input type="text" class="form-control" name="national_id_card_number" placeholder="Identity Number" value="{{ $user->national_id_card_number }}"/>
+
+
+                                                        <label class="fieldlabels in">Religion.:</label>
+                                                        <input type="text" class="form-control" name="religion" placeholder="Religion" value="{{$user->religion}}"/>
+
+                                                        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'nationality_id') !!}">
+                                                            <label for="">{{__('Nationality')}}</label>
+                                                            {!! Form::select('nationality_id', [''=>__('Select Nationality')]+$nationalities, null, array('class'=>'form-control', 'id'=>'nationality_id')) !!}
+                                                            {!! APFrmErrHelp::showErrors($errors, 'nationality_id') !!} 
+                                                        </div>
+
+                                                        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}">
+                                                            <label for="">{{__('Country')}}</label>
+                                                            <?php $country_id = old('country_id', (isset($user) && (int) $user->country_id > 0) ? $user->country_id : $siteSetting->default_country_id); ?>
+                                                            {!! Form::select('country_id', [''=>__('Select Country')]+$countries, $country_id, array('class'=>'form-control', 'id'=>'country_id')) !!}
+                                                            {!! APFrmErrHelp::showErrors($errors, 'country_id') !!} 
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-6">
+                                                        <label class="fieldlabels in">Father's Name:</label>
+                                                        <input type="text" class="form-control" name="father_name" placeholder="Father's Name" value="{{ $user->father_name }}"/>
+                                                        <label class="fieldlabels in ">Father's Number:</label>
+                                                        <input type="text" class="form-control" name="father_no" placeholder="Father's Number" value="{{ $user->father_no }}"/>
+                                                        <label class="fieldlabels in">Mother's Name:</label>
+                                                        <input type="text" class="form-control" name="mother_name" placeholder="Mother's Name" value="{{ $user->mother_name }}"/>
+                                                        <label class="fieldlabels in">Mother's Number:</label>
+                                                        <input type="text" class="form-control" name="mother_no" placeholder="Mother's Number" value="{{ $user->mother_no }}"/>
+                                                        <label class="fieldlabels in">Emergency Contact No.:</label>
+                                                        <input type="text" class="form-control" name="e_no" placeholder="Emergency Contact No." value="{{ $user->mobile_num }}"/>
+                                                        
+                                                        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
+                                                            <label for="">{{__('Division')}}</label>
+                                                            <span id="state_dd"> {!! Form::select('state_id', [''=>__('Select Division')], null, array('class'=>'form-control', 'id'=>'state_id')) !!}</span>
+                                                            {!! APFrmErrHelp::showErrors($errors, 'state_id') !!} 
+                                                        </div>
+                                                        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
+                                                            <label for="">{{__('Area')}}</label>
+                                                            <span id="city_dd"> {!! Form::select('city_id', [''=>__('Select Area')], null, array('class'=>'form-control', 'id'=>'city_id')) !!} </span> 
+                                                            {!! APFrmErrHelp::showErrors($errors, 'city_id') !!} 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="button" name="next" class="next action-button" value="Next"/>
+                                            <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                        </fieldset>
+                                        
+                                        <fieldset>
+                                            <div class="form-card">
+                                                <div class="row">
+                                                <div class="col-7">
+                                                    <h2 class="fs-title">Credentials Upload:</h2>
+                                                  </div>
+                                                  <div class="col-5">
+                                                    <h2 class="steps">Step 4 - 5</h2>
+                                                  </div>
+                                                </div>
+                                                @include('user.forms.cv.cvs')
+                                            </div>
+                                            <input type="button" name="next" class="next action-button" value="Submit"/>
+                                            <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                        </fieldset>
+
+                                        <fieldset>
+                                            <div class="form-card">
+                                                <div class="row">
+                                                <div class="col-7">
+                                                    <h2 class="fs-title">Image Upload:</h2>
+                                                  </div>
+                                                  <div class="col-5">
+                                                    <h2 class="steps">Step 4 - 5</h2>
+                                                  </div>
+                                                </div>
+                                                <label class="fieldlabels">Upload Your Photo:</label>
+                                                <input type="file" name="pic" accept="image/*">
+                                                <label class="fieldlabels">Upload Signature Photo:</label>
+                                                <input type="file" name="pic" accept="image/*">
+                                            </div>
+                                            <input type="submit" >
+                                        </fieldset> 
+
+                                        <fieldset>
+                                            <div class="form-card">
+                                              <div class="row">
+                                                <div class="col-7">
+                                                    <h2 class="fs-title">Quiz:</h2>
+                                                  </div>
+                                                  <div class="col-5">
+                                                    <h2 class="steps">Step 5 - 5</h2>
+                                                  </div>
+                                                </div>
+                                                <br><br>
+                                                <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2>
+                                                <br>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-3">
+                                                        <img src="https://i.imgur.com/GwStPmg.png" class="fit-image">
+                                                    </div>
+                                                </div>
+                                                <br><br>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-7 text-center">
+                                                        <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
                                 </div>
                             </div>
+                          </div>
                         </div>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>  
 </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script>
-
-
   $(document).ready(function(){
       
       var current_fs, next_fs, previous_fs; //fieldsets
@@ -740,6 +733,9 @@
 @push('styles')
 <style type="text/css">
     .userccount p{ text-align:left !important;}
+    .modal-backdrop {
+        z-index: -9999 !important;
+    }
 </style>
 @endpush
 @push('scripts')

@@ -15,18 +15,15 @@
 
 <hr>
 
+
 <div class="modal" id="add_cv_modal" role="dialog"></div>
 
 @push('css')
 
 <style type="text/css">
-
     .datepicker>div {
-
         display: block;
-
     }
-
 </style>
 
 @endpush
