@@ -1,7 +1,7 @@
 <form class="form" id="add_edit_profile_cv" method="POST" action="{{ route('store.profile.cv', [$user->id]) }}" target="cv_iframe">{{ csrf_field() }}
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
         <h4 class="modal-title">{{__('Add Credential')}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
     </div>
     <div class="modal-body">
         <div class="form-body">

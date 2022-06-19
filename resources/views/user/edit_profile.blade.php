@@ -355,7 +355,8 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    @include('user.forms.education.education')
+                                                        
+                                                    @include('user.forms.education.new_edu')
                                                 </div>
                                             </div>
                                             <input type="button" name="next" class="next action-button" value="Next"/>
@@ -485,7 +486,7 @@
                                             <input type="submit" >
                                         </fieldset> 
 
-                                        <fieldset>
+                                        {{-- <fieldset>
                                             <div class="form-card">
                                               <div class="row">
                                                 <div class="col-7">
@@ -510,7 +511,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </fieldset>
+                                        </fieldset> --}}
                                     </form>
                                 </div>
                             </div>

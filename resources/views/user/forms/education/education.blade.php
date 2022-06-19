@@ -89,13 +89,9 @@
             data: {"education_id": education_id, "_token": "{{ csrf_token() }}"},
 
             datatype: 'json',
-
             success: function (json) {
-
             $("#add_education_modal").html(json.html);
-
             initdatepicker();
-
             filterLangStatesEducation(state_id, city_id);
 
             filterDegreeTypes(degree_type_id);

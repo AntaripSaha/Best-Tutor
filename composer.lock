@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0360c4ed3db672e8e6a507ee3c1c56de",
+    "content-hash": "14d98818e9457e5ac157818cd62c5db7",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1446,6 +1446,69 @@
                 }
             ],
             "time": "2022-03-20T21:55:58+00:00"
+        },
+        {
+            "name": "harishdurga/laravel-quiz",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harishdurga/laravel-quiz.git",
+                "reference": "0db507b5624d9a32dcab8c5067a00e3f34de7cdd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harishdurga/laravel-quiz/zipball/0db507b5624d9a32dcab8c5067a00e3f34de7cdd",
+                "reference": "0db507b5624d9a32dcab8c5067a00e3f34de7cdd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "nunomaduro/larastan": "^0.7.10",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Harishdurga\\LaravelQuiz\\LaravelQuizServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelQuiz": "Harishdurga\\LaravelQuiz\\LaravelQuizFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Harishdurga\\LaravelQuiz\\": "src",
+                    "Harishdurga\\LaravelQuiz\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Harish Durga",
+                    "email": "durgaharish5@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides Quiz Functionality",
+            "homepage": "https://github.com/harishdurga/laravel-quiz",
+            "keywords": [
+                "harishdurga",
+                "laravel-quiz"
+            ],
+            "support": {
+                "issues": "https://github.com/harishdurga/laravel-quiz/issues",
+                "source": "https://github.com/harishdurga/laravel-quiz/tree/v1.0"
+            },
+            "time": "2021-07-21T13:42:20+00:00"
         },
         {
             "name": "intervention/image",

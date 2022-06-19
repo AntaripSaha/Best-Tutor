@@ -46,6 +46,17 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'harishdurga/laravel-quiz' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Harishdurga\\LaravelQuiz\\LaravelQuizServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'LaravelQuiz' => 'Harishdurga\\LaravelQuiz\\LaravelQuizFacade',
+    ),
+  ),
   'intervention/image' => 
   array (
     'providers' => 
