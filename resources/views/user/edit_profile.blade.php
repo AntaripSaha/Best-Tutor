@@ -355,7 +355,6 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                        
                                                     @include('user.forms.education.new_edu')
                                                 </div>
                                             </div>
