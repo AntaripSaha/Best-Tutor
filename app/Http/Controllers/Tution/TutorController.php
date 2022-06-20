@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use app\MajorSubject;
 use App\Models\TutionInfoStore;
+use App\ProfileEducation;
 use App\User;
 
 class TutorController extends Controller
 {
+
     public function store(Request $req){
         
        $user = User::where('id', auth()->user()->id)->update([
@@ -53,6 +55,32 @@ class TutorController extends Controller
                                     'place'=>serialize($req->place)
                                 ]);
             return redirect()->back()->with('success', 'Information Updated Successfully');
+        }
+    }
+
+    public function education_store(Request $request)
+    {
+        // return $request;
+        $profile_education = new ProfileEducation;
+        $profile_education->user_id = auth()->user()->id;
+        $profile_education->degree_level_id = $request->degree_id;
+        $profile_education->degree_title = $request->degree_title;
+        $profile_education->major = $request->major;
+        $profile_education->institution = $request->institute_name;
+        $profile_education->date_completion = $request->passing_year;
+        $profile_education->degree_result = $request->result;
+        $profile_education->from_date = $request->from_date;
+        $profile_education->to_date = $request->to_date;
+        if($profile_education->save()){
+            
+            return response()->json(['success'=>'Data Saved Successfully']);
+        }
+        
+    }
+    public function education_delete($id)
+    {
+        if(ProfileEducation::find($id)->delete()){
+            return redirect()->route('my.profile');
         }
     }
 }

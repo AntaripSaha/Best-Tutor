@@ -471,16 +471,14 @@
                                             <div class="form-card">
                                                 <div class="row">
                                                 <div class="col-7">
-                                                    <h2 class="fs-title">Image Upload:</h2>
+                                                    <h2 class="fs-title">Quiz:</h2>
                                                   </div>
                                                   <div class="col-5">
                                                     <h2 class="steps">Step 4 - 5</h2>
                                                   </div>
                                                 </div>
-                                                <label class="fieldlabels">Upload Your Photo:</label>
-                                                <input type="file" name="pic" accept="image/*">
-                                                <label class="fieldlabels">Upload Signature Photo:</label>
-                                                <input type="file" name="pic" accept="image/*">
+                                                <label class="fieldlabels">Results:</label>
+                                                <h4 style="color: aqua">You have passed the exam by gaining 7 out of 10 </h4>
                                             </div>
                                             <input type="submit" >
                                         </fieldset> 

@@ -1,7 +1,7 @@
 <?php
 
 
-
+use Illuminate\Http\Request;
 
 
 
@@ -58,6 +58,8 @@ Route::any('/all/store', 'Tution\TutorController@store')->name('all.store');
 
 Route::any('/tutor/store', 'Tution\TutorController@category')->name('tutor.store');
 
+Route::post('/education/store', 'Tution\TutorController@education_store')->name('education.store');
+Route::any('/education/delete/{id}', 'Tution\TutorController@education_delete')->name('education.delete');
 
 Route::get('/otp', 'OtpController@otp')->name('otp');
 /* * ******** IndexController ************ */
