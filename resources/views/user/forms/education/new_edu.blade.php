@@ -36,7 +36,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Add Education</h4>
-          <button type="button" class="close" data-dismiss="modal" id="modal_close">&times;</button>
+          <button type="" class="close" data-dismiss="modal" id="modal_close">&times;</button>
           
         </div>
 

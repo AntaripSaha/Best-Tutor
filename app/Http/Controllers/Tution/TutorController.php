@@ -8,6 +8,7 @@ use app\MajorSubject;
 use App\Models\TutionInfoStore;
 use App\ProfileEducation;
 use App\User;
+use Illuminate\Support\Facades\Redirect;
 
 class TutorController extends Controller
 {
@@ -80,7 +81,8 @@ class TutorController extends Controller
     public function education_delete($id)
     {
         if(ProfileEducation::find($id)->delete()){
-            return redirect()->route('my.profile');
+            // window.location.reload();
+            return Redirect::to('home')->with('message','Operation Successful !');
         }
     }
 }
