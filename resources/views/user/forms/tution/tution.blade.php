@@ -1,6 +1,6 @@
 
-    <style>
-        #tution_submit{
+<style>
+    #tution_submit{
             display: inline-block;
             background: #17d27c;
             color: #fff;
@@ -9,7 +9,7 @@
             margin-top: 15px;
             border: none;
     }
-        #tution_submit:hover {
+    #tution_submit:hover {
             display: inline-block;
             background: #050505;
             color: #fff;
@@ -23,8 +23,11 @@
         color: #17d27c !important;
         padding: 8px 8px !important;
     }
-    
 </style>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+    </div>
+
     <h5>Tution Related Information</h5>
 <form action="{{route('tutor.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -32,7 +35,7 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Categories</label>
-                <select class="form-control select2-multiple" name="category[]" multiple="multiple" style="width: 260px !important;">
+                <select class="form-control select2-multiple" name="category[]" multiple="multiple" style="width: 260px !important;" required>
                     @foreach ($cat as $cat)
                         <option value="{{$cat}}" selected>{{$cat}}</option>
                     @endforeach

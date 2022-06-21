@@ -1,6 +1,10 @@
 
 {!! Form::model($user, array('method' => 'put', 'route' => array('my.profile'), 'class' => 'form', 'files'=>true)) !!}
 
+<div class="progress-bar" role="progressbar" style="width: 10%; margin-bottom: 2%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+    10%
+</div>
+
 <h5>{{__('Account Information')}}</h5>
 <div class="row">
 <div class="col-md-6">
