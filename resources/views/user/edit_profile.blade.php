@@ -122,8 +122,6 @@
                   @include('flash::message') 
                     <!-- Personal Information -->
                     {{-- @include('user.inc.profile')   --}}
-                    
-                    
                     <div class="tab">
                       <button class="tablinks" onclick="openCity(event, 'Profile')"><i class="fa fa-users" aria-hidden="true"></i> &nbsp Profile</button>
                       <button class="tablinks" onclick="openCity(event, 'Tution')"><i class="fa fa-book" aria-hidden="true"></i>  &nbsp  Tution &nbsp</button>
@@ -136,7 +134,6 @@
                       @include('user.inc.profile')
                       @include('user.inc.summary') 
                     </div>
-                  
                     <div id="Tution" class="tabcontent">
                         @include('user.forms.tution.tution')
                         @include('user.forms.skill.skills')
