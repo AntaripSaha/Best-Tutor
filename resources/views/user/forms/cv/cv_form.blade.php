@@ -1,8 +1,16 @@
 <div class="modal-body">
     <div class="form-body">
         <div class="formrow" id="div_title">
-            <input class="form-control" id="title" placeholder="{{__('Credential title')}}" name="title" type="text" value="{{(isset($profileCv)? $profileCv->title:'')}}">
-            <span class="help-block title-error"></span> </div>
+            {{-- <input class="form-control" id="title" placeholder="{{__('Credential title')}}" name="title" type="text" value="{{(isset($profileCv)? $profileCv->title:'')}}"> --}}
+            {{-- <span class="help-block title-error"></span> --}}
+            <select name="title" id="title" class="form-control">
+                <option value="BIC">Birth Certificate</option>
+                <option value="NID">NID</option>
+                <option value="JSC">JSC</option>
+                <option value="SSC">SSC</option>
+                <option value="HSC">HSC</option>
+            </select> 
+        </div>
 
         @if(isset($profileCv))
         <div class="formrow">

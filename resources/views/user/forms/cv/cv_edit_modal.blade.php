@@ -4,8 +4,8 @@
             {{csrf_field()}}
             <input type="hidden" name="id" id="id" value="{{$profileCv->id}}"/>
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">{{__('Edit Credential')}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             @include('user.forms.cv.cv_form')
             <div class="modal-footer">
