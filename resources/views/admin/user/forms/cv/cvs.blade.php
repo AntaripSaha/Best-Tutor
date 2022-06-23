@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="portlet light portlet-fit bordered">
                 <div class="portlet-title">
-                    <div class="caption"> <i class=" icon-layers font-green"></i> <span class="caption-subject font-green bold uppercase">Cvs</span> </div>
+                    <div class="caption"> <i class=" icon-layers font-green"></i> <span class="caption-subject font-green bold uppercase">Credentials</span> </div>
                 </div>
                 <div class="portlet-body">
                     <div class="mt-element-card mt-element-overlay">

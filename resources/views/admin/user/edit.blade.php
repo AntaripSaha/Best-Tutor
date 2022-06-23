@@ -29,12 +29,12 @@
                         <ul class="nav nav-tabs">              
                             <li class="active"> <a href="#Details" data-toggle="tab" aria-expanded="false"> Details </a> </li>
                             <li><a href="#Summary" data-toggle="tab" aria-expanded="false">Summary</a></li>
-                            <li><a href="#CV" data-toggle="tab" aria-expanded="false">C.V</a></li>
-                            <li><a href="#Projects" data-toggle="tab" aria-expanded="false">Projects</a></li>
-                            <li><a href="#Experience" data-toggle="tab" aria-expanded="false">Experience</a></li>
+                            <li><a href="#CV" data-toggle="tab" aria-expanded="false">Credentials</a></li>
+                            {{-- <li><a href="#Projects" data-toggle="tab" aria-expanded="false">Projects</a></li> --}}
+                            {{-- <li><a href="#Experience" data-toggle="tab" aria-expanded="false">Experience</a></li> --}}
                             <li><a href="#Education" data-toggle="tab" aria-expanded="false">Education</a></li>
                             <li><a href="#Skills" data-toggle="tab" aria-expanded="false">Skills</a></li>
-                            <li><a href="#Languages" data-toggle="tab" aria-expanded="false">Languages</a></li>
+                            {{-- <li><a href="#Languages" data-toggle="tab" aria-expanded="false">Languages</a></li> --}}
                         </ul>
 
                         <div class="tab-content">              
