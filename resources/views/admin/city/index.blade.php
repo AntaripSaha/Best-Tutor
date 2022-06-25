@@ -42,7 +42,7 @@
                                                 {!! Form::select('country_id', ['' => 'Select Country']+$countries, $default_country_id, array('id'=>'country_id', 'class'=>'form-control')) !!} <span id="default_state_dd">{!! Form::select('state_id', ['' => 'Select Division'], null, array('id'=>'state_id', 'class'=>'form-control')) !!}</span></td><td><input type="text" class="form-control" name="city" id="city" autocomplete="off" placeholder="City"></td><td><select name="is_active" id="is_active" class="form-control"><option value="-1">Is Active?</option><option value="1" selected="selected">Active</option><option value="0">In Active</option></select></td>
                                         </tr>
                                         <tr role="row" class="heading">
-                                            <th>Language</th><th>State</th><th>City</th><th>Actions</th>
+                                            <th>Language</th><th>Division</th><th>City</th><th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>

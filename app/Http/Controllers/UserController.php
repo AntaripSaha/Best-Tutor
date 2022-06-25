@@ -95,15 +95,18 @@ class UserController extends Controller
             $cla =  unserialize($tutor[0]->class);
             $sub =  unserialize($tutor[0]->subject);
             $pla =  unserialize($tutor[0]->place);
+            $pla_t =  unserialize($tutor[0]->tutoring_place);
         }elseif(count( $tutor) == 0 ){
             $cat = [''];
             $cla = [''];
             $sub = [''];
             $pla = [''];
+            $pla_t = [''];
         }else{
             return 'something worng';
         }
 
+        $place_tutoring = City::all();
         $subjects = PrefarableSubjects::all();
         $classes = PrefarableClasses::all();
         $category = PrefarableCategories::all();
@@ -136,7 +139,9 @@ class UserController extends Controller
                         ->with('cat', $cat)
                         ->with('cla', $cla)
                         ->with('sub', $sub)
-                        ->with('pla', $pla);
+                        ->with('pla', $pla)
+                        ->with('pla_t', $pla_t)
+                        ->with('place_tutoring', $place_tutoring);
     }
 
     public function updateMyProfile(UserFrontFormRequest $request)

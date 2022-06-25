@@ -45,6 +45,7 @@ class TutorController extends Controller
             $tutor->class = serialize($req->class);
             $tutor->subject = serialize($req->subject);
             $tutor->place = serialize($req->place);
+            $tutor->tutoring_place = serialize($req->tutoring_place);
             if($tutor->save()){
                 return redirect()->back()->with('success', 'Information Updated Successfully');
             }
@@ -53,7 +54,8 @@ class TutorController extends Controller
                                     'category'=>serialize($req->category),
                                     'class' => serialize($req->class),
                                     'subject'=>serialize($req->subject),
-                                    'place'=>serialize($req->place)
+                                    'place'=>serialize($req->place),
+                                    'tutoring_place'=>serialize($req->tutoring_place)
                                 ]);
             return redirect()->back()->with('success', 'Information Updated Successfully');
         }

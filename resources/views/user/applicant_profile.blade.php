@@ -26,26 +26,27 @@ if(null!==($package)){
 
 		<div class="usercoverimg">
 
-		 {{$user->printUserCoverImage()}}
+            <img src="{{asset('cover_photo.jpg')}}" alt="">
+
+		 {{-- {{$user->printUserCoverImage()}} --}}
 		
 			
 			<div class="userMaininfo">
                 
-						<div class="userPic">{{$user->printUserImage()}}</div>
-					
+					<div class="userPic">{{$user->printUserImage()}}</div>
 					<div class="title">
                                 <h3>{{$user->getName()}}
-                                @if((bool)$user->is_immediate_available)
-                                <span>{{__('Immediate Available For Work')}}</span>
-                                @endif
+                                    @if((bool)$user->is_immediate_available)
+                                    <span>{{__('Immediate Available For Work')}}</span>
+                                    @endif
 								</h3>
 						<div class="desi"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$user->getLocation()}}</div>
-						
+					
 						<div class="membersinc"><i class="fa fa-history" aria-hidden="true"></i> {{__('Member Since')}}, {{$user->created_at->format('M d, Y')}}</div>
-						
-                            </div>
+                    
+                    </div>
 					
-					
+						<div class="desi" style="margin:2px;"><i class="fa fa-user" aria-hidden="true"></i> Tutor ID: {{$user->id}}</div>
                         
             </div>
 			

@@ -48,7 +48,7 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Classes</label>
-                <select class="form-control select2-multiple" id="sel" name="class[]" multiple="multiple"  style="width: 260px !important;">
+                <select class="form-control select2-multiple" name="class[]" multiple="multiple"  style="width: 260px !important;" required>
                     @foreach($cla as $cla)
                         <option value="{{$cla}}" selected>{{$cla}}</option>
                     @endforeach
@@ -61,7 +61,7 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Preferable Subjects</label>
-                <select class="form-control select2-multiple" id="sel" name="subject[]" multiple="multiple" style="width: 260px !important;">
+                <select class="form-control select2-multiple" name="subject[]" multiple="multiple" style="width: 260px !important;" required>
                     @foreach($sub as $sub)
                         <option value="{{$sub}}" selected>{{$sub}}</option>
                     @endforeach
@@ -74,13 +74,26 @@
         <div class="col-md-6">
             <div class="formrow">
                 <label for="">Place of Tutoring</label>
-                <select class="form-control select2-multiple" id="sel" name="place[]" multiple="multiple"  style="width: 260px !important;">
+                <select class="form-control select2-multiple" name="place[]" multiple="multiple"  style="width: 260px !important;" required>
                     @foreach($pla as $pla)
                         <option value="{{$pla}}" selected>{{$pla}}</option>
                     @endforeach
                     <option value="Student Home">Student Home</option>
                     <option value="My Home">My Home</option>
                     <option value="Online">Online</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="formrow">
+                <label for="">Prefarable Places</label>
+                <select class="form-control select2-multiple" name="tutoring_place[]" multiple="multiple"  style="width: 260px !important;" required>
+                    @foreach($pla_t as $pla_t)
+                        <option value="{{$pla_t}}" selected>{{$pla_t}}</option>
+                    @endforeach
+                    @foreach ($place_tutoring as $place_tutor)
+                        <option value="{{$place_tutor->city}}">{{$place_tutor->city}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

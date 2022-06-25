@@ -115,6 +115,9 @@
             
             <div class="col-md-9 col-sm-12"> 
               <div class="new_head">
+                <h4>
+                   Tutor ID: {{$user->id}}
+                </h4>
                 <h2>Update Profile</h2>
               </div>
               <div class="userccount" style="padding: 0px !important;">
@@ -132,7 +135,7 @@
                     <div id="Profile" class="tabcontent" style="display: block !important">
                       <h3></h3>@include('flash::message')
                       @include('user.inc.profile')
-                      @include('user.inc.summary') 
+                      @include('user.inc.summary')
                     </div>
                     <div id="Tution" class="tabcontent">
                         @include('user.forms.tution.tution')

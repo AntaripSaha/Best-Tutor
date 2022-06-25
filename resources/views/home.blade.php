@@ -43,13 +43,9 @@
 							<div class="col-lg-7">
 
 								<h4>{{auth()->user()->name}}</h4> 
-
 								<h6><i class="fa fa-map-marker" aria-hidden="true"></i> {{Auth::user()->getLocation()}}</h6>
-
 							</div>
-
 							<div class="col-lg-5"><div class="editbtbn"><a href="{{ route('my.profile') }}"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit Profile</a>
-
 						</div></div>
 
 						</div>
