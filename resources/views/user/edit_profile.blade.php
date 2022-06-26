@@ -115,9 +115,6 @@
             
             <div class="col-md-9 col-sm-12"> 
               <div class="new_head">
-                <h4>
-                   Tutor ID: {{$user->id}}
-                </h4>
                 <h2>Update Profile</h2>
               </div>
               <div class="userccount" style="padding: 0px !important;">
