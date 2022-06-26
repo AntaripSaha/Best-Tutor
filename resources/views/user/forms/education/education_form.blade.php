@@ -72,7 +72,8 @@
             $result_type_id = (isset($profileEducation) ? $profileEducation->result_type_id : null);
             ?>
             {!! Form::select('result_type_id', [''=>__('Select Result Type')]+$resultTypes, $result_type_id, array('class'=>'form-control', 'id'=>'result_type_id')) !!}
-            <span class="help-block result_type_id-error"></span> </div>
+            <span class="help-block result_type_id-error"></span> 
+        </div>
 
     </div>
 </div>

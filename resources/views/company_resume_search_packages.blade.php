@@ -20,7 +20,7 @@
             </div>
             @endif
                 
-                        <div class="paypackages">
+<div class="paypackages">
     <!---four-paln-->
     <?php 
         $package = Auth::guard('company')->user()->cvs_getPackage();

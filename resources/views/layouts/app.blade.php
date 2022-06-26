@@ -166,27 +166,15 @@ if (!isset($seo)) {
 
 
         $(document).ready(function(){
-
             $.ajax({
-
                 type: 'get',
-
                 url: "{{route('check-time')}}",
-
                 success: function(res) {
-
-                        $('.notification').html(res);
-
-                   
+                    $('.notification').html(res);
 
                 }
-
             });
-
         });
-
-		
-
         </script>
 
 </body>

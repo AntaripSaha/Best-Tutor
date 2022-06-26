@@ -45,7 +45,6 @@ if(null!==($package)){
 						<div class="membersinc"><i class="fa fa-history" aria-hidden="true"></i> {{__('Member Since')}}, {{$user->created_at->format('M d, Y')}}</div>
                     
                     </div>
-					
 						<div class="desi" style="margin:2px;"><i class="fa fa-user" aria-hidden="true"></i> Tutor ID: {{$user->id}}</div>
                         
             </div>

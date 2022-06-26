@@ -196,7 +196,7 @@
 </div> --}}
 <hr>
 
-{{-- <h5>{{__('Career Information')}}</h5>
+<h5>{{__('Career Information')}}</h5>
 
 <div class="row">
  <div class="col-md-6">
@@ -223,19 +223,19 @@
 			{!! Form::select('functional_area_id', [''=>__('Select Major')]+$functionalAreas, null, array('class'=>'form-control', 'id'=>'functional_area_id')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'functional_area_id') !!} </div>
     </div>
-    <div class="col-md-4">
+    {{-- <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'current_salary') !!}">
 			<label for="">{{__('Current Salary')}}</label>
 			{!! Form::text('current_salary', null, array('class'=>'form-control', 'id'=>'current_salary', 'placeholder'=>__('Current Salary'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'current_salary') !!} </div>
-    </div>
+    </div> --}}
     <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'expected_salary') !!}">
 			<label for="">{{__('Expected Salary')}}</label>
 			{!! Form::text('expected_salary', null, array('class'=>'form-control', 'id'=>'expected_salary', 'placeholder'=>__('Expected Salary'))) !!}
             {!! APFrmErrHelp::showErrors($errors, 'expected_salary') !!} </div>
     </div>
-    <div class="col-md-4">
+    {{-- <div class="col-md-4">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'salary_currency') !!}">
 			<label for="">{{__('Salary Currency')}}</label>			
             @php
@@ -243,8 +243,8 @@
             @endphp
             {!! Form::text('salary_currency', $salary_currency, array('class'=>'form-control', 'id'=>'salary_currency', 'placeholder'=>__('Salary Currency'), 'autocomplete'=>'off')) !!}
             {!! APFrmErrHelp::showErrors($errors, 'salary_currency') !!} </div>
-    </div>
-</div> --}}
+    </div> --}}
+</div>
 	
 	
 	
